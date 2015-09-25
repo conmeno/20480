@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GoogleMobileAds
 /// A view controller representing the swift-2048 game. It serves mostly to tie a GameModel and a GameboardView
 /// together. Data flow works as follows: user input reaches the view controller and is forwarded to the model. Move
 /// orders calculated by the model are returned to the view controller and forwarded to the gameboard view, which
@@ -22,6 +22,8 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
   var model: GameModel?
 
   var scoreView: ScoreViewProtocol?
+    
+  var gBannerView: GADBannerView!
 
   // Width of the gameboard
   let boardWidth: CGFloat = 230.0
@@ -69,11 +71,50 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
     view.addGestureRecognizer(rightSwipe)
   }
+    
+    var interstitial: GADInterstitial!
+    
+    func createAndLoadAd() -> GADInterstitial
+    {
+        var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
+        
+        var request = GADRequest()
+        
+        request.testDevices = [kGADSimulatorID, "19c08b1b5ea99d3f2265925e45cf7387"]
+        
+        ad.loadRequest(request)
+        
+        return ad
+    }
+    func showAdmob()
+    {
+        if (self.interstitial.isReady)
+        {
+            self.interstitial.presentFromRootViewController(self)
+            self.interstitial = self.createAndLoadAd()
+        }
+    }
 
+    func ShowAdmobBanner()
+    {
+        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , 320, 50))
+        gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
+        gBannerView?.delegate = nil
+        //gBannerView?.rootViewController = self
+        view?.addSubview(gBannerView!)
+        //adViewHeight = bannerView!.frame.size.height
+        var request = GADRequest()
+        request.testDevices = [kGADSimulatorID , "19c08b1b5ea99d3f2265925e45cf7387"];
+        gBannerView?.loadRequest(request)
+        //gBannerView?.hidden = true
+        println("load admob")
+    }
 
   // View Controller
   override func viewDidLoad()  {
     super.viewDidLoad()
+    ShowAdmobBanner()
+ self.interstitial = self.createAndLoadAd()
     setupGame()
   }
 
@@ -200,7 +241,9 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
             reset()
             break;
         case 0:
-            NSLog("Home Menu");
+            NSLog("Show Ad");
+            showAdmob()
+
             break;
         default:
             NSLog("Default");

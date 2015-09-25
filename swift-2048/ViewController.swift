@@ -7,14 +7,153 @@
 //
 
 import UIKit
+import AVFoundation
+import GoogleMobileAds
 
-class ViewController: UIViewController {
-                            
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
+class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate {
+    
+     var timerAd:NSTimer?
+    var AdNumber = 0
+    var audioPlayer: AVAudioPlayer?
+    
+    @IBOutlet weak var gBannerView: GADBannerView!
+    
+    func RandomThemeMusic(Mp3Name : String)
+    {
+        audioPlayer?.stop()
+        
+        
+        let url = NSURL.fileURLWithPath(
+            NSBundle.mainBundle().pathForResource(Mp3Name,
+                ofType: "mp3")!)
+        
+        var error: NSError?
+        
+        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+        
+        if let err = error {
+            println("audioPlayer error \(err.localizedDescription)")
+        } else {
+            
+            audioPlayer?.prepareToPlay()
+        }
+        audioPlayer?.numberOfLoops = 100
+        
+    }
+    var interstitial: GADInterstitial!
+    
+    func createAndLoadAd() -> GADInterstitial
+    {
+        var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
+        
+        var request = GADRequest()
+        
+        request.testDevices = [kGADSimulatorID, "19c08b1b5ea99d3f2265925e45cf7387"]
+        
+        ad.loadRequest(request)
+        
+        return ad
+    }
+    func showAdmob()
+    {
+        if (self.interstitial.isReady)
+        {
+            self.interstitial.presentFromRootViewController(self)
+            self.interstitial = self.createAndLoadAd()
+        }
+    }
+    func ShowAdmobBanner()
+    {
+        //gBannerView = GADBannerView(frame: CGRectMake(0, 20 , 320, 50))
+        gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
+        gBannerView?.delegate = self
+        gBannerView?.rootViewController = self
+        //self.view.addSubview(bannerView!)
+        //adViewHeight = bannerView!.frame.size.height
+        var request = GADRequest()
+        request.testDevices = [kGADSimulatorID , "19c08b1b5ea99d3f2265925e45cf7387"];
+        gBannerView?.loadRequest(request)
+        gBannerView?.hidden = true
+        
+    }
+    func showAds()
+    {
+        
+        Chartboost.showInterstitial("Home" + String(AdNumber))
+        
+        AdNumber++
+       
+        if(AdNumber > 7)
+        {
+            //adView.backgroundColor = UIColor.redColor()
+        }
+        println(AdNumber)
+    }
+    func timerMethodAutoAd(timer:NSTimer) {
+        println("auto play")
+       // adView.backgroundColor = UIColor.redColor()
+        
+       showAds()
+        
+    }
+
+ 
+    
+    
+    //GADBannerViewDelegate
+    func adViewDidReceiveAd(view: GADBannerView!) {
+        println("adViewDidReceiveAd:\(view)");
+        gBannerView?.hidden = false
+        
+        //relayoutViews()
+    }
+    
+    func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        println("\(view) error:\(error)")
+        gBannerView?.hidden = false
+        //relayoutViews()
+    }
+    
+    func adViewWillPresentScreen(adView: GADBannerView!) {
+        println("adViewWillPresentScreen:\(adView)")
+        gBannerView?.hidden = false
+        
+        //relayoutViews()
+    }
+    
+    func adViewWillLeaveApplication(adView: GADBannerView!) {
+        println("adViewWillLeaveApplication:\(adView)")
+    }
+    
+    func adViewWillDismissScreen(adView: GADBannerView!) {
+        println("adViewWillDismissScreen:\(adView)")
+        
+        // relayoutViews()
+    }
+    
+    
+    
+    
+    //click button
+    
+    @IBAction func moreapp1Click(sender: AnyObject) {
+        showAdmob()
+    }
+    
+    @IBAction func moreApp2click(sender: AnyObject) {
+        showAds()
+    }
+    //end click button
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ShowAdmobBanner()
+        self.interstitial = self.createAndLoadAd()
+    }
+    
 
   @IBAction func startGameButtonTapped(sender : UIButton) {
+    RandomThemeMusic("4")
     let game = NumberTileGameViewController(dimension: 4, threshold: 20480)
     self.presentViewController(game, animated: true, completion: nil)
   }
