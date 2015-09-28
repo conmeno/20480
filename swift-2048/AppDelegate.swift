@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
 
 Chartboost.startWithAppId("5604c9cd04b0165979d185df", appSignature: "31dea0ced9b004aa978de4483b7952440f7d990b", delegate: self)
+        
+        
+        // initialize the SDK with your appID and devID
+        var sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
+        sdk.appID = "208928003"
+        sdk.devID = "108171558"
+        //sdk.showSplashAd()
         return true
     }
   func applicationWillResignActive(application: UIApplication) {

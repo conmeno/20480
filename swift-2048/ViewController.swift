@@ -17,7 +17,8 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     var audioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var gBannerView: GADBannerView!
-    
+    var startAppBanner: STABannerView?
+    var startAppAd: STAStartAppAd?
     func RandomThemeMusic(Mp3Name : String)
     {
         audioPlayer?.stop()
@@ -48,7 +49,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         
         var request = GADRequest()
         
-        request.testDevices = [kGADSimulatorID, "19c08b1b5ea99d3f2265925e45cf7387"]
+        request.testDevices = [kGADSimulatorID, "9b1ec7c4a365ca2f239b626a86d2d8f6"]
         
         ad.loadRequest(request)
         
@@ -71,7 +72,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "19c08b1b5ea99d3f2265925e45cf7387"];
+        request.testDevices = [kGADSimulatorID , "9b1ec7c4a365ca2f239b626a86d2d8f6"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
         
@@ -141,14 +142,30 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     }
     
     @IBAction func moreApp2click(sender: AnyObject) {
+        startAppAd!.loadAd()
+    }
+    
+    @IBAction func Click(sender: AnyObject) {
         showAds()
     }
+    
+    @IBAction func startGameHover(sender: AnyObject) {
+        
+        if (startAppBanner == nil) {
+            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.view, withDelegate: nil);
+            self.view.addSubview(startAppBanner!)
+        }
+    }
+    
     //end click button
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ShowAdmobBanner()
         self.interstitial = self.createAndLoadAd()
+        startAppAd = STAStartAppAd()
+        //show startApp Full
+        
     }
     
 

@@ -80,7 +80,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         
         var request = GADRequest()
         
-        request.testDevices = [kGADSimulatorID, "19c08b1b5ea99d3f2265925e45cf7387"]
+        request.testDevices = [kGADSimulatorID, "9e7d817c401083530f3ebfb9350b045a"]
         
         ad.loadRequest(request)
         
@@ -100,11 +100,11 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         gBannerView = GADBannerView(frame: CGRectMake(0, 20 , 320, 50))
         gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
         gBannerView?.delegate = nil
-        //gBannerView?.rootViewController = self
+        gBannerView?.rootViewController = self
         view?.addSubview(gBannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "19c08b1b5ea99d3f2265925e45cf7387"];
+        request.testDevices = [kGADSimulatorID , "9e7d817c401083530f3ebfb9350b045a"];
         gBannerView?.loadRequest(request)
         //gBannerView?.hidden = true
         println("load admob")
@@ -116,7 +116,29 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     ShowAdmobBanner()
  self.interstitial = self.createAndLoadAd()
     setupGame()
+    setupButton()
   }
+    func setupButton(){
+    
+        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        button.frame = CGRectMake(10, 100, 65, 40)
+        button.backgroundColor = UIColor.blackColor()
+        
+        button.setTitle("Reset", forState: UIControlState.Normal)
+    
+        button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view?.addSubview(button)
+        
+    }
+    
+    func buttonAction(sender:UIButton!)
+    {
+        println("New game")
+        reset()
+    }
+
+    
 
   func reset() {
     assert(board != nil && model != nil)
