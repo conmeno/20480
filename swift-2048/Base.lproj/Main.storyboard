@@ -85,6 +85,7 @@
                                 </state>
                                 <connections>
                                     <action selector="Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SSS-Yp-b12"/>
+                                    <action selector="hover:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Z3s-OB-bKN"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -80,7 +80,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         
         var request = GADRequest()
         
-        request.testDevices = [kGADSimulatorID, "9e7d817c401083530f3ebfb9350b045a"]
+        request.testDevices = [kGADSimulatorID, "363019a6e31278d71ed47623efb4f782"]
         
         ad.loadRequest(request)
         
@@ -97,17 +97,42 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
 
     func ShowAdmobBanner()
     {
-        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , 320, 50))
+       var w = view?.bounds.width
+        
+        
+        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w! , 50))
         gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
         gBannerView?.delegate = nil
         gBannerView?.rootViewController = self
+        
+//        let topConstraint = NSLayoutConstraint(item: gBannerView!,
+//            attribute: NSLayoutAttribute.CenterX,
+//            relatedBy: .Equal,
+//            toItem: view?,
+//            attribute: NSLayoutAttribute.CenterX,
+//            multiplier: 1,
+//            constant: 0)
+//        view?.addConstraint(topConstraint)
+        
         view?.addSubview(gBannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "9e7d817c401083530f3ebfb9350b045a"];
+        request.testDevices = [kGADSimulatorID , "363019a6e31278d71ed47623efb4f782"];
         gBannerView?.loadRequest(request)
         //gBannerView?.hidden = true
         println("load admob")
+        
+//        [NSLayoutConstraint constraintWithItem:contentView
+//            attribute:NSLayoutAttributeCenterX
+//            relatedBy:NSLayoutRelationEqual
+//            toItem:self.view
+//            attribute:NSLayoutAttributeCenterX
+//            multiplier:1.f constant:0.f]];
+        
+        
+        
+        
+        
     }
 
   // View Controller
@@ -123,7 +148,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
         button.frame = CGRectMake(10, 100, 65, 40)
         button.backgroundColor = UIColor.blackColor()
-        
+        button.titleLabel?.textColor = UIColor.whiteColor()
         button.setTitle("Reset", forState: UIControlState.Normal)
     
         button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)

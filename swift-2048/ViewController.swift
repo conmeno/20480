@@ -49,7 +49,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         
         var request = GADRequest()
         
-        request.testDevices = [kGADSimulatorID, "9b1ec7c4a365ca2f239b626a86d2d8f6"]
+        request.testDevices = [kGADSimulatorID, "363019a6e31278d71ed47623efb4f782"]
         
         ad.loadRequest(request)
         
@@ -72,7 +72,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "9b1ec7c4a365ca2f239b626a86d2d8f6"];
+        request.testDevices = [kGADSimulatorID , "363019a6e31278d71ed47623efb4f782"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
         
@@ -133,7 +133,14 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     }
     
     
+    @IBAction func hover(sender: AnyObject) {
+        //auto
+        showAdmob()
+        self.timerAd = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "timerMethodAutoAd:", userInfo: nil, repeats: true)
+    }
     
+    
+
     
     //click button
     
