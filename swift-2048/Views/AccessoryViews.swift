@@ -20,13 +20,18 @@ class ScoreView : UIView, ScoreViewProtocol {
   }
   }
 
-  let defaultFrame = CGRectMake(0, 0, 140, 40)
+  var defaultFrame = CGRectMake(0, 0, 140, 40)
   var label: UILabel
 
-  init(backgroundColor bgcolor: UIColor, textColor tcolor: UIColor, font: UIFont, radius r: CGFloat) {
+    init(backgroundColor bgcolor: UIColor, textColor tcolor: UIColor, font: UIFont, radius r: CGFloat, defaultFrame1: CGRect) {
+    defaultFrame = defaultFrame1
     label = UILabel(frame: defaultFrame)
     label.textAlignment = NSTextAlignment.Center
+    
     super.init(frame: defaultFrame)
+        
+   
+    
     backgroundColor = bgcolor
     label.textColor = tcolor
     label.font = font
@@ -41,6 +46,14 @@ class ScoreView : UIView, ScoreViewProtocol {
   func scoreChanged(newScore s: Int)  {
     score = s
   }
+    func isIpad()->Bool
+    {
+        var userInterfaceIdiom = UIDevice.currentDevice().userInterfaceIdiom
+        if (userInterfaceIdiom != UIUserInterfaceIdiom.Phone) {
+            return true
+        }
+        return false
+    }
 }
 
 // A simple view that displays several buttons for controlling the app

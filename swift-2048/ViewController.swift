@@ -49,7 +49,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         
         var request = GADRequest()
         
-        request.testDevices = [kGADSimulatorID, "363019a6e31278d71ed47623efb4f782"]
+        request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
         
         ad.loadRequest(request)
         
@@ -72,7 +72,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "363019a6e31278d71ed47623efb4f782"];
+        request.testDevices = [kGADSimulatorID , "66a1a7a74843127e3f26f6e826d13bbd"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
         

@@ -26,7 +26,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
   var gBannerView: GADBannerView!
 
   // Width of the gameboard
-  let boardWidth: CGFloat = 230.0
+  var boardWidth: CGFloat = 230.0
   // How much padding to place between the tiles
   let thinPadding: CGFloat = 3.0
   let thickPadding: CGFloat = 6.0
@@ -40,16 +40,29 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
   init(dimension d: Int, threshold t: Int) {
     dimension = d > 2 ? d : 2
     threshold = t > 8 ? t : 8
+   
     super.init(nibName: nil, bundle: nil)
+    if(isIpad())
+    {
+        boardWidth = 430.0
+    }
     model = GameModel(dimension: dimension, threshold: threshold, delegate: self)
     view.backgroundColor = UIColor.whiteColor()
     setupSwipeControls()
+    
   }
 
   required init(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
   }
-
+    func isIpad()->Bool
+    {
+        var userInterfaceIdiom = UIDevice.currentDevice().userInterfaceIdiom
+        if (userInterfaceIdiom != UIUserInterfaceIdiom.Phone) {
+            return true
+        }
+        return false
+    }
   func setupSwipeControls() {
     let upSwipe = UISwipeGestureRecognizer(target: self, action: Selector("up:"))
     upSwipe.numberOfTouchesRequired = 1
@@ -80,7 +93,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         
         var request = GADRequest()
         
-        request.testDevices = [kGADSimulatorID, "363019a6e31278d71ed47623efb4f782"]
+        request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
         
         ad.loadRequest(request)
         
@@ -117,7 +130,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         view?.addSubview(gBannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "363019a6e31278d71ed47623efb4f782"];
+        request.testDevices = [kGADSimulatorID , "66a1a7a74843127e3f26f6e826d13bbd"];
         gBannerView?.loadRequest(request)
         //gBannerView?.hidden = true
         println("load admob")
@@ -146,11 +159,12 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     func setupButton(){
     
         let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        button.frame = CGRectMake(10, 100, 65, 40)
+        button.frame = CGRectMake(10, 80, 65, 40)
         button.backgroundColor = UIColor.blackColor()
-        button.titleLabel?.textColor = UIColor.whiteColor()
+      
         button.setTitle("Reset", forState: UIControlState.Normal)
-    
+        button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+      //button.titleLabel?.textColor = UIColor.whiteColor()
         button.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view?.addSubview(button)
@@ -202,10 +216,21 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     }
 
     // Create the score view
+    var scoreFoneSize:CGFloat = 16.0
+    if(isIpad())
+    {
+        scoreFoneSize = 36.0
+    }
+    var defaultFrame = CGRectMake(0, 0, 140, 40)
+    if(isIpad())
+    {
+        defaultFrame = CGRectMake(0, 0, 280, 80)
+        
+    }
     let scoreView = ScoreView(backgroundColor: UIColor.blackColor(),
       textColor: UIColor.whiteColor(),
-      font: UIFont(name: "HelveticaNeue-Bold", size: 16.0) ?? UIFont.systemFontOfSize(16.0),
-      radius: 6)
+      font: UIFont(name: "HelveticaNeue-Bold", size: scoreFoneSize) ?? UIFont.systemFontOfSize(scoreFoneSize),
+      radius: 6, defaultFrame1: defaultFrame)
     scoreView.score = 0
 
     // Create the gameboard
