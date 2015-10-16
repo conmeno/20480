@@ -10,69 +10,104 @@ import UIKit
 import AVFoundation
 import GoogleMobileAds
 
-class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate {
+class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate {
     
+    var interstitialAmazon: AmazonAdInterstitial!
      var timerAd:NSTimer?
     var AdNumber = 0
     var audioPlayer: AVAudioPlayer?
-    
+    var timerAmazon:NSTimer?
     @IBOutlet weak var gBannerView: GADBannerView!
-    var startAppBanner: STABannerView?
-    var startAppAd: STAStartAppAd?
-    func RandomThemeMusic(Mp3Name : String)
-    {
-        audioPlayer?.stop()
-        
-        
-        let url = NSURL.fileURLWithPath(
-            NSBundle.mainBundle().pathForResource(Mp3Name,
-                ofType: "mp3")!)
-        
-        var error: NSError?
-        
-        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-        
-        if let err = error {
-            println("audioPlayer error \(err.localizedDescription)")
-        } else {
-            
-            audioPlayer?.prepareToPlay()
-        }
-        audioPlayer?.numberOfLoops = 100
-        
-    }
-    var interstitial: GADInterstitial!
+   // var startAppBanner: STABannerView?
+    //var startAppAd: STAStartAppAd?
+    var isAutoAmazonFull = false
     
-    func createAndLoadAd() -> GADInterstitial
+    //begin amazon banner
+    
+    @IBOutlet var amazonAdView: AmazonAdView!
+    func showAmazon()
     {
-        var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
-        
-        var request = GADRequest()
-        
-        request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
-        
-        ad.loadRequest(request)
-        
-        return ad
+        amazonAdView = AmazonAdView(adSize: AmazonAdSize_320x50)
+        loadAmazonAdWithUserInterfaceIdiom(UIDevice.currentDevice().userInterfaceIdiom, interfaceOrientation: UIApplication.sharedApplication().statusBarOrientation)
+        amazonAdView.delegate = self
+        self.view.addSubview(amazonAdView)
     }
-    func showAdmob()
-    {
-        if (self.interstitial.isReady)
-        {
-            self.interstitial.presentFromRootViewController(self)
-            self.interstitial = self.createAndLoadAd()
+     
+    
+    func loadAmazonAdWithUserInterfaceIdiom(userInterfaceIdiom: UIUserInterfaceIdiom, interfaceOrientation: UIInterfaceOrientation) -> Void {
+        
+        var options = AmazonAdOptions()
+        options.isTestRequest = false
+        var x = (self.view.bounds.width - 320)/2
+        
+        if (userInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
+            amazonAdView.frame = CGRectMake(x, self.view.bounds.height - 50, 320, 50)
+        } else {
+            amazonAdView.removeFromSuperview()
+            
+            if (interfaceOrientation == UIInterfaceOrientation.Portrait) {
+                amazonAdView = AmazonAdView(adSize: AmazonAdSize_728x90)
+                amazonAdView.frame = CGRectMake((self.view.bounds.width-728.0)/2.0, self.view.bounds.height - 50, 728.0, 90.0)
+            } else {
+                amazonAdView = AmazonAdView(adSize: AmazonAdSize_1024x50)
+                amazonAdView.frame = CGRectMake((self.view.bounds.width-1024.0)/2.0, self.view.bounds.height - 50, 1024.0, 50.0)
+            }
+            self.view.addSubview(amazonAdView)
+            amazonAdView.delegate = self
         }
+        
+        amazonAdView.loadAd(options)
     }
+    
+    //end amazon banner
+    
+    
+   
+    
+
+
+func timerMethodAutoAmazon(timer:NSTimer) {
+    println("auto load amazon")
+    loadAmazonAdWithUserInterfaceIdiom(UIDevice.currentDevice().userInterfaceIdiom, interfaceOrientation: UIApplication.sharedApplication().statusBarOrientation)
+    if(isAutoAmazonFull){
+        showAmazonFull()
+    }
+}
+
+
+   
+//    var interstitial: GADInterstitial!
+//    
+//    func createAndLoadAd() -> GADInterstitial
+//    {
+//        var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
+//        
+//        var request = GADRequest()
+//        
+//        request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
+//        
+//        ad.loadRequest(request)
+//        
+//        return ad
+//    }
+//    func showAdmob()
+//    {
+//        if (self.interstitial.isReady)
+//        {
+//            self.interstitial.presentFromRootViewController(self)
+//            self.interstitial = self.createAndLoadAd()
+//        }
+//    }
     func ShowAdmobBanner()
     {
         //gBannerView = GADBannerView(frame: CGRectMake(0, 20 , 320, 50))
-        gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
+        gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7512154068"
         gBannerView?.delegate = self
         gBannerView?.rootViewController = self
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "66a1a7a74843127e3f26f6e826d13bbd"];
+        request.testDevices = [kGADSimulatorID , "840f78326dcb34887597a9fa80236814"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
         
@@ -81,7 +116,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     {
         
         Chartboost.showInterstitial("Home" + String(AdNumber))
-        
+        Chartboost.load()
         AdNumber++
        
         if(AdNumber > 7)
@@ -135,7 +170,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     @IBAction func hover(sender: AnyObject) {
         //auto
-        showAdmob()
+        //showAdmob()
         self.timerAd = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "timerMethodAutoAd:", userInfo: nil, repeats: true)
     }
     
@@ -145,11 +180,14 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     //click button
     
     @IBAction func moreapp1Click(sender: AnyObject) {
-        showAdmob()
+        //showAdmob()
+        showAds()
     }
     
     @IBAction func moreApp2click(sender: AnyObject) {
-        startAppAd!.loadAd()
+        //startAppAd!.loadAd()
+        showAmazonFull()
+        isAutoAmazonFull = true
     }
     
     @IBAction func Click(sender: AnyObject) {
@@ -157,29 +195,105 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     }
     
     @IBAction func startGameHover(sender: AnyObject) {
-        
-        if (startAppBanner == nil) {
-            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.view, withDelegate: nil);
-            self.view.addSubview(startAppBanner!)
-        }
+        ShowAdmobBanner()
+//        if (startAppBanner == nil) {
+//            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.view, withDelegate: nil);
+//            self.view.addSubview(startAppBanner!)
+//        }
     }
     
     //end click button
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ShowAdmobBanner()
-        self.interstitial = self.createAndLoadAd()
-        startAppAd = STAStartAppAd()
+        //ShowAdmobBanner()
+        //self.interstitial = self.createAndLoadAd()
+        //startAppAd = STAStartAppAd()
         //show startApp Full
+        showAmazon()
+        interstitialAmazon = AmazonAdInterstitial()
         
+        interstitialAmazon.delegate = self
+        loadAmazonFull()
+        
+        self.timerAd = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
+        Chartboost.load()
     }
     
+    func loadAmazonFull()
+    {
+        var options = AmazonAdOptions()
+        
+        options.isTestRequest = true
+        
+        interstitialAmazon.load(options)
+    }
+    func showAmazonFull()
+    {
+        interstitialAmazon.presentFromViewController(self)
+        
+    }
 
   @IBAction func startGameButtonTapped(sender : UIButton) {
-    RandomThemeMusic("4")
+    //RandomThemeMusic("4")
     let game = NumberTileGameViewController(dimension: 4, threshold: 20480)
     self.presentViewController(game, animated: true, completion: nil)
   }
+    
+    
+    // Mark: - AmazonAdInterstitialDelegate
+    func interstitialDidLoad(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial loaded.")
+        //loadStatusLabel.text = "Interstitial loaded."
+    }
+    
+    func interstitialDidFailToLoad(interstitial: AmazonAdInterstitial!, withError: AmazonAdError!) {
+        Swift.print("Interstitial failed to load.")
+        //loadStatusLabel.text = "Interstitial failed to load."
+    }
+    
+    func interstitialWillPresent(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial will be presented.")
+    }
+    
+    func interstitialDidPresent(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial has been presented.")
+    }
+    
+    func interstitialWillDismiss(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial will be dismissed.")
+        
+    }
+    
+    func interstitialDidDismiss(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial has been dismissed.");
+        //self.loadStatusLabel.text = "No interstitial loaded.";
+        loadAmazonFull();
+    }
+    
+    
+    
+    // Mark: - AmazonAdViewDelegate
+    func viewControllerForPresentingModalView() -> UIViewController {
+        return self
+    }
+    
+    func adViewDidLoad(view: AmazonAdView!) -> Void {
+        self.view.addSubview(amazonAdView)
+    }
+    
+    func adViewDidFailToLoad(view: AmazonAdView!, withError: AmazonAdError!) -> Void {
+        println("Ad Failed to load. Error code \(withError.errorCode): \(withError.errorDescription)")
+    }
+    
+    func adViewWillExpand(view: AmazonAdView!) -> Void {
+        println("Ad will expand")
+    }
+    
+    func adViewDidCollapse(view: AmazonAdView!) -> Void {
+        println("Ad has collapsed")
+    }
+
+
 }
 
