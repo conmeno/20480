@@ -224,7 +224,7 @@ func timerMethodAutoAmazon(timer:NSTimer) {
     {
         var options = AmazonAdOptions()
         
-        options.isTestRequest = true
+        options.isTestRequest = false
         
         interstitialAmazon.load(options)
     }
@@ -236,7 +236,7 @@ func timerMethodAutoAmazon(timer:NSTimer) {
 
   @IBAction func startGameButtonTapped(sender : UIButton) {
     //RandomThemeMusic("4")
-    let game = NumberTileGameViewController(dimension: 4, threshold: 20480)
+    let game = NumberTileGameViewController(dimension: 4, threshold: 10240)
     self.presentViewController(game, animated: true, completion: nil)
   }
     
