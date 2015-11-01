@@ -16,31 +16,14 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     var AdNumber = 0
     var audioPlayer: AVAudioPlayer?
     
-    @IBOutlet weak var gBannerView: GADBannerView!
+   var gBannerView: GADBannerView!
     var startAppBanner: STABannerView?
     var startAppAd: STAStartAppAd?
-    func RandomThemeMusic(Mp3Name : String)
-    {
-        audioPlayer?.stop()
-        
-        
-        let url = NSURL.fileURLWithPath(
-            NSBundle.mainBundle().pathForResource(Mp3Name,
-                ofType: "mp3")!)
-        
-        var error: NSError?
-        
-        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-        
-        if let err = error {
-            println("audioPlayer error \(err.localizedDescription)")
-        } else {
-            
-            audioPlayer?.prepareToPlay()
-        }
-        audioPlayer?.numberOfLoops = 100
-        
-    }
+    
+    var timerVPN:NSTimer?
+    var isStopAD = true
+    
+    
     var interstitial: GADInterstitial!
     
     func createAndLoadAd() -> GADInterstitial
@@ -65,18 +48,37 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     }
     func ShowAdmobBanner()
     {
-        //gBannerView = GADBannerView(frame: CGRectMake(0, 20 , 320, 50))
+        var w = view?.bounds.width
+
+        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w!, 50))
         gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
         gBannerView?.delegate = self
         gBannerView?.rootViewController = self
+        self.view.addSubview(gBannerView)
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
         var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "66a1a7a74843127e3f26f6e826d13bbd"];
+        request.testDevices = [kGADSimulatorID , "a2be35bd5c1489db37f4327e6727df18"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
         
     }
+    
+    func showAd()->Bool
+    {
+        var abc = Test()
+        var VPN = abc.isVPNConnected()
+        var Version = abc.platformNiceString()
+        if(VPN == false && Version == "CDMA")
+        {
+            return false
+        }
+        
+        return true
+    }
+    
+    
+    
     func showAds()
     {
         
@@ -168,16 +170,42 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ShowAdmobBanner()
+        
         self.interstitial = self.createAndLoadAd()
         startAppAd = STAStartAppAd()
         //show startApp Full
+        self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
         
+        
+        if(showAd())
+        {
+            ShowAdmobBanner()
+            isStopAD = false
+        }
+        
+    }
+    
+    func timerVPNMethodAutoAd(timer:NSTimer) {
+        println("VPN Checking....")
+        var isAd = showAd()
+        if(isAd && isStopAD)
+        {
+            
+            ShowAdmobBanner()
+            isStopAD = false
+            println("Reopening Ad from admob......")
+        }
+        
+        if(isAd == false && isStopAD == false)
+        {
+            gBannerView.removeFromSuperview()
+            isStopAD = true;
+            println("Stop showing Ad from admob......")
+        }
     }
     
 
   @IBAction func startGameButtonTapped(sender : UIButton) {
-    RandomThemeMusic("4")
     let game = NumberTileGameViewController(dimension: 4, threshold: 20480)
     self.presentViewController(game, animated: true, completion: nil)
   }

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
 
-Chartboost.startWithAppId("5604c9cd04b0165979d185df", appSignature: "31dea0ced9b004aa978de4483b7952440f7d990b", delegate: self)
+Chartboost.startWithAppId("5635f40643150f4e4bb82724", appSignature: "0dcb7b712fb4c74b2c843a3d3a0487d2f7e25957", delegate: self)
         
         
         // initialize the SDK with your appID and devID
