@@ -24,6 +24,7 @@
 		1AF8F0B91941846F00A7049E /* AuxiliaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF8F0B71941841000A7049E /* AuxiliaryModels.swift */; };
 		84A08F831BB9229800FBA80B /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84A08F811BB9229800FBA80B /* StartApp.bundle */; };
 		84A08F841BB9229800FBA80B /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A08F821BB9229800FBA80B /* StartApp.framework */; };
+		84A3D2281C1D1C7D0055D37A /* AmazonAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A3D2271C1D1C7D0055D37A /* AmazonAd.framework */; };
 		84A794051BB52AAB007E4AE1 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794041BB52AAB007E4AE1 /* GoogleMobileAds.framework */; };
 		84A794071BB52AD5007E4AE1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794061BB52AD5007E4AE1 /* AdSupport.framework */; };
 		84A794091BB52ADC007E4AE1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794081BB52ADC007E4AE1 /* WebKit.framework */; };
@@ -92,6 +93,7 @@
 		1AF8F0B71941841000A7049E /* AuxiliaryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuxiliaryModels.swift; path = Models/AuxiliaryModels.swift; sourceTree = "<group>"; };
 		84A08F811BB9229800FBA80B /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
 		84A08F821BB9229800FBA80B /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
+		84A3D2271C1D1C7D0055D37A /* AmazonAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmazonAd.framework; sourceTree = "<group>"; };
 		84A794031BB52A66007E4AE1 /* vuonhoa-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "vuonhoa-Bridging-header.h"; path = "../vuonhoa-Bridging-header.h"; sourceTree = "<group>"; };
 		84A794041BB52AAB007E4AE1 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		84A794061BB52AD5007E4AE1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -131,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A794341BB52B97007E4AE1 /* EventKit.framework in Frameworks */,
+				84A3D2281C1D1C7D0055D37A /* AmazonAd.framework in Frameworks */,
 				84A794351BB52B97007E4AE1 /* EventKitUI.framework in Frameworks */,
 				84A794311BB52B92007E4AE1 /* CoreData.framework in Frameworks */,
 				84A7942F1BB52B8C007E4AE1 /* CoreMedia.framework in Frameworks */,
@@ -173,6 +176,7 @@
 		1AC563D4193DCE6000402286 = {
 			isa = PBXGroup;
 			children = (
+				84A3D2271C1D1C7D0055D37A /* AmazonAd.framework */,
 				84C238EE1BE61A65002A4C07 /* Test.h */,
 				84C238EF1BE61A65002A4C07 /* Test.m */,
 				84A08F801BB9228A00FBA80B /* FW */,

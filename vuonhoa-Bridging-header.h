@@ -9,7 +9,11 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <AdSupport/AdSupport.h>
 #import <StartApp/StartApp.h>
-
+#import <AmazonAd/AmazonAdInterstitial.h>
+#import <AmazonAd/AmazonAdRegistration.h>
+#import <AmazonAd/AmazonAdView.h>
+#import <AmazonAd/AmazonAdError.h>
+#import <AmazonAd/AmazonAdOptions.h>
 
 //#import <AmazonAd/AmazonAdRegistration.h>
 //#import <AmazonAd/AmazonAdView.h>

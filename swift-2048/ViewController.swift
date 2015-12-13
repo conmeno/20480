@@ -10,26 +10,31 @@ import UIKit
 import AVFoundation
 import GoogleMobileAds
 
-class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate {
+class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate,AmazonAdInterstitialDelegate,GADInterstitialDelegate {
     
      var timerAd:NSTimer?
     var AdNumber = 0
     var audioPlayer: AVAudioPlayer?
+    var interstitialAmazon: AmazonAdInterstitial!
+
     
    var gBannerView: GADBannerView!
     var startAppBanner: STABannerView?
     var startAppAd: STAStartAppAd?
     
     var timerVPN:NSTimer?
+    var timerAdmobFull:NSTimer?
     var isStopAD = true
     
     
     var interstitial: GADInterstitial!
+    var isShowFullAdmob = false
+    var isShowFllAmazon = false
     
     func createAndLoadAd() -> GADInterstitial
     {
         var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
-        
+        //ad.delegate = self
         var request = GADRequest()
         
         request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
@@ -151,8 +156,13 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     }
     
     @IBAction func moreApp2click(sender: AnyObject) {
+        showAmazonFull()
+
         startAppAd!.loadAd()
-    }
+        
+        println("xxaa")
+        
+            }
     
     @IBAction func Click(sender: AnyObject) {
         showAds()
@@ -168,23 +178,63 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     //end click button
     
+    func LoadMultiAD()
+    {
+    
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.interstitial = self.createAndLoadAd()
+        interstitialAmazon = AmazonAdInterstitial()
+        
+        interstitialAmazon.delegate = self
+        
+        
         startAppAd = STAStartAppAd()
         //show startApp Full
         self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
+        
+        self.timerAdmobFull = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timerAdmobFull:", userInfo: nil, repeats: true)
+
         
         
         if(showAd())
         {
             ShowAdmobBanner()
+            self.interstitial = self.createAndLoadAd()
+            //self.interstitial.delegate = self
             isStopAD = false
         }
+        LoadAmazon()
         
     }
-    
+     func timerAdmobFull(timer:NSTimer) {
+        
+       
+        if(!isShowFullAdmob)
+        {
+            
+           if(self.interstitial.isReady)
+           {
+            showAdmob()
+            isShowFullAdmob = true;
+            }
+            
+            
+        
+            
+        }
+        if(!isShowFllAmazon)
+        {
+            if(self.interstitialAmazon.isReady){
+                
+                showAmazonFull()
+                isShowFllAmazon = true;
+            }
+        }
+    }
     func timerVPNMethodAutoAd(timer:NSTimer) {
         println("VPN Checking....")
         var isAd = showAd()
@@ -209,5 +259,73 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     let game = NumberTileGameViewController(dimension: 4, threshold: 20480)
     self.presentViewController(game, animated: true, completion: nil)
   }
+    
+    
+    
+    //amazon full
+    //amaazon
+    func LoadAmazon()
+    {
+        var options = AmazonAdOptions()
+        
+        options.isTestRequest = true
+        
+        interstitialAmazon.load(options)
+    }
+    
+    func showAmazonFull()
+    {
+        interstitialAmazon.presentFromViewController(self)
+        
+    }
+    
+    
+    // Mark: - AmazonAdInterstitialDelegate
+    func interstitialDidLoad(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial loaded.")
+        //loadStatusLabel.text = "Interstitial loaded."
+    }
+    
+    func interstitialDidFailToLoad(interstitial: AmazonAdInterstitial!, withError: AmazonAdError!) {
+        Swift.print("Interstitial failed to load.")
+        //loadStatusLabel.text = "Interstitial failed to load."
+    }
+    
+    func interstitialWillPresent(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial will be presented.")
+    }
+    
+    func interstitialDidPresent(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial has been presented.")
+    }
+    
+    func interstitialWillDismiss(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial will be dismissed.")
+    }
+    
+    func interstitialDidDismiss(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial has been dismissed.");
+        //self.loadStatusLabel.text = "No interstitial loaded.";
+        LoadAmazon()
+    }
+    
+    //admob full delegate
+    // MARK: GADInterstitialDelegate implementation
+    
+    func interstitialDidFailToReceiveAdWithError (
+        interstitial: GADInterstitial,
+        error: GADRequestError) {
+            println("interstitialDidFailToReceiveAdWithError: %@" + error.localizedDescription)
+    }
+    func interstitialWillPresentScreen(interstitial: GADInterstitial)
+    {
+         println("dashowxxx")
+        isShowFullAdmob = true
+    }
+    
+    func interstitialDidDismissScreen (interstitial: GADInterstitial) {
+        println("interstitialDidDismissScreen")
+       // startNewGame()
+    }
 }
 
