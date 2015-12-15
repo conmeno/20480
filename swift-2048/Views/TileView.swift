@@ -21,7 +21,7 @@ class TileView : UIView {
   }
   var numberLabel: UILabel
     
-  required init(coder: NSCoder) {
+  required init?(coder: NSCoder) {
     fatalError("NSCoding not supported")
   }
     

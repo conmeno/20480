@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -52,6 +52,20 @@
                                     <action selector="startGameHover:" destination="BYZ-38-t0r" eventType="touchDragOutside" id="H8v-eX-hoQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-vv-ave" userLabel="20480">
+                                <rect key="frame" x="0.0" y="100" width="320" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="6kP-Pj-UFd"/>
+                                    <constraint firstAttribute="height" constant="98" id="BU8-60-8yS"/>
+                                </constraints>
+                                <state key="normal" image="bt1.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SSS-Yp-b12"/>
+                                    <action selector="hover:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Z3s-OB-bKN"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5z-be-Z1L">
                                 <rect key="frame" x="16" y="448" width="288" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.10505776973648573" blue="0.2695085520771302" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,20 +79,6 @@
                                 </state>
                                 <connections>
                                     <action selector="moreApp2click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYq-ff-NWn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-vv-ave" userLabel="20480">
-                                <rect key="frame" x="0.0" y="100" width="320" height="98"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="6kP-Pj-UFd"/>
-                                    <constraint firstAttribute="height" constant="98" id="BU8-60-8yS"/>
-                                </constraints>
-                                <state key="normal" image="bt1.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SSS-Yp-b12"/>
-                                    <action selector="hover:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Z3s-OB-bKN"/>
                                 </connections>
                             </button>
                         </subviews>

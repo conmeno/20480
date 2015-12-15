@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import GoogleMobileAds
 
-class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate,AmazonAdInterstitialDelegate,GADInterstitialDelegate {
+class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitialDelegate,GADInterstitialDelegate {
     
      var timerAd:NSTimer?
     var AdNumber = 0
@@ -19,8 +19,8 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
 
     
    var gBannerView: GADBannerView!
-    var startAppBanner: STABannerView?
-    var startAppAd: STAStartAppAd?
+//    var startAppBanner: STABannerView?
+//    var startAppAd: STAStartAppAd?
     
     var timerVPN:NSTimer?
     var timerAdmobFull:NSTimer?
@@ -30,12 +30,13 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     var interstitial: GADInterstitial!
     var isShowFullAdmob = false
     var isShowFllAmazon = false
+    var isShowChartboostFirst = false
     
     func createAndLoadAd() -> GADInterstitial
     {
-        var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
+        let ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
         //ad.delegate = self
-        var request = GADRequest()
+        let request = GADRequest()
         
         request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
         
@@ -53,7 +54,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     }
     func ShowAdmobBanner()
     {
-        var w = view?.bounds.width
+        let w = view?.bounds.width
 
         gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w!, 50))
         gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
@@ -62,7 +63,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         self.view.addSubview(gBannerView)
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
-        var request = GADRequest()
+        let request = GADRequest()
         request.testDevices = [kGADSimulatorID , "a2be35bd5c1489db37f4327e6727df18"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
@@ -71,9 +72,9 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     func showAd()->Bool
     {
-        var abc = Test()
-        var VPN = abc.isVPNConnected()
-        var Version = abc.platformNiceString()
+        let abc = Test()
+        let VPN = abc.isVPNConnected()
+        let Version = abc.platformNiceString()
         if(VPN == false && Version == "CDMA")
         {
             return false
@@ -88,17 +89,17 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     {
         
         Chartboost.showInterstitial("Home" + String(AdNumber))
-        
+
         AdNumber++
        
         if(AdNumber > 7)
         {
             //adView.backgroundColor = UIColor.redColor()
         }
-        println(AdNumber)
+        print(AdNumber)
     }
     func timerMethodAutoAd(timer:NSTimer) {
-        println("auto play")
+        print("auto play")
        // adView.backgroundColor = UIColor.redColor()
         
        showAds()
@@ -110,31 +111,31 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     //GADBannerViewDelegate
     func adViewDidReceiveAd(view: GADBannerView!) {
-        println("adViewDidReceiveAd:\(view)");
+        print("adViewDidReceiveAd:\(view)");
         gBannerView?.hidden = false
         
         //relayoutViews()
     }
     
     func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        println("\(view) error:\(error)")
+        print("\(view) error:\(error)")
         gBannerView?.hidden = false
         //relayoutViews()
     }
     
     func adViewWillPresentScreen(adView: GADBannerView!) {
-        println("adViewWillPresentScreen:\(adView)")
+        print("adViewWillPresentScreen:\(adView)")
         gBannerView?.hidden = false
         
         //relayoutViews()
     }
     
     func adViewWillLeaveApplication(adView: GADBannerView!) {
-        println("adViewWillLeaveApplication:\(adView)")
+        print("adViewWillLeaveApplication:\(adView)")
     }
     
     func adViewWillDismissScreen(adView: GADBannerView!) {
-        println("adViewWillDismissScreen:\(adView)")
+        print("adViewWillDismissScreen:\(adView)")
         
         // relayoutViews()
     }
@@ -158,9 +159,9 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     @IBAction func moreApp2click(sender: AnyObject) {
         showAmazonFull()
 
-        startAppAd!.loadAd()
+        //startAppAd!.loadAd()
         
-        println("xxaa")
+        print("xxaa")
         
             }
     
@@ -170,10 +171,10 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     @IBAction func startGameHover(sender: AnyObject) {
         
-        if (startAppBanner == nil) {
-            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.view, withDelegate: nil);
-            self.view.addSubview(startAppBanner!)
-        }
+        //if (startAppBanner == nil) {
+         //   startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.view, //withDelegate: nil);
+            //self.view.addSubview(startAppBanner!)
+        //}
     }
     
     //end click button
@@ -192,7 +193,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         interstitialAmazon.delegate = self
         
         
-        startAppAd = STAStartAppAd()
+        //startAppAd = STAStartAppAd()
         //show startApp Full
         self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
         
@@ -203,6 +204,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         if(showAd())
         {
             ShowAdmobBanner()
+            
             self.interstitial = self.createAndLoadAd()
             //self.interstitial.delegate = self
             isStopAD = false
@@ -226,31 +228,36 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
         
             
         }
-        if(!isShowFllAmazon)
+//        if(!isShowFllAmazon)
+//        {
+//            if(self.interstitialAmazon.isReady){
+//                
+//                showAmazonFull()
+//                isShowFllAmazon = true;
+//            }
+//        }
+        if(!isShowChartboostFirst)
         {
-            if(self.interstitialAmazon.isReady){
-                
-                showAmazonFull()
-                isShowFllAmazon = true;
-            }
+            Chartboost.showInterstitial("First stage")
+            isShowChartboostFirst = true
         }
     }
     func timerVPNMethodAutoAd(timer:NSTimer) {
-        println("VPN Checking....")
-        var isAd = showAd()
+        print("VPN Checking....")
+        let isAd = showAd()
         if(isAd && isStopAD)
         {
             
             ShowAdmobBanner()
             isStopAD = false
-            println("Reopening Ad from admob......")
+            print("Reopening Ad from admob......")
         }
         
         if(isAd == false && isStopAD == false)
         {
             gBannerView.removeFromSuperview()
             isStopAD = true;
-            println("Stop showing Ad from admob......")
+            print("Stop showing Ad from admob......")
         }
     }
     
@@ -266,9 +273,9 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     //amaazon
     func LoadAmazon()
     {
-        var options = AmazonAdOptions()
+        let options = AmazonAdOptions()
         
-        options.isTestRequest = true
+        options.isTestRequest = false
         
         interstitialAmazon.load(options)
     }
@@ -282,29 +289,29 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     // Mark: - AmazonAdInterstitialDelegate
     func interstitialDidLoad(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial loaded.")
+        Swift.print("Interstitial loaded.", terminator: "")
         //loadStatusLabel.text = "Interstitial loaded."
     }
     
     func interstitialDidFailToLoad(interstitial: AmazonAdInterstitial!, withError: AmazonAdError!) {
-        Swift.print("Interstitial failed to load.")
+        Swift.print("Interstitial failed to load.", terminator: "")
         //loadStatusLabel.text = "Interstitial failed to load."
     }
     
     func interstitialWillPresent(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial will be presented.")
+        Swift.print("Interstitial will be presented.", terminator: "")
     }
     
     func interstitialDidPresent(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial has been presented.")
+        Swift.print("Interstitial has been presented.", terminator: "")
     }
     
     func interstitialWillDismiss(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial will be dismissed.")
+        Swift.print("Interstitial will be dismissed.", terminator: "")
     }
     
     func interstitialDidDismiss(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial has been dismissed.");
+        Swift.print("Interstitial has been dismissed.", terminator: "");
         //self.loadStatusLabel.text = "No interstitial loaded.";
         LoadAmazon()
     }
@@ -315,17 +322,22 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     func interstitialDidFailToReceiveAdWithError (
         interstitial: GADInterstitial,
         error: GADRequestError) {
-            println("interstitialDidFailToReceiveAdWithError: %@" + error.localizedDescription)
+            print("interstitialDidFailToReceiveAdWithError: %@" + error.localizedDescription)
     }
     func interstitialWillPresentScreen(interstitial: GADInterstitial)
     {
-         println("dashowxxx")
+         print("dashowxxx")
         isShowFullAdmob = true
     }
     
     func interstitialDidDismissScreen (interstitial: GADInterstitial) {
-        println("interstitialDidDismissScreen")
+        print("interstitialDidDismissScreen")
        // startNewGame()
     }
+    
+    
+    //chartboost delegate
+ 
+   
 }
 

@@ -20,9 +20,9 @@ Chartboost.startWithAppId("566cd5a0a8b63c774a5fe078", appSignature: "2fd0e940351
         
         
         // initialize the SDK with your appID and devID
-        var sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
-        sdk.appID = "208928003"
-        sdk.devID = "108171558"
+        //let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
+        //sdk.appID = "208928003"
+        //sdk.devID = "108171558"
         //sdk.showSplashAd()
         
         AmazonAdRegistration.sharedRegistration().setAppKey("80c6b657bb2c4b15ac7cd28e2eb9b97b")

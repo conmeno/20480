@@ -42,7 +42,7 @@ class GameboardView : UIView {
     setupBackground(backgroundColor: backgroundColor, tileColor: foregroundColor)
   }
   
-  required init(coder: NSCoder) {
+  required init?(coder: NSCoder) {
       fatalError("NSCoding not supported")
   }
   /// Reset the gameboard.

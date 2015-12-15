@@ -52,12 +52,12 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     
   }
 
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
   }
     func isIpad()->Bool
     {
-        var userInterfaceIdiom = UIDevice.currentDevice().userInterfaceIdiom
+        let userInterfaceIdiom = UIDevice.currentDevice().userInterfaceIdiom
         if (userInterfaceIdiom != UIUserInterfaceIdiom.Phone) {
             return true
         }
@@ -89,9 +89,9 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     
     func createAndLoadAd() -> GADInterstitial
     {
-        var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
+        let ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
         
-        var request = GADRequest()
+        let request = GADRequest()
         
         request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
         
@@ -110,7 +110,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
 
     func ShowAdmobBanner()
     {
-       var w = view?.bounds.width
+       let w = view?.bounds.width
         
         
         gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w! , 50))
@@ -129,11 +129,11 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         
         view?.addSubview(gBannerView!)
         //adViewHeight = bannerView!.frame.size.height
-        var request = GADRequest()
+        let request = GADRequest()
         request.testDevices = [kGADSimulatorID , "66a1a7a74843127e3f26f6e826d13bbd"];
         gBannerView?.loadRequest(request)
         //gBannerView?.hidden = true
-        println("load admob")
+        print("load admob")
         
 //        [NSLayoutConstraint constraintWithItem:contentView
 //            attribute:NSLayoutAttributeCenterX
@@ -158,7 +158,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
   }
     func setupButton(){
     
-        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let button   = UIButton(type: UIButtonType.System) as UIButton
         button.frame = CGRectMake(10, 80, 65, 40)
         button.backgroundColor = UIColor.blackColor()
       
@@ -173,7 +173,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     
     func buttonAction(sender:UIButton!)
     {
-        println("New game")
+        print("New game")
         reset()
     }
 
@@ -203,7 +203,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     func yPositionForViewAtPosition(order: Int, views: [UIView]) -> CGFloat {
       assert(views.count > 0)
       assert(order >= 0 && order < views.count)
-      let viewHeight = views[order].bounds.size.height
+      //let viewHeight = views[order].bounds.size.height
       let totalHeight = CGFloat(views.count - 1)*viewPadding + views.map({ $0.bounds.size.height }).reduce(verticalViewOffset, combine: { $0 + $1 })
       let viewsTop = 0.5*(vcHeight - totalHeight) >= 0 ? 0.5*(vcHeight - totalHeight) : 0
 
@@ -249,12 +249,12 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
 
     var f = scoreView.frame
     f.origin.x = xPositionToCenterView(scoreView)
-    f.origin.y = yPositionForViewAtPosition(0, views)
+    f.origin.y = yPositionForViewAtPosition(0, views: views)
     scoreView.frame = f
 
     f = gameboard.frame
     f.origin.x = xPositionToCenterView(gameboard)
-    f.origin.y = yPositionForViewAtPosition(1, views)
+    f.origin.y = yPositionForViewAtPosition(1, views: views)
     gameboard.frame = f
 
 

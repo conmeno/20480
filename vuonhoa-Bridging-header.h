@@ -7,8 +7,8 @@
 #import <Foundation/Foundation.h>
 #import <Chartboost/Chartboost.h>
 #import <CommonCrypto/CommonDigest.h>
-#import <AdSupport/AdSupport.h>
-#import <StartApp/StartApp.h>
+#import <AdSupport/AdSupport.h> 
+#import <UIKit/UIKit.h>
 #import <AmazonAd/AmazonAdInterstitial.h>
 #import <AmazonAd/AmazonAdRegistration.h>
 #import <AmazonAd/AmazonAdView.h>
