@@ -81,9 +81,68 @@
                                     <action selector="moreApp2click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYq-ff-NWn"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udi-Ef-rwa">
+                                <rect key="frame" x="-4" y="318" width="328" height="250"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-Tv-hHq">
+                                        <rect key="frame" x="23" y="47" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="AmazonChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="uMe-5s-bgy"/>
+                                        </connections>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0fs-VN-5gd">
+                                        <rect key="frame" x="23" y="86" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="СhartBoostChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ziJ-OH-IeO"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTk-sB-qy2">
+                                        <rect key="frame" x="91" y="13" width="82" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amazon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMZ-cm-qic">
+                                        <rect key="frame" x="91" y="52" width="72" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ChartBoost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P98-Wh-D3T">
+                                        <rect key="frame" x="91" y="91" width="103" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jv7-JR-33X">
+                                        <rect key="frame" x="23" y="8" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="GoogleChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="thm-gK-nlL"/>
+                                        </connections>
+                                    </switch>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VV1-eV-ssh">
+                                        <rect key="frame" x="23" y="120" width="285" height="130"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="wCd-ii-HQ8"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VV1-eV-ssh" secondAttribute="bottom" id="Syp-b8-UJT"/>
+                                    <constraint firstAttribute="trailing" secondItem="VV1-eV-ssh" secondAttribute="trailing" constant="20" id="eh3-W4-Km2"/>
+                                    <constraint firstItem="VV1-eV-ssh" firstAttribute="leading" secondItem="udi-Ef-rwa" secondAttribute="leading" constant="23" id="roi-2e-EWc"/>
+                                    <constraint firstAttribute="height" constant="250" id="y6n-tl-OUl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="udi-Ef-rwa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="2AB-rx-k6d"/>
                             <constraint firstItem="cKb-Fe-Dgl" firstAttribute="top" secondItem="tfJ-eG-B82" secondAttribute="bottom" constant="8" id="5Z5-1l-s1G"/>
                             <constraint firstAttribute="bottomMargin" secondItem="5eB-8H-mJv" secondAttribute="bottom" id="ATo-Sy-c5F"/>
                             <constraint firstItem="cKb-Fe-Dgl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JVD-Kk-ejN"/>
@@ -97,6 +156,8 @@
                             <constraint firstItem="j5z-be-Z1L" firstAttribute="top" secondItem="cKb-Fe-Dgl" secondAttribute="bottom" constant="8" id="jQq-rF-dgG"/>
                             <constraint firstItem="5eB-8H-mJv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="jdO-g6-TSF"/>
                             <constraint firstItem="cKb-Fe-Dgl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="liZ-UE-gMK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="udi-Ef-rwa" secondAttribute="bottom" id="nT5-o0-xzt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="udi-Ef-rwa" secondAttribute="trailing" constant="-20" id="rCF-mS-Lo5"/>
                             <constraint firstItem="j5z-be-Z1L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vXz-Fj-arE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5eB-8H-mJv" secondAttribute="trailing" constant="-16" id="xwn-rK-CiH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j5z-be-Z1L" secondAttribute="bottom" constant="60" id="y6U-Eu-7MJ"/>
@@ -114,6 +175,13 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="AdOption" destination="udi-Ef-rwa" id="Njz-b7-9k6"/>
+                        <outlet property="AdmobCheck" destination="jv7-JR-33X" id="Lns-of-KKI"/>
+                        <outlet property="AmazonCheck" destination="W1N-Tv-hHq" id="5w0-HB-Cuk"/>
+                        <outlet property="ChartboostCheck" destination="0fs-VN-5gd" id="j0i-my-hFc"/>
+                        <outlet property="textDevice" destination="VV1-eV-ssh" id="SLz-Fj-ZQC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

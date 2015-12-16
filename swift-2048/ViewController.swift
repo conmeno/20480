@@ -23,14 +23,32 @@ class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitia
 //    var startAppAd: STAStartAppAd?
     
     var timerVPN:NSTimer?
-    var timerAdmobFull:NSTimer?
+    
     var isStopAD = true
     
+    @IBOutlet weak var textDevice: UITextView!
     
     var interstitial: GADInterstitial!
+ 
+    
+    //new funciton
+    @IBOutlet weak var AdOption: UIView!
+    @IBOutlet weak var AdmobCheck: UISwitch!
+    @IBOutlet weak var AmazonCheck: UISwitch!
+    @IBOutlet weak var ChartboostCheck: UISwitch!
+    
+    var isAdmob = true;
+    var isAmazon = false
+    var isChart = false
+    
     var isShowFullAdmob = false
     var isShowFllAmazon = false
     var isShowChartboostFirst = false
+    var timerAdmobFull:NSTimer?
+    
+    //end new funciton
+    
+    
     
     func createAndLoadAd() -> GADInterstitial
     {
@@ -175,29 +193,61 @@ class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitia
          //   startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.view, //withDelegate: nil);
             //self.view.addSubview(startAppBanner!)
         //}
+        let myIDFA: String?
+        // Check if Advertising Tracking is Enabled
+        if ASIdentifierManager.sharedManager().advertisingTrackingEnabled {
+            // Set the IDFA
+            myIDFA = ASIdentifierManager.sharedManager().advertisingIdentifier.UUIDString
+        } else {
+            myIDFA = nil
+        }
+        
+        let venderID = UIDevice.currentDevice().identifierForVendor!.UUIDString
+        
+        AdOption.hidden = false
+        
+        textDevice.text = "IDFA: \n" + myIDFA! + "\nVendorID: \n" + venderID
+        
+        
     }
     
     //end click button
     
-    func LoadMultiAD()
-    {
-    
-        
-    }
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         CheckAdOptionValue()
         
-        interstitialAmazon = AmazonAdInterstitial()
-        
-        interstitialAmazon.delegate = self
+       
         
         
-        //startAppAd = STAStartAppAd()
-        //show startApp Full
-        self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
+       
+        if(showAd())
+        {
+            ShowAdmobBanner()
+            if(isAdmob)
+            {
+                
+                self.interstitial = self.createAndLoadAd()
+            }
+            isStopAD = false
+        }
+        AdOption.hidden = true
         
-        self.timerAdmobFull = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timerAdmobFull:", userInfo: nil, repeats: true)
+        
+        if(isAmazon)
+        {
+            interstitialAmazon = AmazonAdInterstitial()
+            
+            interstitialAmazon.delegate = self
+            
+            LoadAmazon()
+        }
+        
+        
+        
+        
 
         
         
@@ -209,39 +259,105 @@ class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitia
             //self.interstitial.delegate = self
             isStopAD = false
         }
-        LoadAmazon()
-        
-    }
-     func timerAdmobFull(timer:NSTimer) {
-        
        
-        if(!isShowFullAdmob)
-        {
-            
-           if(self.interstitial.isReady)
-           {
-            showAdmob()
-            isShowFullAdmob = true;
-            }
-            
-            
+        self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
         
+        self.timerAdmobFull = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timerAdmobFull:", userInfo: nil, repeats: true)
+    }
+  
+    func CheckAdOptionValue()
+    {
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("Admob") != nil)
+        {
+            isAdmob = NSUserDefaults.standardUserDefaults().objectForKey("Admob") as! Bool
             
         }
-//        if(!isShowFllAmazon)
-//        {
-//            if(self.interstitialAmazon.isReady){
-//                
-//                showAmazonFull()
-//                isShowFllAmazon = true;
-//            }
-//        }
-        if(!isShowChartboostFirst)
+        
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("Amazon") != nil)
         {
-            Chartboost.showInterstitial("First stage")
-            isShowChartboostFirst = true
+            isAmazon = NSUserDefaults.standardUserDefaults().objectForKey("Amazon")as! Bool
+            
         }
+        
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("Chart") != nil)
+        {
+            isChart = NSUserDefaults.standardUserDefaults().objectForKey("Chart") as! Bool
+            
+        }
+        AdmobCheck.on = isAdmob
+        AmazonCheck.on = isAmazon
+        ChartboostCheck.on = isChart
     }
+    //Save ADOption
+    @IBAction func GoogleChange(sender: UISwitch) {
+        //if(AdmobCheck.on)
+        //{
+        
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"Admob")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        isAdmob = sender.on
+        //
+        // }
+        
+    }
+    
+    @IBAction func AmazonChange(sender: UISwitch) {
+        //        if(AmazonCheck.on)
+        //        {
+        
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"Amazon")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        isAmazon = sender.on
+        //}
+    }
+    
+    @IBAction func СhartBoostChanged(sender: UISwitch) {
+       
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"Chart")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        isChart = sender.on
+        
+    }
+    func timerAdmobFull(timer:NSTimer) {
+        //var isShowFullAdmob = false
+        //var isShowFllAmazon = false
+        //var isShowChartboostFirst = false
+        if(isChart && isShowChartboostFirst == false)
+        {
+            
+            Chartboost.showInterstitial("First stage")
+            isShowChartboostFirst = true;
+            //timerAdmobFull?.invalidate()
+            
+            
+        }
+        if(isAdmob && isShowFullAdmob == false)
+        {
+            
+            if(self.interstitial.isReady)
+            {
+                showAdmob()
+                //timerAdmobFull?.invalidate()
+                isShowFullAdmob = true;
+            }
+        }
+        
+        if(isAmazon && isShowFllAmazon ==  false)
+        {
+            if(self.interstitialAmazon.isReady){
+                
+                showAmazonFull()
+                //timerAdmobFull?.invalidate()
+                isShowFllAmazon = true
+            }
+        }
+        
+        
+    }
+    
     func timerVPNMethodAutoAd(timer:NSTimer) {
         print("VPN Checking....")
         let isAd = showAd()
