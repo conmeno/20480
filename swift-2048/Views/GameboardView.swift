@@ -47,7 +47,7 @@ class GameboardView : UIView {
   }
   /// Reset the gameboard.
   func reset() {
-    for (key, tile) in tiles {
+    for (_, tile) in tiles {
       tile.removeFromSuperview()
     }
     tiles.removeAll(keepCapacity: true)
@@ -64,9 +64,9 @@ class GameboardView : UIView {
     var xCursor = tilePadding
     var yCursor: CGFloat
     let bgRadius = (cornerRadius >= 2) ? cornerRadius - 2 : 0
-    for i in 0..<dimension {
+    for _ in 0..<dimension {
       yCursor = tilePadding
-      for j in 0..<dimension {
+      for _ in 0..<dimension {
         // Draw each tile
         let background = UIView(frame: CGRectMake(xCursor, yCursor, tileWidth, tileWidth))
         background.layer.cornerRadius = bgRadius

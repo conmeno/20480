@@ -16,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
 
-Chartboost.startWithAppId("566cd5a0a8b63c774a5fe078", appSignature: "2fd0e940351959c82f7e53471f64c086961a33cf", delegate: self)
+Chartboost.startWithAppId("567398eca8b63c7fcb833a5d", appSignature: "be6ba1a2c00386f7d72d701184b013837bb7e085", delegate: self)
         
+      
         
         // initialize the SDK with your appID and devID
         //let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
@@ -25,7 +26,7 @@ Chartboost.startWithAppId("566cd5a0a8b63c774a5fe078", appSignature: "2fd0e940351
         //sdk.devID = "108171558"
         //sdk.showSplashAd()
         
-        AmazonAdRegistration.sharedRegistration().setAppKey("80c6b657bb2c4b15ac7cd28e2eb9b97b")
+        AmazonAdRegistration.sharedRegistration().setAppKey("adb769b819be42f6b9cc3eb404e41dae")
         AmazonAdRegistration.sharedRegistration().setLogging(true)
 
         

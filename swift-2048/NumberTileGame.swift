@@ -89,11 +89,11 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     
     func createAndLoadAd() -> GADInterstitial
     {
-        let ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
+        let ad = GADInterstitial(adUnitID: "ca-app-pub-1165859043722140/5008085314")
         
         let request = GADRequest()
         
-        request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
+        request.testDevices = [kGADSimulatorID, "ed118f458979010c0f207ec85c5a21fa"]
         
         ad.loadRequest(request)
         
@@ -114,7 +114,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         
         
         gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w! , 50))
-        gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
+        gBannerView?.adUnitID = "ca-app-pub-1165859043722140/3531352116"
         gBannerView?.delegate = nil
         gBannerView?.rootViewController = self
         
@@ -130,7 +130,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         view?.addSubview(gBannerView!)
         //adViewHeight = bannerView!.frame.size.height
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "66a1a7a74843127e3f26f6e826d13bbd"];
+        request.testDevices = [kGADSimulatorID , "ed118f458979010c0f207ec85c5a21fa"];
         gBannerView?.loadRequest(request)
         //gBannerView?.hidden = true
         print("load admob")

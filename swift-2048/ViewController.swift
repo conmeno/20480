@@ -52,11 +52,11 @@ class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitia
     
     func createAndLoadAd() -> GADInterstitial
     {
-        let ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
+        let ad = GADInterstitial(adUnitID: "ca-app-pub-1165859043722140/5008085314")
         //ad.delegate = self
         let request = GADRequest()
         
-        request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
+        request.testDevices = [kGADSimulatorID, "ed118f458979010c0f207ec85c5a21fa"]
         
         ad.loadRequest(request)
         
@@ -73,16 +73,16 @@ class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitia
     func ShowAdmobBanner()
     {
         let w = view?.bounds.width
-
-        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w!, 50))
-        gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7614839264"
+        let h = view?.bounds.height
+        gBannerView = GADBannerView(frame: CGRectMake(0, (h! - 50) , w!, 50))
+        gBannerView?.adUnitID = "ca-app-pub-1165859043722140/3531352116"
         gBannerView?.delegate = self
         gBannerView?.rootViewController = self
         self.view.addSubview(gBannerView)
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "a2be35bd5c1489db37f4327e6727df18"];
+        request.testDevices = [kGADSimulatorID , "ed118f458979010c0f207ec85c5a21fa"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
         
@@ -218,10 +218,6 @@ class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitia
     override func viewDidLoad() {
         super.viewDidLoad()
          CheckAdOptionValue()
-        
-       
-        
-        
        
         if(showAd())
         {
@@ -244,12 +240,6 @@ class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitia
             
             LoadAmazon()
         }
-        
-        
-        
-        
-
-        
         
         if(showAd())
         {
@@ -379,7 +369,7 @@ class ViewController: UIViewController,GADBannerViewDelegate,AmazonAdInterstitia
     
 
   @IBAction func startGameButtonTapped(sender : UIButton) {
-    let game = NumberTileGameViewController(dimension: 4, threshold: 20480)
+    let game = NumberTileGameViewController(dimension: 4, threshold: 5120)
     self.presentViewController(game, animated: true, completion: nil)
   }
     
