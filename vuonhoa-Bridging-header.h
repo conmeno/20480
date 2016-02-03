@@ -11,13 +11,16 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <AdSupport/AdSupport.h>
 
-
+#import <AdColony/AdColony.h>
 
 #import <AmazonAd/AmazonAdInterstitial.h>
 #import <AmazonAd/AmazonAdRegistration.h>
 #import <AmazonAd/AmazonAdView.h>
 #import <AmazonAd/AmazonAdError.h>
 #import <AmazonAd/AmazonAdOptions.h>
+
+#include <ifaddrs.h>
+#import "cclass.h"
 
 #ifndef vuonhoaphatgiao_vuonhoa_Bridging_header_h
 #define vuonhoaphatgiao_vuonhoa_Bridging_header_h

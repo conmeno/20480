@@ -39,7 +39,7 @@ class ScoreView : UIView, ScoreViewProtocol {
     self.addSubview(label)
   }
 
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
   }
 
@@ -48,7 +48,7 @@ class ScoreView : UIView, ScoreViewProtocol {
   }
     func isIpad()->Bool
     {
-        var userInterfaceIdiom = UIDevice.currentDevice().userInterfaceIdiom
+        let userInterfaceIdiom = UIDevice.currentDevice().userInterfaceIdiom
         if (userInterfaceIdiom != UIUserInterfaceIdiom.Phone) {
             return true
         }

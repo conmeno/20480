@@ -29,8 +29,6 @@
 		84A794091BB52ADC007E4AE1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794081BB52ADC007E4AE1 /* WebKit.framework */; };
 		84A7940B1BB52AE2007E4AE1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7940A1BB52AE2007E4AE1 /* StoreKit.framework */; };
 		84A7940D1BB52AEE007E4AE1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7940C1BB52AEE007E4AE1 /* Social.framework */; };
-		84A7940F1BB52AF5007E4AE1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7940E1BB52AF5007E4AE1 /* libz.dylib */; };
-		84A794111BB52AFE007E4AE1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794101BB52AFE007E4AE1 /* libsqlite3.0.dylib */; };
 		84A794131BB52B19007E4AE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794121BB52B19007E4AE1 /* Foundation.framework */; };
 		84A794151BB52B28007E4AE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794141BB52B28007E4AE1 /* UIKit.framework */; };
 		84A794171BB52B2F007E4AE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794161BB52B2F007E4AE1 /* CoreGraphics.framework */; };
@@ -52,6 +50,9 @@
 		84A794371BB534E4007E4AE1 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794361BB534E4007E4AE1 /* Chartboost.framework */; };
 		84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C61BB9430600FDAD49 /* bt1.png */; };
 		84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C81BB9431700FDAD49 /* 6666.png */; };
+		9643471B1C60B33200D5232F /* cclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9643471A1C60B33200D5232F /* cclass.m */; };
+		96DD2D0E1C61A8ED0053EDF7 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D0D1C61A8ED0053EDF7 /* AdColony.framework */; };
+		96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +98,6 @@
 		84A794081BB52ADC007E4AE1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		84A7940A1BB52AE2007E4AE1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84A7940C1BB52AEE007E4AE1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		84A7940E1BB52AF5007E4AE1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		84A794101BB52AFE007E4AE1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		84A794121BB52B19007E4AE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84A794141BB52B28007E4AE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		84A794161BB52B2F007E4AE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +119,10 @@
 		84A794361BB534E4007E4AE1 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../Chartboost.framework; sourceTree = "<group>"; };
 		84B5A8C61BB9430600FDAD49 /* bt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt1.png; sourceTree = "<group>"; };
 		84B5A8C81BB9431700FDAD49 /* 6666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6666.png; sourceTree = "<group>"; };
+		964347191C60B33200D5232F /* cclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cclass.h; sourceTree = "<group>"; };
+		9643471A1C60B33200D5232F /* cclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cclass.m; sourceTree = "<group>"; };
+		96DD2D0D1C61A8ED0053EDF7 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */,
 				84A794341BB52B97007E4AE1 /* EventKit.framework in Frameworks */,
 				84A480811BD0D231006F2BBB /* AmazonAd.framework in Frameworks */,
 				84A794351BB52B97007E4AE1 /* EventKitUI.framework in Frameworks */,
@@ -146,12 +150,11 @@
 				84A794171BB52B2F007E4AE1 /* CoreGraphics.framework in Frameworks */,
 				84A794151BB52B28007E4AE1 /* UIKit.framework in Frameworks */,
 				84A794131BB52B19007E4AE1 /* Foundation.framework in Frameworks */,
-				84A794111BB52AFE007E4AE1 /* libsqlite3.0.dylib in Frameworks */,
 				84A794371BB534E4007E4AE1 /* Chartboost.framework in Frameworks */,
-				84A7940F1BB52AF5007E4AE1 /* libz.dylib in Frameworks */,
 				84A7940D1BB52AEE007E4AE1 /* Social.framework in Frameworks */,
 				84A7940B1BB52AE2007E4AE1 /* StoreKit.framework in Frameworks */,
 				84A794091BB52ADC007E4AE1 /* WebKit.framework in Frameworks */,
+				96DD2D0E1C61A8ED0053EDF7 /* AdColony.framework in Frameworks */,
 				84A794071BB52AD5007E4AE1 /* AdSupport.framework in Frameworks */,
 				84A794051BB52AAB007E4AE1 /* GoogleMobileAds.framework in Frameworks */,
 			);
@@ -170,6 +173,8 @@
 		1AC563D4193DCE6000402286 = {
 			isa = PBXGroup;
 			children = (
+				96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */,
+				96DD2D0D1C61A8ED0053EDF7 /* AdColony.framework */,
 				84A480801BD0D231006F2BBB /* AmazonAd.framework */,
 				84A4807E1BD0B19B006F2BBB /* reload.png */,
 				84A794321BB52B97007E4AE1 /* EventKit.framework */,
@@ -190,8 +195,6 @@
 				84A794161BB52B2F007E4AE1 /* CoreGraphics.framework */,
 				84A794141BB52B28007E4AE1 /* UIKit.framework */,
 				84A794121BB52B19007E4AE1 /* Foundation.framework */,
-				84A794101BB52AFE007E4AE1 /* libsqlite3.0.dylib */,
-				84A7940E1BB52AF5007E4AE1 /* libz.dylib */,
 				84A7940C1BB52AEE007E4AE1 /* Social.framework */,
 				84A7940A1BB52AE2007E4AE1 /* StoreKit.framework */,
 				84A794081BB52ADC007E4AE1 /* WebKit.framework */,
@@ -215,6 +218,8 @@
 		1AC563DF193DCE6000402286 /* swift-2048 */ = {
 			isa = PBXGroup;
 			children = (
+				964347191C60B33200D5232F /* cclass.h */,
+				9643471A1C60B33200D5232F /* cclass.m */,
 				84B5A8C81BB9431700FDAD49 /* 6666.png */,
 				84B5A8C61BB9430600FDAD49 /* bt1.png */,
 				84A794361BB534E4007E4AE1 /* Chartboost.framework */,
@@ -322,6 +327,8 @@
 		1AC563D5193DCE6000402286 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Phuong Nguyen";
 				TargetAttributes = {
@@ -381,6 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9643471B1C60B33200D5232F /* cclass.m in Sources */,
 				1AE8BEF4193EF260007592BA /* NumberTileGame.swift in Sources */,
 				1AF8F0B619403AA400A7049E /* AccessoryViews.swift in Sources */,
 				1AE8BEF6193EF4B6007592BA /* TileView.swift in Sources */,
@@ -517,6 +525,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -538,6 +547,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

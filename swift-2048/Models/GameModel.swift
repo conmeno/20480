@@ -284,7 +284,7 @@ class GameModel: NSObject {
   /// |[2][4]|.
   func condense(group: [TileObject]) -> [ActionToken] {
     var tokenBuffer = [ActionToken]()
-    for (idx, tile) in enumerate(group) {
+    for (idx, tile) in group.enumerate() {
       // Go through all the tiles in 'group'. When we see a tile 'out of place', create a corresponding ActionToken.
       switch tile {
       case let .Tile(value) where tokenBuffer.count == idx:
@@ -311,7 +311,7 @@ class GameModel: NSObject {
 
     var tokenBuffer = [ActionToken]()
     var skipNext = false
-    for (idx, token) in enumerate(group) {
+    for (idx, token) in group.enumerate() {
       if skipNext {
         // Prior iteration handled a merge. So skip this iteration.
         skipNext = false
@@ -361,7 +361,7 @@ class GameModel: NSObject {
   /// and convert() methods and convert them into MoveOrders that can be fed back to the delegate.
   func convert(group: [ActionToken]) -> [MoveOrder] {
     var moveBuffer = [MoveOrder]()
-    for (idx, t) in enumerate(group) {
+    for (idx, t) in group.enumerate() {
       switch t {
       case let .Move(s, v):
         moveBuffer.append(MoveOrder.SingleMoveOrder(source: s, destination: idx, value: v, wasMerge: false))

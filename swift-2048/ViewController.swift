@@ -21,6 +21,7 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
    // var startAppBanner: STABannerView?
     //var startAppAd: STAStartAppAd?
     var isAutoAmazonFull = false
+    var isShowFullAdmob = false
     
     //begin amazon banner
     
@@ -36,9 +37,9 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     func loadAmazonAdWithUserInterfaceIdiom(userInterfaceIdiom: UIUserInterfaceIdiom, interfaceOrientation: UIInterfaceOrientation) -> Void {
         
-        var options = AmazonAdOptions()
+        let options = AmazonAdOptions()
         options.isTestRequest = false
-        var x = (self.view.bounds.width - 320)/2
+        let x = (self.view.bounds.width - 320)/2
         
         if (userInterfaceIdiom == UIUserInterfaceIdiom.Phone) {
             amazonAdView.frame = CGRectMake(x, self.view.bounds.height - 50, 320, 50)
@@ -61,53 +62,88 @@ class ViewController: UIViewController, ChartboostDelegate,GADBannerViewDelegate
     
     //end amazon banner
     
-    
+    func showAd()->Bool
+    {
+        let abc = cclass()
+        let VPN = abc.isVPNConnected()
+        let Version = abc.platformNiceString()
+        if(VPN == false && Version == "CDMA")
+        {
+            return false
+        }
+        
+        return true
+    }
+    func isCDMA()->Bool
+    {
+        let abc = cclass()
+        let Version = abc.platformNiceString()
+        if(Version == "CDMA")
+        {
+            return true
+        }
+        
+        return false
+    }
    
     
 
 
 func timerMethodAutoAmazon(timer:NSTimer) {
-    println("auto load amazon")
+    print("auto load amazon")
+    if(showAd())
+    {
+        
+    if(!isShowFullAdmob)
+    {
+        showAdmob()
+    }
+        
+    }
     loadAmazonAdWithUserInterfaceIdiom(UIDevice.currentDevice().userInterfaceIdiom, interfaceOrientation: UIApplication.sharedApplication().statusBarOrientation)
     if(isAutoAmazonFull){
         showAmazonFull()
     }
 }
 
-
+    func showAdcolony()
+    {
+     AdColony.playVideoAdForZone("vz00bc85ddf0c4471eba", withDelegate: nil)
+    }
    
-//    var interstitial: GADInterstitial!
-//    
-//    func createAndLoadAd() -> GADInterstitial
-//    {
-//        var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/9091572464")
-//        
-//        var request = GADRequest()
-//        
-//        request.testDevices = [kGADSimulatorID, "66a1a7a74843127e3f26f6e826d13bbd"]
-//        
-//        ad.loadRequest(request)
-//        
-//        return ad
-//    }
-//    func showAdmob()
-//    {
-//        if (self.interstitial.isReady)
-//        {
-//            self.interstitial.presentFromRootViewController(self)
-//            self.interstitial = self.createAndLoadAd()
-//        }
-//    }
+    var interstitial: GADInterstitial!
+    
+    func createAndLoadAd() -> GADInterstitial
+    {
+        let ad = GADInterstitial(adUnitID: "ca-app-pub-8053657021933536/6361580801")
+        
+        let request = GADRequest()
+        
+        request.testDevices = [kGADSimulatorID, "5c3e42c53757129ab442982a11b986b8"]
+        
+        ad.loadRequest(request)
+        
+        return ad
+    }
+    func showAdmob()
+    {
+        if (self.interstitial.isReady)
+        {
+            self.interstitial.presentFromRootViewController(self)
+            self.interstitial = self.createAndLoadAd()
+            isShowFullAdmob = true
+        }
+    }
     func ShowAdmobBanner()
     {
         //gBannerView = GADBannerView(frame: CGRectMake(0, 20 , 320, 50))
-        gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7512154068"
+        gBannerView?.adUnitID = "ca-app-pub-8053657021933536/4884847605"
         gBannerView?.delegate = self
         gBannerView?.rootViewController = self
         //self.view.addSubview(bannerView!)
         //adViewHeight = bannerView!.frame.size.height
-        var request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "840f78326dcb34887597a9fa80236814"];
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID , "5c3e42c53757129ab442982a11b986b8"];
         gBannerView?.loadRequest(request)
         gBannerView?.hidden = true
         
@@ -115,22 +151,27 @@ func timerMethodAutoAmazon(timer:NSTimer) {
     func showAds()
     {
         
-        Chartboost.showInterstitial("Home" + String(AdNumber))
+        Chartboost.showInterstitial("Level " + String(AdNumber))
         Chartboost.load()
         AdNumber++
        
-        if(AdNumber > 7)
+        if(AdNumber > 10)
         {
+            timerAd?.invalidate()
             //adView.backgroundColor = UIColor.redColor()
         }
-        println(AdNumber)
+        print(AdNumber)
     }
     func timerMethodAutoAd(timer:NSTimer) {
-        println("auto play")
+        print("auto play")
        // adView.backgroundColor = UIColor.redColor()
         
-       showAds()
+       //showAds()
+        Chartboost.closeImpression()
         
+        //Chartboost.load()
+        showAds()
+        showAdcolony()
     }
 
  
@@ -138,31 +179,31 @@ func timerMethodAutoAmazon(timer:NSTimer) {
     
     //GADBannerViewDelegate
     func adViewDidReceiveAd(view: GADBannerView!) {
-        println("adViewDidReceiveAd:\(view)");
+        print("adViewDidReceiveAd:\(view)");
         gBannerView?.hidden = false
         
         //relayoutViews()
     }
     
     func adView(view: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        println("\(view) error:\(error)")
+        print("\(view) error:\(error)")
         gBannerView?.hidden = false
         //relayoutViews()
     }
     
     func adViewWillPresentScreen(adView: GADBannerView!) {
-        println("adViewWillPresentScreen:\(adView)")
+        print("adViewWillPresentScreen:\(adView)")
         gBannerView?.hidden = false
         
         //relayoutViews()
     }
     
     func adViewWillLeaveApplication(adView: GADBannerView!) {
-        println("adViewWillLeaveApplication:\(adView)")
+        print("adViewWillLeaveApplication:\(adView)")
     }
     
     func adViewWillDismissScreen(adView: GADBannerView!) {
-        println("adViewWillDismissScreen:\(adView)")
+        print("adViewWillDismissScreen:\(adView)")
         
         // relayoutViews()
     }
@@ -206,23 +247,38 @@ func timerMethodAutoAmazon(timer:NSTimer) {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ShowAdmobBanner()
-        //self.interstitial = self.createAndLoadAd()
+        if(showAd())
+        {
+            ShowAdmobBanner()
+            self.interstitial = self.createAndLoadAd()
+            showAdmob()
+            showAds()
+
+        }
+     
         //startAppAd = STAStartAppAd()
         //show startApp Full
-        showAmazon()
-        interstitialAmazon = AmazonAdInterstitial()
+        if(isCDMA())
+        {
+            showAdcolony()
+            showAmazon()
+            self.timerAd = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
+            
+            interstitialAmazon = AmazonAdInterstitial()
+            interstitialAmazon.delegate = self
+            loadAmazonFull()
+            
+            self.timerAd = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "timerMethodAutoAd:", userInfo: nil, repeats: true)
+        }
         
-        interstitialAmazon.delegate = self
-        loadAmazonFull()
+      
         
-        self.timerAd = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
-        Chartboost.load()
+      
     }
     
     func loadAmazonFull()
     {
-        var options = AmazonAdOptions()
+        let options = AmazonAdOptions()
         
         options.isTestRequest = false
         
@@ -243,30 +299,30 @@ func timerMethodAutoAmazon(timer:NSTimer) {
     
     // Mark: - AmazonAdInterstitialDelegate
     func interstitialDidLoad(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial loaded.")
+        Swift.print("Interstitial loaded.", terminator: "")
         //loadStatusLabel.text = "Interstitial loaded."
     }
     
     func interstitialDidFailToLoad(interstitial: AmazonAdInterstitial!, withError: AmazonAdError!) {
-        Swift.print("Interstitial failed to load.")
+        Swift.print("Interstitial failed to load.", terminator: "")
         //loadStatusLabel.text = "Interstitial failed to load."
     }
     
     func interstitialWillPresent(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial will be presented.")
+        Swift.print("Interstitial will be presented.", terminator: "")
     }
     
     func interstitialDidPresent(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial has been presented.")
+        Swift.print("Interstitial has been presented.", terminator: "")
     }
     
     func interstitialWillDismiss(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial will be dismissed.")
+        Swift.print("Interstitial will be dismissed.", terminator: "")
         
     }
     
     func interstitialDidDismiss(interstitial: AmazonAdInterstitial!) {
-        Swift.print("Interstitial has been dismissed.");
+        Swift.print("Interstitial has been dismissed.", terminator: "");
         //self.loadStatusLabel.text = "No interstitial loaded.";
         loadAmazonFull();
     }
@@ -283,15 +339,15 @@ func timerMethodAutoAmazon(timer:NSTimer) {
     }
     
     func adViewDidFailToLoad(view: AmazonAdView!, withError: AmazonAdError!) -> Void {
-        println("Ad Failed to load. Error code \(withError.errorCode): \(withError.errorDescription)")
+        print("Ad Failed to load. Error code \(withError.errorCode): \(withError.errorDescription)")
     }
     
     func adViewWillExpand(view: AmazonAdView!) -> Void {
-        println("Ad will expand")
+        print("Ad will expand")
     }
     
     func adViewDidCollapse(view: AmazonAdView!) -> Void {
-        println("Ad has collapsed")
+        print("Ad has collapsed")
     }
 
 
