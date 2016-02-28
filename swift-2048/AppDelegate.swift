@@ -15,15 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-
-Chartboost.startWithAppId("56b069922fdf347c6ab3a771", appSignature: "c877af59bac08b9c6cfddb1d4820b94263bc387d", delegate: self)
         
+        
+        
+        Utility.SetUpAdData()
+        
+        Chartboost.startWithAppId(Utility.ChartboostAppID, appSignature: Utility.ChartboostSign, delegate: self)
+        
+        AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
+        AmazonAdRegistration.sharedRegistration().setLogging(true)
+        
+        
+        
+     
         
   AdColony.configureWithAppID("appc21b928c354c44b9ae", zoneIDs: ["vz00bc85ddf0c4471eba"], delegate: nil, logging: true)
         
-        AmazonAdRegistration.sharedRegistration().setAppKey("f952dd60f8c14f7c9347ee495ae0a3ea")
-        AmazonAdRegistration.sharedRegistration().setLogging(true)
-        
+            
         return true
     }
   func applicationWillResignActive(application: UIApplication) {

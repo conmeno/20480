@@ -19,6 +19,8 @@
 #import <AmazonAd/AmazonAdError.h>
 #import <AmazonAd/AmazonAdOptions.h>
 
+#import <RevMobAds/RevMobAds.h>
+
 #include <ifaddrs.h>
 #import "cclass.h"
 
