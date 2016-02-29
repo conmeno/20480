@@ -9,14 +9,14 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
                             
   var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
 
-Chartboost.startWithAppId("567398eca8b63c7fcb833a5d", appSignature: "be6ba1a2c00386f7d72d701184b013837bb7e085", delegate: self)
+//Chartboost.startWithAppId("567398eca8b63c7fcb833a5d", appSignature: "be6ba1a2c00386f7d72d701184b013837bb7e085", delegate: self)
         
       
         
@@ -25,6 +25,7 @@ Chartboost.startWithAppId("567398eca8b63c7fcb833a5d", appSignature: "be6ba1a2c00
         //sdk.appID = "208928003"
         //sdk.devID = "108171558"
         //sdk.showSplashAd()
+         AdTapsy.startSession("56cc0f17e4b0d72cf1c0177f");
         
         AmazonAdRegistration.sharedRegistration().setAppKey("adb769b819be42f6b9cc3eb404e41dae")
         AmazonAdRegistration.sharedRegistration().setLogging(true)
@@ -52,6 +53,7 @@ Chartboost.startWithAppId("567398eca8b63c7fcb833a5d", appSignature: "be6ba1a2c00
 
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+     AdTapsy.destroy();
   }
 
 

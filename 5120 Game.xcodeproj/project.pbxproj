@@ -46,10 +46,10 @@
 		84A794311BB52B92007E4AE1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794301BB52B91007E4AE1 /* CoreData.framework */; };
 		84A794341BB52B97007E4AE1 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794321BB52B97007E4AE1 /* EventKit.framework */; };
 		84A794351BB52B97007E4AE1 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794331BB52B97007E4AE1 /* EventKitUI.framework */; };
-		84A794371BB534E4007E4AE1 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794361BB534E4007E4AE1 /* Chartboost.framework */; };
 		84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C61BB9430600FDAD49 /* bt1.png */; };
 		84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C81BB9431700FDAD49 /* 6666.png */; };
 		84C238F01BE61A65002A4C07 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C238EF1BE61A65002A4C07 /* Test.m */; };
+		960754A91C7C5475006B362F /* AdTapsy in Resources */ = {isa = PBXBuildFile; fileRef = 960754A81C7C5475006B362F /* AdTapsy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,11 +112,11 @@
 		84A794301BB52B91007E4AE1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84A794321BB52B97007E4AE1 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		84A794331BB52B97007E4AE1 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		84A794361BB534E4007E4AE1 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../Chartboost.framework; sourceTree = "<group>"; };
 		84B5A8C61BB9430600FDAD49 /* bt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt1.png; sourceTree = "<group>"; };
 		84B5A8C81BB9431700FDAD49 /* 6666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6666.png; sourceTree = "<group>"; };
 		84C238EE1BE61A65002A4C07 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		84C238EF1BE61A65002A4C07 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		960754A81C7C5475006B362F /* AdTapsy */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AdTapsy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,6 @@
 				84A794191BB52B38007E4AE1 /* SystemConfiguration.framework in Frameworks */,
 				84A794171BB52B2F007E4AE1 /* CoreGraphics.framework in Frameworks */,
 				84A794131BB52B19007E4AE1 /* Foundation.framework in Frameworks */,
-				84A794371BB534E4007E4AE1 /* Chartboost.framework in Frameworks */,
 				84A7940D1BB52AEE007E4AE1 /* Social.framework in Frameworks */,
 				84A7940B1BB52AE2007E4AE1 /* StoreKit.framework in Frameworks */,
 				84A794091BB52ADC007E4AE1 /* WebKit.framework in Frameworks */,
@@ -165,6 +164,7 @@
 		1AC563D4193DCE6000402286 = {
 			isa = PBXGroup;
 			children = (
+				960754A81C7C5475006B362F /* AdTapsy */,
 				84A3D2271C1D1C7D0055D37A /* AmazonAd.framework */,
 				84C238EE1BE61A65002A4C07 /* Test.h */,
 				84C238EF1BE61A65002A4C07 /* Test.m */,
@@ -211,7 +211,6 @@
 			children = (
 				84B5A8C81BB9431700FDAD49 /* 6666.png */,
 				84B5A8C61BB9430600FDAD49 /* bt1.png */,
-				84A794361BB534E4007E4AE1 /* Chartboost.framework */,
 				84A794031BB52A66007E4AE1 /* vuonhoa-Bridging-header.h */,
 				1AC563E2193DCE6000402286 /* AppDelegate.swift */,
 				1AC563E4193DCE6000402286 /* ViewController.swift */,
@@ -356,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC563E8193DCE6000402286 /* Main.storyboard in Resources */,
+				960754A91C7C5475006B362F /* AdTapsy in Resources */,
 				84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */,
 				1AC563EA193DCE6000402286 /* Images.xcassets in Resources */,
 				84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */,
@@ -518,10 +518,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AdTapsy",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/AdTapsy";
 				INFOPLIST_FILE = "swift-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/AdTapsy";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "newphuongnt3000.5120-Game";
 				PRODUCT_NAME = "5120 Game";
@@ -541,10 +544,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AdTapsy",
 				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/AdTapsy";
 				INFOPLIST_FILE = "swift-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/AdTapsy";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "newphuongnt3000.5120-Game";
 				PRODUCT_NAME = "5120 Game";
