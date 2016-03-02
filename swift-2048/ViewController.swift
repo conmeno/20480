@@ -58,7 +58,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-      
+      let xml = ADXML()
+        xml.LoadXML()
     }
    
   @IBAction func startGameButtonTapped(sender : UIButton) {

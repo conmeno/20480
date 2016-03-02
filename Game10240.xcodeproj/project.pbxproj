@@ -60,6 +60,7 @@
 		84A794371BB534E4007E4AE1 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794361BB534E4007E4AE1 /* Chartboost.framework */; };
 		84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C61BB9430600FDAD49 /* bt1.png */; };
 		84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C81BB9431700FDAD49 /* 6666.png */; };
+		96722F181C86C6D7008ACA05 /* ADXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96722F171C86C6D7008ACA05 /* ADXML.swift */; };
 		96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		84A794361BB534E4007E4AE1 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		84B5A8C61BB9430600FDAD49 /* bt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt1.png; sourceTree = "<group>"; };
 		84B5A8C81BB9431700FDAD49 /* 6666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6666.png; sourceTree = "<group>"; };
+		96722F171C86C6D7008ACA05 /* ADXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADXML.swift; path = AdManager/ADXML.swift; sourceTree = "<group>"; };
 		96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -311,6 +313,7 @@
 				1B666B0B1C82BA1900B936B8 /* MyAd.swift */,
 				1B666B0C1C82BA1900B936B8 /* StoryboardAD.storyboard */,
 				1B666B0D1C82BA1900B936B8 /* Utility.swift */,
+				96722F171C86C6D7008ACA05 /* ADXML.swift */,
 			);
 			name = Ad;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B666B131C82BA1900B936B8 /* MyAd.swift in Sources */,
+				96722F181C86C6D7008ACA05 /* ADXML.swift in Sources */,
 				1B666B0E1C82BA1900B936B8 /* AdManagerView.swift in Sources */,
 				1B666B121C82BA1900B936B8 /* GoogleAdEditor.swift in Sources */,
 				1AE8BEF4193EF260007592BA /* NumberTileGame.swift in Sources */,
