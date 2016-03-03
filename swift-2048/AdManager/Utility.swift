@@ -25,6 +25,8 @@ class Utility {
     static var GFullAdUnit: String = ""
     static var ChartboostAppID: String = ""
     static var ChartboostSign: String = ""
+    static var AdcolonyAppID: String = ""
+    static var AdcolonyZoneID: String = ""
     
     static var Amazonkey = ""
     
@@ -47,6 +49,10 @@ class Utility {
         ChartboostAppID = data.cAppID
         ChartboostSign = data.cSign
         Amazonkey = data.AmazonKey
+        
+        AdcolonyAppID = data.AdcolonyAppID
+        AdcolonyZoneID = data.AdcolonyZoneID
+        
         
         //get edit ad unit ID for Admob
         
@@ -108,6 +114,29 @@ class Utility {
 
         
         
+        
+         //GEt Ad unit online
+      
+        
+        
+        let xmlSetup = ADXML()
+        xmlSetup.LoadXML()
+        
+        SetupAdOnline()
+
+        
+        
+        //setup ad manual
+        SetupAdManual()
+        
+        
+       
+        
+    
+    }
+    static func SetupAdManual()
+    {
+        
         if(isAd7)
         {
             if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") != nil)
@@ -122,7 +151,7 @@ class Utility {
             }
         }
         
-
+        
         //get edited appid & sign from Chartboost
         
         if(isAd8)
@@ -139,8 +168,61 @@ class Utility {
                 
             }
             
-
+            
         }
+        
+        
+    }
+
+    static func SetupAdOnline()
+    {
+    
+        //google
+        if(NSUserDefaults.standardUserDefaults().objectForKey("gBannerOnline") != nil)
+        {
+            GBannerAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("gBannerOnline") as! String
+            
+        }
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("gFullOnline") != nil)
+        {
+            GFullAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("gFullOnline") as! String
+        }
+       
+        
+        //end google
+        
+        //get edited appid & sign from Chartboost
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("cappidOnline") != nil)
+        {
+            ChartboostAppID = NSUserDefaults.standardUserDefaults().objectForKey("cappidOnline") as! String
+            
+        }
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("csignOnline") != nil)
+        {
+            ChartboostSign = NSUserDefaults.standardUserDefaults().objectForKey("csignOnline") as! String
+            
+        }
+        
+        //get edited appid & sign from Adcolony
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("adcolonyAppID") != nil)
+        {
+            AdcolonyAppID = NSUserDefaults.standardUserDefaults().objectForKey("adcolonyAppID") as! String
+            
+        }
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("adcolonyZoneID") != nil)
+        {
+            AdcolonyZoneID = NSUserDefaults.standardUserDefaults().objectForKey("adcolonyZoneID") as! String
+            
+        }
+
+        
+        
+        
     
     }
     

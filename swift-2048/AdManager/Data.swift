@@ -19,6 +19,15 @@ class Data {
         let cSign : String = "1661b8248912f9cd312730a9f978b658bf97963a"
     
    let AmazonKey: String = "f952dd60f8c14f7c9347ee495ae0a3ea"
+    let AdcolonyAppID: String = ""
+    let AdcolonyZoneID: String = ""
+    
+    
+    
+    
+    
+    let AdURL: String = "http://www.tony.somee.com/10240.txt"
+    
     
 
     

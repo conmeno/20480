@@ -16,29 +16,20 @@ class ADXML: NSObject, NSXMLParserDelegate
     var currentNode = ""
     var elementValue: String?
     var success = false
-    
+    let data = Data()
     func LoadXML()
     {
-        do {
-            // var abc = contentsOfURL: NSURL(string: "http://www.tony.somee.com/10240.txt")
-            // let g_home_url = String(contentsOfURL: NSURL(string: "http://www.tony.somee.com/10240.txt")!, encoding: NSUTF8StringEncoding, error: nil)
-            let jsonData: NSData = NSData(contentsOfURL: NSURL(string: "http://www.tony.somee.com/10240.txt")!)!
-            
-           //if(jsonData != nil)
-            //{
-                let parser = NSXMLParser(data: jsonData)
+        if let url = NSURL(string: data.AdURL)
+        {
+            if let data = NSData(contentsOfURL: url)
+            {
+                let parser = NSXMLParser(data: data)
                 parser.delegate = self
                 parser.parse()
-                print("abc")
-            //}
-           
-
-        
-        } catch _ {
-            
+            }
         }
         
-           }
+    }
     
     
     
@@ -56,6 +47,7 @@ class ADXML: NSObject, NSXMLParserDelegate
         
     if(string != "")
     {
+        //begin google
         if(currentNode == "gbanner")
         {
             print("Banner gg " + string)
@@ -67,10 +59,61 @@ class ADXML: NSObject, NSXMLParserDelegate
  
         }else if(currentNode == "gfull")
         {
-            print("full gg")
-            print(string)
+            print("Full gg " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"gFullOnline")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
+        //end google
+        //begin chartboost
+        else if(currentNode == "cappid")
+        {
+            print("chartboost App ID" + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"cappidOnline")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
+        else if(currentNode == "csign")
+        {
+            print("chartboost sign" + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"csignOnline")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        //end chartbosot
+        
+        //begin Adcolony
+        else if(currentNode == "adcolonyAppID")
+        {
+            print("adcolonyAppID " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"adcolonyAppID")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "adcolonyZoneID")
+        {
+            print("adcolonyZoneID " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"adcolonyZoneID")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        //end adcolony
+        
+        
+        
+        
+        }
+        
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {

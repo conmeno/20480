@@ -19,17 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
         
         
         Utility.SetUpAdData()
-//        
-//        Chartboost.startWithAppId(Utility.ChartboostAppID, appSignature: Utility.ChartboostSign, delegate: self)
-//        
-//        AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
-//        AmazonAdRegistration.sharedRegistration().setLogging(true)
+        
+        Chartboost.startWithAppId(Utility.ChartboostAppID, appSignature: Utility.ChartboostSign, delegate: self)
+        
+        AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
+        AmazonAdRegistration.sharedRegistration().setLogging(true)
         
         
         
      
         
-  //AdColony.configureWithAppID("appc21b928c354c44b9ae", zoneIDs: ["vz00bc85ddf0c4471eba"], delegate: nil, logging: true)
+  AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
         
             
         return true

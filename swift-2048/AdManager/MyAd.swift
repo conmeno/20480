@@ -123,7 +123,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     }
     func showAdcolony()
     {
-        AdColony.playVideoAdForZone("vz00bc85ddf0c4471eba", withDelegate: nil)
+        AdColony.playVideoAdForZone(Utility.AdcolonyZoneID, withDelegate: nil)
     }
     
     func createAndLoadAd() -> GADInterstitial
