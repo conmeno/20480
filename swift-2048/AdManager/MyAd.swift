@@ -15,14 +15,16 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var isStopAD = true
     var gBannerView: GADBannerView!
     var interstitial: GADInterstitial!
+    var interstitialAmazon: AmazonAdInterstitial!
     var timerVPN:NSTimer?
     var timerAd10:NSTimer?
     var timerAd60:NSTimer?
     var timerAmazon:NSTimer?
+    var timerADcolony:NSTimer?
     
     var isFirsAdmob = false
     var isFirstChart = false
-    var amazonLocationY:CGFloat = -50.0
+    var amazonLocationY:CGFloat = 20.0
     var AdmobLocationY: CGFloat = 20
     var AdmobBannerTop = false
     var AdNumber = 1
@@ -76,11 +78,23 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             {
                 showAmazonBanner()
                 self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
+                
+                
+                //set up amazon full
+                interstitialAmazon = AmazonAdInterstitial()
+                interstitialAmazon.delegate = self
+
+                loadAmazonFull()
+                showAmazonFull()
+
             }
             
             
-            
-            
+            if(Utility.isAd5)
+            {
+                showAdcolony()
+                self.timerADcolony = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerADcolony:", userInfo: nil, repeats: true)
+            }
             
             
             
@@ -253,7 +267,19 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         
         
     }
-    
+    //timerADcolony
+    func timerADcolony(timer:NSTimer) {
+        
+        if(showAd())
+        {
+           showAdcolony()
+            
+        }
+        
+        
+        
+    }
+
     
     func timerVPNMethodAutoAd(timer:NSTimer) {
         print("VPN Checking....")
@@ -327,8 +353,8 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     
     
     //amazon
-    ///////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
     var amazonAdView: AmazonAdView!
     func showAmazonBanner()
     {
@@ -372,7 +398,24 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         
         
     }
+    //////////////////////
+    //amazonfull
+    //////////////////////
+    func loadAmazonFull()
+    {
+        let options = AmazonAdOptions()
+        
+        options.isTestRequest = false
+        
+        interstitialAmazon.load(options)
+    }
+    func showAmazonFull()
+    {
+        interstitialAmazon.presentFromViewController(self.viewController)
+        
+    }
     
+    /////////////////////////////////////////////////////////////
     // Mark: - AmazonAdViewDelegate
     func viewControllerForPresentingModalView() -> UIViewController {
         return viewController
@@ -394,6 +437,40 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     func adViewDidCollapse(view: AmazonAdView!) -> Void {
         print("Ad has collapsed")
     }
+    ///////////
+    //full delegate
+    // Mark: - AmazonAdInterstitialDelegate
+    func interstitialDidLoad(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial loaded.", terminator: "")
+        //loadStatusLabel.text = "Interstitial loaded."
+        showAmazonFull()
+    }
+    
+    func interstitialDidFailToLoad(interstitial: AmazonAdInterstitial!, withError: AmazonAdError!) {
+        Swift.print("Interstitial failed to load.", terminator: "")
+        //loadStatusLabel.text = "Interstitial failed to load."
+    }
+    
+    func interstitialWillPresent(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial will be presented.", terminator: "")
+    }
+    
+    func interstitialDidPresent(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial has been presented.", terminator: "")
+    }
+    
+    func interstitialWillDismiss(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial will be dismissed.", terminator: "")
+        
+    }
+    
+    func interstitialDidDismiss(interstitial: AmazonAdInterstitial!) {
+        Swift.print("Interstitial has been dismissed.", terminator: "");
+        //self.loadStatusLabel.text = "No interstitial loaded.";
+        //loadAmazonFull();
+    }
+    
+
     
     ////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////

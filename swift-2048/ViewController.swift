@@ -15,13 +15,10 @@ class ViewController: UIViewController {
    
       var audioPlayer: AVAudioPlayer?
 
-    @IBOutlet weak var gBannerView: GADBannerView!
-   // var startAppBanner: STABannerView?
-    //var startAppAd: STAStartAppAd?
     
     @IBAction func hover(sender: AnyObject) {
-        //auto
-        //showAdmob()
+        Utility.OpenView("AdView1",view: self)
+        
             }
     
     
@@ -56,7 +53,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let myad = MyAd(root: self)
+        myad.ViewDidload()
         
          }
    

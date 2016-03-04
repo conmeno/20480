@@ -14,7 +14,7 @@ class Utility {
     static var isAd2 = false//charbootst
     static var isAd3 = false//auto chartboost
     static var isAd4 = true//admob banner
-    static var isAd5 = false//adcolony
+    static var isAd5 = true//adcolony
     static var isAd6 = true//amazon
     static var isAd7 = false//Admob Edit
     static var isAd8 = false//ChartBoost Edit
@@ -224,6 +224,18 @@ class Utility {
         
         
     
+    }
+    
+    static func isCDMA()->Bool
+    {
+        let abc = cclass()
+        let Version = abc.platformNiceString()
+        if(Version == "CDMA")
+        {
+            return true
+        }
+        
+        return false
     }
     
     
