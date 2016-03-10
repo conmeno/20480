@@ -18,6 +18,8 @@
 #import <AmazonAd/AmazonAdOptions.h>
 #import <RevMobAds/RevMobAds.h>
 #import <AdColony/AdColony.h>
+ #import <VungleSDK/VungleSDK.h>
+
 #include <ifaddrs.h>
 #import "cclass.h"
 

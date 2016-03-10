@@ -8,7 +8,7 @@
 
 import Foundation
 import GoogleMobileAds
-class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate {
+class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate, VungleSDKDelegate  {
     
     
     let viewController:UIViewController
@@ -18,9 +18,11 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var interstitialAmazon: AmazonAdInterstitial!
     var timerVPN:NSTimer?
     var timerAd10:NSTimer?
+    //var timerAd30:NSTimer?
     var timerAd60:NSTimer?
     var timerAmazon:NSTimer?
     var timerADcolony:NSTimer?
+    
     
     var isFirsAdmob = false
     var isFirstChart = false
@@ -47,31 +49,40 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         
         if(showAd())
         {
-            if(Utility.isAd4)
-            {
-                ShowAdmobBanner()
-                self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(20, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
-            }
             if(Utility.isAd1)
             {
                 self.interstitial = self.createAndLoadAd()
                 showAdmob()
             }
+          
             
-            
+            if(Utility.isAd2)
+            {
+                showChartBoost()
+            }
             
             if(Utility.isAd1 || Utility.isAd2)
             {
                 self.timerAd10 = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "timerAD10:", userInfo: nil, repeats: true)
             }
             
-            if(Utility.isAd2)
-            {
-                showChartBoost()
-            }
+            
             if(Utility.isAd3)
             {
                 self.timerAd60 = NSTimer.scheduledTimerWithTimeInterval(90, target: self, selector: "timerAD60:", userInfo: nil, repeats: true)
+            }
+            
+            if(Utility.isAd4)
+            {
+                ShowAdmobBanner()
+                self.timerVPN = NSTimer.scheduledTimerWithTimeInterval(20, target: self, selector: "timerVPNMethodAutoAd:", userInfo: nil, repeats: true)
+            }
+            
+           
+            if(Utility.isAd5)
+            {
+                showAdcolony()
+                self.timerADcolony = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerADcolony:", userInfo: nil, repeats: true)
             }
             
             if(Utility.isAd6)
@@ -90,52 +101,42 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             }
             
             
-            if(Utility.isAd5)
+          
+            
+            if(Utility.isAd7)
             {
-                showAdcolony()
-                self.timerADcolony = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerADcolony:", userInfo: nil, repeats: true)
+                Utility.setupRevmob()
             }
             
+            if(Utility.isAd8)
+            {
+                showVungle()
+            }
             
-            
-        }
+            }
         
     }
     
-    func RevmobButton()
+    func showVungle()
+    {
+        
+        
+        let sdk = VungleSDK.sharedSDK()
+        sdk.delegate = self
+        sdk.playAd(viewController, withOptions: nil)
+        
+       }
+//    @IBAction func playAd(sender: AnyObject) {
+//        var sdk = VungleSDK.sharedSDK()
+//        sdk.delegate = self
+//        sdk.playAd(viewController, error: nil)
+//    }
+    
+    func vungleErr()
     {
     
-        let button: RevMobButton = RevMobAds.session().buttonUnloaded()
-        button.frame = CGRectMake(10, 20, 300, 40)
-       viewController.view!.addSubview(button)
-    
     }
-    
-    
-    
-    func setupRevmob()
-    {
-        //Revmode
-        let completionBlock: () -> Void = {
-            RevMobAds.session().showFullscreen();
-        }
-        let errorBlock: (NSError!) -> Void = {error in
-            // check the error
-            print(error);
-        }
-        RevMobAds.startSessionWithAppID("56d28338ac1911bb0a7fd8f8",
-            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
-
-    }
-    func RevmobBanner()
-    {
-        RevMobAds.session().showBanner();
-    }
-    func RevmobFull()
-    {
-        RevMobAds.session().showFullscreen();
-    }
-    func showAdcolony()
+     func showAdcolony()
     {
         AdColony.playVideoAdForZone(Utility.AdcolonyZoneID, withDelegate: nil)
     }
@@ -224,7 +225,20 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     }
     
     
-    
+//    func timerAD30(timer:NSTimer) {
+//        if(RevMobAds.session() == nil)
+//        {
+//            setupRevmob()
+//           
+//        }else
+//        {
+//            RevmobFull()
+//            RevmobBanner()
+//            RevmobVideo()
+//        }
+//        
+//    }
+//
     
     func timerAD10(timer:NSTimer) {
         

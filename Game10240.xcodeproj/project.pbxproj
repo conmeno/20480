@@ -61,6 +61,7 @@
 		84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C61BB9430600FDAD49 /* bt1.png */; };
 		84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C81BB9431700FDAD49 /* 6666.png */; };
 		96722F181C86C6D7008ACA05 /* ADXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96722F171C86C6D7008ACA05 /* ADXML.swift */; };
+		967AC2241C915DAD00950D31 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967AC2231C915DAD00950D31 /* VungleSDK.framework */; };
 		96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,7 @@
 		84B5A8C61BB9430600FDAD49 /* bt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt1.png; sourceTree = "<group>"; };
 		84B5A8C81BB9431700FDAD49 /* 6666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6666.png; sourceTree = "<group>"; };
 		96722F171C86C6D7008ACA05 /* ADXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADXML.swift; path = AdManager/ADXML.swift; sourceTree = "<group>"; };
+		967AC2231C915DAD00950D31 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
 		96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				84A7941D1BB52B46007E4AE1 /* QuartzCore.framework in Frameworks */,
 				84A7941B1BB52B40007E4AE1 /* Security.framework in Frameworks */,
 				84A794191BB52B38007E4AE1 /* SystemConfiguration.framework in Frameworks */,
+				967AC2241C915DAD00950D31 /* VungleSDK.framework in Frameworks */,
 				84A794171BB52B2F007E4AE1 /* CoreGraphics.framework in Frameworks */,
 				84A794151BB52B28007E4AE1 /* UIKit.framework in Frameworks */,
 				84A794131BB52B19007E4AE1 /* Foundation.framework in Frameworks */,
@@ -192,6 +195,7 @@
 		1AC563D4193DCE6000402286 = {
 			isa = PBXGroup;
 			children = (
+				967AC2231C915DAD00950D31 /* VungleSDK.framework */,
 				84A794361BB534E4007E4AE1 /* Chartboost.framework */,
 				1B666B181C82C40500B936B8 /* AdColony.framework */,
 				1B666B161C82BA3800B936B8 /* RevMobAds.framework */,
@@ -570,10 +574,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
 				);
 				INFOPLIST_FILE = "swift-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -593,10 +599,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
 				);
 				INFOPLIST_FILE = "swift-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

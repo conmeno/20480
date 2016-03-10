@@ -108,6 +108,27 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         //end adcolony
+        //read revmob
+        else if(currentNode == "revmobid")
+        {
+            print("revmobid " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"revmobid")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+            //read revmob
+        else if(currentNode == "vungleid")
+        {
+            print("vungleid " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"vungleid")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         
         
         

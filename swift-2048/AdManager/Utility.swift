@@ -16,8 +16,8 @@ class Utility {
     static var isAd4 = true//admob banner
     static var isAd5 = true//adcolony
     static var isAd6 = true//amazon
-    static var isAd7 = false//Admob Edit
-    static var isAd8 = false//ChartBoost Edit
+    static var isAd7 = true//REvmob
+    static var isAd8 = true//VungLe
 
     
     
@@ -29,6 +29,9 @@ class Utility {
     static var AdcolonyZoneID: String = ""
     
     static var Amazonkey = ""
+    
+    static var RevmobID = ""
+    static var VungleID = ""
     
     static func OpenView(viewName: String, view: UIViewController)
     {
@@ -53,6 +56,9 @@ class Utility {
         AdcolonyAppID = data.AdcolonyAppID
         AdcolonyZoneID = data.AdcolonyZoneID
         
+        
+        VungleID = data.VungleID
+        RevmobID = data.RevmobID
         
         //get edit ad unit ID for Admob
         
@@ -127,52 +133,52 @@ class Utility {
         
         
         //setup ad manual
-        SetupAdManual()
+        //SetupAdManual()
         
         
        
         
     
     }
-    static func SetupAdManual()
-    {
-        
-        if(isAd7)
-        {
-            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") != nil)
-            {
-                GBannerAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") as! String
-                
-            }
-            
-            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") != nil)
-            {
-                GFullAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") as! String
-            }
-        }
-        
-        
-        //get edited appid & sign from Chartboost
-        
-        if(isAd8)
-        {
-            if(NSUserDefaults.standardUserDefaults().objectForKey("CAppID") != nil)
-            {
-                ChartboostAppID = NSUserDefaults.standardUserDefaults().objectForKey("CAppID") as! String
-                
-            }
-            
-            if(NSUserDefaults.standardUserDefaults().objectForKey("CSign") != nil)
-            {
-                ChartboostSign = NSUserDefaults.standardUserDefaults().objectForKey("CSign") as! String
-                
-            }
-            
-            
-        }
-        
-        
-    }
+//    static func SetupAdManual()
+//    {
+//        
+//        if(isAd7)
+//        {
+//            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") != nil)
+//            {
+//                GBannerAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") as! String
+//                
+//            }
+//            
+//            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") != nil)
+//            {
+//                GFullAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") as! String
+//            }
+//        }
+//        
+//        
+//        //get edited appid & sign from Chartboost
+//        
+//        if(isAd8)
+//        {
+//            if(NSUserDefaults.standardUserDefaults().objectForKey("CAppID") != nil)
+//            {
+//                ChartboostAppID = NSUserDefaults.standardUserDefaults().objectForKey("CAppID") as! String
+//                
+//            }
+//            
+//            if(NSUserDefaults.standardUserDefaults().objectForKey("CSign") != nil)
+//            {
+//                ChartboostSign = NSUserDefaults.standardUserDefaults().objectForKey("CSign") as! String
+//                
+//            }
+//            
+//            
+//        }
+//        
+//        
+//    }
 
     static func SetupAdOnline()
     {
@@ -219,9 +225,23 @@ class Utility {
             AdcolonyZoneID = NSUserDefaults.standardUserDefaults().objectForKey("adcolonyZoneID") as! String
             
         }
+        
+        //get revmob online id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("revmobid") != nil)
+        {
+            RevmobID = NSUserDefaults.standardUserDefaults().objectForKey("revmobid") as! String
+            
+        }
 
         
+        //get vungle online id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("vungleid") != nil)
+        {
+            VungleID = NSUserDefaults.standardUserDefaults().objectForKey("vungleid") as! String
+            
+        }
         
+
         
     
     }
@@ -238,6 +258,62 @@ class Utility {
         return false
     }
     
+//    static func setupRevmob()
+//    {
+//        //Revmode
+//        let completionBlock: () -> Void = {
+//            RevMobAds.session().showFullscreen();
+//        }
+//        let errorBlock: (NSError!) -> Void = {error in
+//            // check the error
+//            print(error);
+//        }
+//        RevMobAds.startSessionWithAppID("56d28338ac1911bb0a7fd8f8",
+//            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
+//        
+//    }
+    
+    static func setupRevmob()
+    {
+        //Revmode
+        let completionBlock: () -> Void = {
+            RevMobAds.session().showFullscreen()
+            self.RevmobBanner()
+            self.RevmobFull()
+            self.RevmobVideo()
+            RevmobPopup()
+        }
+        let errorBlock: (NSError!) -> Void = {error in
+            // check the error
+            print(error);
+        }
+        RevMobAds.startSessionWithAppID(Utility.RevmobID,
+            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
+        
+    }
+    static func RevmobBanner()
+    {
+        RevMobAds.session()?.showBanner();
+    }
+    static func RevmobFull()
+    {
+        RevMobAds.session()?.showFullscreen();
+    }
+    static func RevmobPopup()
+    {
+         RevMobAds.session()?.showPopup();
+    
+    }
+    static func RevmobVideo()
+    {
+        //To load
+        RevMobAds.session()?.fullscreen().loadVideo()
+        
+        //To show
+        RevMobAds.session()?.fullscreen().showVideo()
+    }
+
+
     
     
     
