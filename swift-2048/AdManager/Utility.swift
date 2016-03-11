@@ -10,8 +10,8 @@ import Foundation
 
 class Utility {
 
-    static var isAd1 = false//admob full
-    static var isAd2 = false//charbootst
+    static var isAd1 = true//admob full
+    static var isAd2 = true//charbootst
     static var isAd3 = false//auto chartboost
     static var isAd4 = true//admob banner
     static var isAd5 = true//adcolony
