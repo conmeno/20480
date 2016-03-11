@@ -25,16 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
         AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
         AmazonAdRegistration.sharedRegistration().setLogging(true)
         
-        
-//        NSString* appID = @"Test_iOS";
-//        VungleSDK *sdk = [VungleSDK sharedSDK];
-//        
-//        // start vungle publisher library
-//        [sdk startWithAppId:appID];
+ 
+        //vungle
         let sdk = VungleSDK.sharedSDK()
-        // start vungle publisher library
         sdk.startWithAppId(Utility.VungleID)
         
+        
+        //applovin
+        ALSdk.initializeSdk()
         
      
         

@@ -204,7 +204,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     func yPositionForViewAtPosition(order: Int, views: [UIView]) -> CGFloat {
       assert(views.count > 0)
       assert(order >= 0 && order < views.count)
-      let viewHeight = views[order].bounds.size.height
+      _ = views[order].bounds.size.height
       let totalHeight = CGFloat(views.count - 1)*viewPadding + views.map({ $0.bounds.size.height }).reduce(verticalViewOffset, combine: { $0 + $1 })
       let viewsTop = 0.5*(vcHeight - totalHeight) >= 0 ? 0.5*(vcHeight - totalHeight) : 0
 
@@ -275,7 +275,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
   func followUp() {
     assert(model != nil)
     let m = model!
-    let (userWon, winningCoords) = m.userHasWon()
+    let (userWon, _) = m.userHasWon()
     if userWon {
       // TODO: alert delegate we won
       let alertView = UIAlertView()

@@ -18,7 +18,7 @@ class Utility {
     static var isAd6 = true//amazon
     static var isAd7 = true//REvmob
     static var isAd8 = true//VungLe
-
+    static var isAd9 = true//Applovin
     
     
     static var GBannerAdUnit: String = ""
@@ -117,6 +117,13 @@ class Utility {
             isAd8 = NSUserDefaults.standardUserDefaults().objectForKey("ad8") as! Bool
             
         }
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("ad9") != nil)
+        {
+            isAd9 = NSUserDefaults.standardUserDefaults().objectForKey("ad9") as! Bool
+            
+        }
+
 
         
         
@@ -275,7 +282,7 @@ class Utility {
     
     static func setupRevmob()
     {
-        //Revmode
+        
         let completionBlock: () -> Void = {
             RevMobAds.session().showFullscreen()
             self.RevmobBanner()

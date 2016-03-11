@@ -27,14 +27,12 @@ class ViewController: UIViewController {
     //click button
     
     @IBAction func moreapp1Click(sender: AnyObject) {
-        //showAdmob()
+        Utility.MoreGame()
         
     }
     
     @IBAction func moreApp2click(sender: AnyObject) {
-        //startAppAd!.loadAd()
-        //showAmazonFull()
-        //isAutoAmazonFull = true
+       Utility.MoreGame()
     }
     
     @IBAction func Click(sender: AnyObject) {
@@ -55,6 +53,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let myad = MyAd(root: self)
         myad.ViewDidload()
+        
+        
         
          }
    

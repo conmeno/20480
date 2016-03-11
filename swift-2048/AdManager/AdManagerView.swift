@@ -40,6 +40,7 @@ class AdManagerView: UIViewController
     
     @IBOutlet weak var sw8: UISwitch!
     
+      @IBOutlet weak var sw9: UISwitch!
     
     @IBOutlet weak var textDevice: UITextView!
     
@@ -94,6 +95,12 @@ class AdManagerView: UIViewController
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd8 = sender.on
     }
+    
+    @IBAction func sw9Action(sender: UISwitch) {
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad9")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        Utility.isAd9 = sender.on
+    }
 
     
     
@@ -106,21 +113,21 @@ class AdManagerView: UIViewController
     }
     
     
-    @IBAction func EditGoogle(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
-        
-        let WebDetailView = storyboard.instantiateViewControllerWithIdentifier("GoogleAdEditorView") as UIViewController
-        
-        self.presentViewController(WebDetailView, animated: true, completion: nil)
-        
-    }
-    @IBAction func EditChartboost(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
-        
-        let WebDetailView = storyboard.instantiateViewControllerWithIdentifier("ChartboostAdEditorView") as UIViewController
-        
-        self.presentViewController(WebDetailView, animated: true, completion: nil)
-    }
+//    @IBAction func EditGoogle(sender: AnyObject) {
+//        let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
+//        
+//        let WebDetailView = storyboard.instantiateViewControllerWithIdentifier("GoogleAdEditorView") as UIViewController
+//        
+//        self.presentViewController(WebDetailView, animated: true, completion: nil)
+//        
+//    }
+//    @IBAction func EditChartboost(sender: AnyObject) {
+//        let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
+//        
+//        let WebDetailView = storyboard.instantiateViewControllerWithIdentifier("ChartboostAdEditorView") as UIViewController
+//        
+//        self.presentViewController(WebDetailView, animated: true, completion: nil)
+//    }
     
     func setupDevice()
     {

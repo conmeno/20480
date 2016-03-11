@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMobileAds
+
 class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate, VungleSDKDelegate  {
     
     
@@ -112,31 +113,37 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             {
                 showVungle()
             }
+            if(Utility.isAd9)
+            {
+                 showAppLovin()
+            }
             
+           
             }
         
     }
-    
+    func showAppLovin()
+    {
+        if ALInterstitialAd.isReadyForDisplay() == true {
+            ALInterstitialAd.show()
+        } else {
+            print("No Applovin Ad available to show")
+        }
+    }
     func showVungle()
     {
         
+        //let nserr : NSError
         
         let sdk = VungleSDK.sharedSDK()
         sdk.delegate = self
-        sdk.playAd(viewController, withOptions: nil)
+        sdk.playAd(viewController)
+        
         
        }
-//    @IBAction func playAd(sender: AnyObject) {
-//        var sdk = VungleSDK.sharedSDK()
-//        sdk.delegate = self
-//        sdk.playAd(viewController, error: nil)
-//    }
+ 
     
-    func vungleErr()
-    {
-    
-    }
-     func showAdcolony()
+      func showAdcolony()
     {
         AdColony.playVideoAdForZone(Utility.AdcolonyZoneID, withDelegate: nil)
     }
