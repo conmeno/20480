@@ -129,6 +129,28 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().setObject(string, forKey:"vungleid")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
+            //read revmob
+        else if(currentNode == "amazon")
+        {
+            print("amazon " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"amazon")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+            //Show Ad  status
+        else if(currentNode == "showOtherAd")
+        {
+            print("showOtherAd status " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"showOtherAd")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
         
         
         

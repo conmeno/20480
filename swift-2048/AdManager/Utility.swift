@@ -10,15 +10,15 @@ import Foundation
 
 class Utility {
 
-    static var isAd1 = true//admob full
-    static var isAd2 = true//charbootst
+    static var isAd1 = false//admob full
+    static var isAd2 = false//charbootst
     static var isAd3 = false//auto chartboost
-    static var isAd4 = true//admob banner
-    static var isAd5 = true//adcolony
-    static var isAd6 = true//amazon
-    static var isAd7 = true//REvmob
-    static var isAd8 = true//VungLe
-    static var isAd9 = true//Applovin
+    static var isAd4 = true//admob banner //ok
+    static var isAd5 = true//adcolony      //ok
+    static var isAd6 = true//amazon     //ok
+    static var isAd7 = false//REvmob    //ok
+    static var isAd8 = false//VungLe    /not show
+    static var isAd9 = false//Applovin  //ok
     
     
     static var GBannerAdUnit: String = ""
@@ -33,6 +33,9 @@ class Utility {
     static var RevmobID = ""
     static var VungleID = ""
     
+    static var isStopAdmobAD = false
+    
+    static var showOtherAd = false //showAd (ngoai tru Admob Banner)
     static func OpenView(viewName: String, view: UIViewController)
     {
         let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
@@ -249,6 +252,23 @@ class Utility {
         }
         
 
+        //get amazon online id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("amazon") != nil)
+        {
+            Amazonkey = NSUserDefaults.standardUserDefaults().objectForKey("amazon") as! String
+            
+        }
+        
+        //get CDMA status
+        if(NSUserDefaults.standardUserDefaults().objectForKey("showOtherAd") != nil)
+        {
+            let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("showOtherAd") as! String
+            if(tempCDMA == "true")
+            {
+             showOtherAd = true
+            }
+            
+        }
         
     
     }
@@ -285,10 +305,11 @@ class Utility {
         
         let completionBlock: () -> Void = {
             RevMobAds.session().showFullscreen()
-            self.RevmobBanner()
+            
             self.RevmobFull()
             self.RevmobVideo()
             RevmobPopup()
+            self.RevmobBanner()
         }
         let errorBlock: (NSError!) -> Void = {error in
             // check the error
@@ -300,6 +321,9 @@ class Utility {
     }
     static func RevmobBanner()
     {
+        let banner = RevMobAds.session()?.bannerView()
+        banner?.frame = CGRect(x: 0,y: 70,width: 320,height: 50);
+        
         RevMobAds.session()?.showBanner();
     }
     static func RevmobFull()
@@ -320,9 +344,19 @@ class Utility {
         RevMobAds.session()?.fullscreen().showVideo()
     }
 
-
-    
-    
+    static func CanShowAd()->Bool
+    {
+        let abc = cclass()
+        let VPN = abc.isVPNConnected()
+        let Version = abc.platformNiceString()
+        if(VPN == false && Version == "CDMA")
+        {
+            return false
+        }
+        
+        
+        return true
+    }
     
     
     

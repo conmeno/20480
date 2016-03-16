@@ -16,8 +16,8 @@ class Data {
     let AdURL: String = "http://www.tony.somee.com/10240.txt"
     
     //google
-    let gBanner : String = ""
-    let gFull : String = ""
+    let gBanner : String = "ca-app-pub-1359745315754901/5585356073"
+    let gFull : String = "ca-app-pub-1359745315754901/7062089278"
     let TestDeviceID: String = "25229a4d09c90bcec58dec27036a470b"
     
 

@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     
    
       var audioPlayer: AVAudioPlayer?
-
     
     @IBAction func hover(sender: AnyObject) {
         Utility.OpenView("AdView1",view: self)
@@ -40,11 +39,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startGameHover(sender: AnyObject) {
-        //ShowAdmobBanner()
-//        if (startAppBanner == nil) {
-//            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.view, withDelegate: nil);
-//            self.view.addSubview(startAppBanner!)
-//        }
+        
     }
     
     //end click button
@@ -54,9 +49,12 @@ class ViewController: UIViewController {
         let myad = MyAd(root: self)
         myad.ViewDidload()
         
-        
+ 
         
          }
+   
+    
+    
    
   @IBAction func startGameButtonTapped(sender : UIButton) {
     //RandomThemeMusic("4")

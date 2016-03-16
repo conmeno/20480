@@ -20,24 +20,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ChartboostDelegate {
         
         Utility.SetUpAdData()
         
-        Chartboost.startWithAppId(Utility.ChartboostAppID, appSignature: Utility.ChartboostSign, delegate: self)
+        if(Utility.isAd2)
+        {
+            Chartboost.startWithAppId(Utility.ChartboostAppID, appSignature: Utility.ChartboostSign, delegate: self)
+        }
         
-        AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
-        AmazonAdRegistration.sharedRegistration().setLogging(true)
+        if(Utility.isAd6)
+        {
+            AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
+            AmazonAdRegistration.sharedRegistration().setLogging(true)
+        }
         
- 
-        //vungle
-        let sdk = VungleSDK.sharedSDK()
-        sdk.startWithAppId(Utility.VungleID)
+        if(Utility.isAd8)
+        {
+            
+            //vungle
+            let sdk = VungleSDK.sharedSDK()
+            sdk.startWithAppId(Utility.VungleID)
+        }
         
+                 
         
         //applovin
-        ALSdk.initializeSdk()
+        if(Utility.isAd9)
+        {
+            ALSdk.initializeSdk()
+        }
         
-     
-        
-  AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
-        
+        if(Utility.isAd5)
+        {
+            AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
+        }
             
         return true
     }

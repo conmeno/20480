@@ -34,7 +34,6 @@
 		84A794051BB52AAB007E4AE1 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794041BB52AAB007E4AE1 /* GoogleMobileAds.framework */; };
 		84A794071BB52AD5007E4AE1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794061BB52AD5007E4AE1 /* AdSupport.framework */; };
 		84A794091BB52ADC007E4AE1 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794081BB52ADC007E4AE1 /* WebKit.framework */; };
-		84A7940B1BB52AE2007E4AE1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7940A1BB52AE2007E4AE1 /* StoreKit.framework */; };
 		84A7940D1BB52AEE007E4AE1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A7940C1BB52AEE007E4AE1 /* Social.framework */; };
 		84A794131BB52B19007E4AE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794121BB52B19007E4AE1 /* Foundation.framework */; };
 		84A794151BB52B28007E4AE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794141BB52B28007E4AE1 /* UIKit.framework */; };
@@ -115,7 +114,6 @@
 		84A794041BB52AAB007E4AE1 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		84A794061BB52AD5007E4AE1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		84A794081BB52ADC007E4AE1 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		84A7940A1BB52AE2007E4AE1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		84A7940C1BB52AEE007E4AE1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		84A794121BB52B19007E4AE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84A794141BB52B28007E4AE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -179,7 +177,6 @@
 				84A794371BB534E4007E4AE1 /* Chartboost.framework in Frameworks */,
 				84A7940D1BB52AEE007E4AE1 /* Social.framework in Frameworks */,
 				1B666B191C82C40500B936B8 /* AdColony.framework in Frameworks */,
-				84A7940B1BB52AE2007E4AE1 /* StoreKit.framework in Frameworks */,
 				84A794091BB52ADC007E4AE1 /* WebKit.framework in Frameworks */,
 				84A794071BB52AD5007E4AE1 /* AdSupport.framework in Frameworks */,
 				84A794051BB52AAB007E4AE1 /* GoogleMobileAds.framework in Frameworks */,
@@ -228,7 +225,6 @@
 				84A794141BB52B28007E4AE1 /* UIKit.framework */,
 				84A794121BB52B19007E4AE1 /* Foundation.framework */,
 				84A7940C1BB52AEE007E4AE1 /* Social.framework */,
-				84A7940A1BB52AE2007E4AE1 /* StoreKit.framework */,
 				84A794081BB52ADC007E4AE1 /* WebKit.framework */,
 				84A794061BB52AD5007E4AE1 /* AdSupport.framework */,
 				84A794041BB52AAB007E4AE1 /* GoogleMobileAds.framework */,
@@ -380,6 +376,11 @@
 					1AC563DC193DCE6000402286 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 6SZC32EP3F;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					1AC563EE193DCE6000402286 = {
 						CreatedOnToolsVersion = 6.0;
