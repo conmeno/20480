@@ -9,7 +9,7 @@
 import Foundation
 import GoogleMobileAds
 
-class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate {
+class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate,VungleSDKDelegate {
     //VungleSDKDelegate
     
     let viewController:UIViewController
@@ -164,11 +164,11 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     func showVungle()
     {
         
-        //let nserr : NSError
-        //
-        //        let sdk = VungleSDK.sharedSDK()
-        //        sdk.delegate = self
-        //        sdk.playAd(viewController)
+        let nserr : NSError
+        
+                let sdk = VungleSDK.sharedSDK()
+                sdk.delegate = self
+                sdk.playAd(viewController)
         
         
     }
