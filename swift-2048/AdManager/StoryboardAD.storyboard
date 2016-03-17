@@ -117,7 +117,6 @@
                                     <rect key="frame" x="20" y="184" width="51" height="31"/>
                                 </variation>
                                 <connections>
-                                    <action selector="sw4Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="JaI-WZ-W5N"/>
                                     <action selector="sw5Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="0T3-By-vCm"/>
                                 </connections>
                             </switch>
@@ -136,7 +135,6 @@
                                     <rect key="frame" x="20" y="223" width="51" height="31"/>
                                 </variation>
                                 <connections>
-                                    <action selector="sw4Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="lQ6-c2-bkp"/>
                                     <action selector="sw6Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="beJ-zO-Njg"/>
                                 </connections>
                             </switch>
@@ -155,8 +153,6 @@
                                     <rect key="frame" x="20" y="262" width="51" height="31"/>
                                 </variation>
                                 <connections>
-                                    <action selector="sw4Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="dbF-ea-tIK"/>
-                                    <action selector="sw6Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="Jf5-Yg-Nzw"/>
                                     <action selector="sw7Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="CVX-H5-fop"/>
                                 </connections>
                             </switch>
@@ -175,8 +171,6 @@
                                     <rect key="frame" x="20" y="301" width="51" height="31"/>
                                 </variation>
                                 <connections>
-                                    <action selector="sw4Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="RvQ-mS-CjZ"/>
-                                    <action selector="sw6Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="QMd-40-UVc"/>
                                     <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="NnR-2Y-enT"/>
                                 </connections>
                             </switch>
@@ -204,9 +198,6 @@
                                     <rect key="frame" x="145" y="301" width="51" height="31"/>
                                 </variation>
                                 <connections>
-                                    <action selector="sw4Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="G1c-iV-5aY"/>
-                                    <action selector="sw6Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="1Iu-HF-4S6"/>
-                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="5mh-BN-8om"/>
                                     <action selector="sw9Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="DrV-pM-EzK"/>
                                 </connections>
                             </switch>
