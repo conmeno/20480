@@ -9,8 +9,8 @@
 import Foundation
 import GoogleMobileAds
 
-class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate, VungleSDKDelegate  {
-    
+class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate {
+    //VungleSDKDelegate
     
     let viewController:UIViewController
     //var isStopAD = true
@@ -30,26 +30,31 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var isFirsAdmob = false
     var isFirstChart = false
     var isApplovinShowed = false
-    var amazonLocationY:CGFloat = 20.0
+    var amazonLocationY:CGFloat = -40.0
     var AdmobLocationY: CGFloat = 20
     var AdmobBannerTop = false
+    var AmazonBannerTop = true
     var AdNumber = 1
     let data = Data()
     
     
     
- 
-   
+    
+    
     
     init(root: UIViewController )
     {
         self.viewController = root
         
     }
- 
+    
     func ViewDidload()
     {
-     
+        
+        if(!AmazonBannerTop)
+        {
+            amazonLocationY = (viewController.view?.bounds.height)! - 5
+        }
         
         if(Utility.CanShowAd())
         {
@@ -58,7 +63,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 self.interstitial = self.createAndLoadAd()
                 showAdmob()
             }
-          
+            
             if(Utility.isAd4)
             {
                 ShowAdmobBanner()
@@ -94,10 +99,10 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 
                 if(Utility.isAd6)
                 {
-                    showAmazonBanner()
-                    self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
-                    
-                    
+                    if(!AmazonBannerTop)
+                    {
+                        amazonLocationY = (viewController.view?.bounds.height)! - 100
+                    }
                     //set up amazon full
                     interstitialAmazon = AmazonAdInterstitial()
                     interstitialAmazon.delegate = self
@@ -106,6 +111,8 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                     showAmazonFull()
                     
                 }
+                showAmazonBanner()
+                self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
                 
                 
                 
@@ -124,14 +131,17 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                     showAppLovin()
                     
                 }
+                
+                
+                
             }
             
             
             
-             self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerAd30:", userInfo: nil, repeats: true)
+            self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerAd30:", userInfo: nil, repeats: true)
             
-           
-            }
+            
+        }
         
     }
     
@@ -155,16 +165,16 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     {
         
         //let nserr : NSError
+        //
+        //        let sdk = VungleSDK.sharedSDK()
+        //        sdk.delegate = self
+        //        sdk.playAd(viewController)
         
-        let sdk = VungleSDK.sharedSDK()
-        sdk.delegate = self
-        sdk.playAd(viewController)
         
-        
-       }
- 
+    }
     
-      func showAdcolony()
+    
+    func showAdcolony()
     {
         AdColony.playVideoAdForZone(Utility.AdcolonyZoneID, withDelegate: nil)
     }
@@ -231,7 +241,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         print(Utility.GBannerAdUnit)
         gBannerView?.delegate = self
         gBannerView?.rootViewController = viewController
-         gBannerView?.viewWithTag(999)
+        gBannerView?.viewWithTag(999)
         viewController.view?.addSubview(gBannerView)
         
         let request = GADRequest()
@@ -244,20 +254,20 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     
     
     
-//    func timerAD30(timer:NSTimer) {
-//        if(RevMobAds.session() == nil)
-//        {
-//            setupRevmob()
-//           
-//        }else
-//        {
-//            RevmobFull()
-//            RevmobBanner()
-//            RevmobVideo()
-//        }
-//        
-//    }
-//
+    //    func timerAD30(timer:NSTimer) {
+    //        if(RevMobAds.session() == nil)
+    //        {
+    //            setupRevmob()
+    //
+    //        }else
+    //        {
+    //            RevmobFull()
+    //            RevmobBanner()
+    //            RevmobVideo()
+    //        }
+    //
+    //    }
+    //
     
     func timerAD10(timer:NSTimer) {
         
@@ -319,13 +329,13 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 }
             }
             
- 
+            
         }
         
         
         
     }
-
+    
     
     func timerVPNMethodAutoAd(timer:NSTimer) {
         print("VPN Checking....")
@@ -339,20 +349,20 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         }
         
         
-       
-//        if(isAd == false && Utility.isStopAD == false)
-//        {
-//            gBannerView.removeFromSuperview()
-//            Utility.isStopAD = true;
-//            print("Stop showing Ad from admob......")
-//        }
+        
+        //        if(isAd == false && Utility.isStopAD == false)
+        //        {
+        //            gBannerView.removeFromSuperview()
+        //            Utility.isStopAD = true;
+        //            print("Stop showing Ad from admob......")
+        //        }
         
     }
     
     func hideAdmobBanner()
     {
         gBannerView.hidden = true
-    
+        
     }
     
     
@@ -444,10 +454,15 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     }
     func timerMethodAutoAmazon(timer:NSTimer) {
         print("auto load amazon")
-        if(Utility.CanShowAd())
-        {
-            showAmazonBanner()
-        }
+        loadAmazonAdWithUserInterfaceIdiom(UIDevice.currentDevice().userInterfaceIdiom, interfaceOrientation: UIApplication.sharedApplication().statusBarOrientation)
+        
+        //        if(Utility.CanShowAd())
+        //        {
+        //            showAmazonBanner()
+        //        }else
+        //        {
+        //            amazonAdView.removeFromSuperview()
+        //        }
         
         
     }
@@ -523,7 +538,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         //loadAmazonFull();
     }
     
-
+    
     
     ////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////
