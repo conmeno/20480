@@ -9,7 +9,7 @@
 import Foundation
 
 class Utility {
-
+    
     static var isAd1 = false//admob full
     static var isAd2 = false//charbootst
     static var isAd3 = false//auto chartboost
@@ -35,7 +35,7 @@ class Utility {
     
     static var isStopAdmobAD = false
     
-    static var showOtherAd = false //showAd (ngoai tru Admob Banner)
+    static var showOtherAd = true //showAd (ngoai tru Admob Banner)
     static func OpenView(viewName: String, view: UIViewController)
     {
         let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
@@ -43,7 +43,7 @@ class Utility {
         let WebDetailView = storyboard.instantiateViewControllerWithIdentifier(viewName) as UIViewController
         
         view.presentViewController(WebDetailView , animated: true, completion: nil)
-
+        
     }
     
     static func SetUpAdData()
@@ -126,73 +126,73 @@ class Utility {
             isAd9 = NSUserDefaults.standardUserDefaults().objectForKey("ad9") as! Bool
             
         }
-
-
         
         
         
-         //GEt Ad unit online
-      
+        
+        
+        //GEt Ad unit online
+        
         
         
         let xmlSetup = ADXML()
         xmlSetup.LoadXML()
         
         SetupAdOnline()
-
+        
         
         
         //setup ad manual
         //SetupAdManual()
         
         
-       
         
-    
+        
+        
     }
-//    static func SetupAdManual()
-//    {
-//        
-//        if(isAd7)
-//        {
-//            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") != nil)
-//            {
-//                GBannerAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") as! String
-//                
-//            }
-//            
-//            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") != nil)
-//            {
-//                GFullAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") as! String
-//            }
-//        }
-//        
-//        
-//        //get edited appid & sign from Chartboost
-//        
-//        if(isAd8)
-//        {
-//            if(NSUserDefaults.standardUserDefaults().objectForKey("CAppID") != nil)
-//            {
-//                ChartboostAppID = NSUserDefaults.standardUserDefaults().objectForKey("CAppID") as! String
-//                
-//            }
-//            
-//            if(NSUserDefaults.standardUserDefaults().objectForKey("CSign") != nil)
-//            {
-//                ChartboostSign = NSUserDefaults.standardUserDefaults().objectForKey("CSign") as! String
-//                
-//            }
-//            
-//            
-//        }
-//        
-//        
-//    }
-
+    //    static func SetupAdManual()
+    //    {
+    //
+    //        if(isAd7)
+    //        {
+    //            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") != nil)
+    //            {
+    //                GBannerAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") as! String
+    //
+    //            }
+    //
+    //            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") != nil)
+    //            {
+    //                GFullAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") as! String
+    //            }
+    //        }
+    //
+    //
+    //        //get edited appid & sign from Chartboost
+    //
+    //        if(isAd8)
+    //        {
+    //            if(NSUserDefaults.standardUserDefaults().objectForKey("CAppID") != nil)
+    //            {
+    //                ChartboostAppID = NSUserDefaults.standardUserDefaults().objectForKey("CAppID") as! String
+    //
+    //            }
+    //
+    //            if(NSUserDefaults.standardUserDefaults().objectForKey("CSign") != nil)
+    //            {
+    //                ChartboostSign = NSUserDefaults.standardUserDefaults().objectForKey("CSign") as! String
+    //
+    //            }
+    //
+    //
+    //        }
+    //
+    //
+    //    }
+    
     static func SetupAdOnline()
     {
-    
+        
         //google
         if(NSUserDefaults.standardUserDefaults().objectForKey("gBannerOnline") != nil)
         {
@@ -204,7 +204,7 @@ class Utility {
         {
             GFullAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("gFullOnline") as! String
         }
-       
+        
         
         //end google
         
@@ -242,7 +242,7 @@ class Utility {
             RevmobID = NSUserDefaults.standardUserDefaults().objectForKey("revmobid") as! String
             
         }
-
+        
         
         //get vungle online id
         if(NSUserDefaults.standardUserDefaults().objectForKey("vungleid") != nil)
@@ -251,7 +251,7 @@ class Utility {
             
         }
         
-
+        
         //get amazon online id
         if(NSUserDefaults.standardUserDefaults().objectForKey("amazon") != nil)
         {
@@ -265,12 +265,15 @@ class Utility {
             let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("showOtherAd") as! String
             if(tempCDMA == "true")
             {
-             showOtherAd = true
+                showOtherAd = true
+            }else
+            {
+                showOtherAd = false
             }
             
         }
         
-    
+        
     }
     
     static func isCDMA()->Bool
@@ -285,20 +288,20 @@ class Utility {
         return false
     }
     
-//    static func setupRevmob()
-//    {
-//        //Revmode
-//        let completionBlock: () -> Void = {
-//            RevMobAds.session().showFullscreen();
-//        }
-//        let errorBlock: (NSError!) -> Void = {error in
-//            // check the error
-//            print(error);
-//        }
-//        RevMobAds.startSessionWithAppID("56d28338ac1911bb0a7fd8f8",
-//            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
-//        
-//    }
+    //    static func setupRevmob()
+    //    {
+    //        //Revmode
+    //        let completionBlock: () -> Void = {
+    //            RevMobAds.session().showFullscreen();
+    //        }
+    //        let errorBlock: (NSError!) -> Void = {error in
+    //            // check the error
+    //            print(error);
+    //        }
+    //        RevMobAds.startSessionWithAppID("56d28338ac1911bb0a7fd8f8",
+    //            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
+    //
+    //    }
     
     static func setupRevmob()
     {
@@ -332,8 +335,8 @@ class Utility {
     }
     static func RevmobPopup()
     {
-         RevMobAds.session()?.showPopup();
-    
+        RevMobAds.session()?.showPopup();
+        
     }
     static func RevmobVideo()
     {
@@ -343,7 +346,7 @@ class Utility {
         //To show
         RevMobAds.session()?.fullscreen().showVideo()
     }
-
+    
     static func CanShowAd()->Bool
     {
         let abc = cclass()
@@ -365,6 +368,6 @@ class Utility {
         let barsLink : String = "itms-apps://itunes.apple.com/ca/developer/phuong-nguyen/id1004963752"
         UIApplication.sharedApplication().openURL(NSURL(string: barsLink)!)
     }
-
-
+    
+    
 }
