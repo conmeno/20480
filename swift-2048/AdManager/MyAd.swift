@@ -22,7 +22,6 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var timerVPN:NSTimer?
     var timerAd10:NSTimer?
     var timerAd30:NSTimer? //for all ad
-    var timerAd60:NSTimer? //for all ad
     var timerAutoChartboost:NSTimer?
     var timerAmazon:NSTimer?
     //var timerADcolony:NSTimer?
@@ -34,7 +33,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var amazonLocationY:CGFloat = -40.0
     var AdmobLocationY: CGFloat = 20
     var AdmobBannerTop = false
-    var AmazonBannerTop = false
+    var AmazonBannerTop = true
     var AdNumber = 1
     let data = Data()
     
@@ -102,7 +101,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 {
                     if(!AmazonBannerTop)
                     {
-                        amazonLocationY = (viewController.view?.bounds.height)! - 50
+                        amazonLocationY = (viewController.view?.bounds.height)! - 100
                     }
                     //set up amazon full
                     interstitialAmazon = AmazonAdInterstitial()
@@ -140,7 +139,6 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             
             
             self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerAd30:", userInfo: nil, repeats: true)
-            self.timerAd60 = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: "timerAd60:", userInfo: nil, repeats: true)
             
             
         }
@@ -337,33 +335,6 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         
         
     }
-    
-    func timerAd60(timer:NSTimer) {
-        
-        if(Utility.CanShowAd())
-        {
-            if(Utility.showOtherAd)
-            {
-                if(Utility.isAd5)
-                {
-                    showAdcolony()
-                    
-                }
-                if(Utility.isAd9)
-                {
-                    showAppLovin()
-                    
-                }
-            }
-            
-            
-        }
-        
-        
-        
-    }
-
-    
     
     
     func timerVPNMethodAutoAd(timer:NSTimer) {
