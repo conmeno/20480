@@ -83,13 +83,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1AC563DD193DCE6000402286 /* Game10240.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game10240.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC563DD193DCE6000402286 /* Game20480.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game20480.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC563E1193DCE6000402286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC563E2193DCE6000402286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AC563E4193DCE6000402286 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1AC563E7193DCE6000402286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AC563E9193DCE6000402286 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1AC563EF193DCE6000402286 /* Game10240Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Game10240Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC563EF193DCE6000402286 /* Game20480.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Game20480.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC563F4193DCE6000402286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC563F5193DCE6000402286 /* swift_2048Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_2048Tests.swift; sourceTree = "<group>"; };
 		1AE339B1193DCF110081FFA4 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameModel.swift; path = Models/GameModel.swift; sourceTree = "<group>"; };
@@ -237,8 +237,8 @@
 		1AC563DE193DCE6000402286 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AC563DD193DCE6000402286 /* Game10240.app */,
-				1AC563EF193DCE6000402286 /* Game10240Tests.xctest */,
+				1AC563DD193DCE6000402286 /* Game20480.app */,
+				1AC563EF193DCE6000402286 /* Game20480.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,9 +326,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1AC563DC193DCE6000402286 /* Game10240 */ = {
+		1AC563DC193DCE6000402286 /* Game20480 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "Game10240" */;
+			buildConfigurationList = 1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "Game20480" */;
 			buildPhases = (
 				1AC563D9193DCE6000402286 /* Sources */,
 				1AC563DA193DCE6000402286 /* Frameworks */,
@@ -338,14 +338,14 @@
 			);
 			dependencies = (
 			);
-			name = Game10240;
+			name = Game20480;
 			productName = "swift-2048";
-			productReference = 1AC563DD193DCE6000402286 /* Game10240.app */;
+			productReference = 1AC563DD193DCE6000402286 /* Game20480.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1AC563EE193DCE6000402286 /* Game10240Tests */ = {
+		1AC563EE193DCE6000402286 /* Game20480Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "Game10240Tests" */;
+			buildConfigurationList = 1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "Game20480Tests" */;
 			buildPhases = (
 				1AC563EB193DCE6000402286 /* Sources */,
 				1AC563EC193DCE6000402286 /* Frameworks */,
@@ -357,9 +357,9 @@
 				1AC563F1193DCE6000402286 /* PBXTargetDependency */,
 				1AE8BEF8193F1090007592BA /* PBXTargetDependency */,
 			);
-			name = Game10240Tests;
+			name = Game20480Tests;
 			productName = "swift-2048Tests";
-			productReference = 1AC563EF193DCE6000402286 /* Game10240Tests.xctest */;
+			productReference = 1AC563EF193DCE6000402286 /* Game20480.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -388,7 +388,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1AC563D8193DCE6000402286 /* Build configuration list for PBXProject "Game10240" */;
+			buildConfigurationList = 1AC563D8193DCE6000402286 /* Build configuration list for PBXProject "Game20480" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -401,8 +401,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1AC563DC193DCE6000402286 /* Game10240 */,
-				1AC563EE193DCE6000402286 /* Game10240Tests */,
+				1AC563DC193DCE6000402286 /* Game20480 */,
+				1AC563EE193DCE6000402286 /* Game20480Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -470,12 +470,12 @@
 /* Begin PBXTargetDependency section */
 		1AC563F1193DCE6000402286 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1AC563DC193DCE6000402286 /* Game10240 */;
+			target = 1AC563DC193DCE6000402286 /* Game20480 */;
 			targetProxy = 1AC563F0193DCE6000402286 /* PBXContainerItemProxy */;
 		};
 		1AE8BEF8193F1090007592BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1AC563DC193DCE6000402286 /* Game10240 */;
+			target = 1AC563DC193DCE6000402286 /* Game20480 */;
 			targetProxy = 1AE8BEF7193F1090007592BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -597,8 +597,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "phuongnguyen1024.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Game10240;
+				PRODUCT_BUNDLE_IDENTIFIER = phuongnt20480.Game20480;
+				PRODUCT_NAME = Game20480;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift-2048/AdManager/Bridging-header.h";
 			};
@@ -629,8 +629,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "phuongnguyen1024.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = Game10240;
+				PRODUCT_BUNDLE_IDENTIFIER = phuongnt20480.Game20480;
+				PRODUCT_NAME = Game20480;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift-2048/AdManager/Bridging-header.h";
 			};
@@ -653,9 +653,9 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "f3nghuang.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Game10240Tests;
+				PRODUCT_NAME = Game20480;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Game10240.app/Game10240";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Game20480.app/Game20480";
 			};
 			name = Debug;
 		};
@@ -672,16 +672,16 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "f3nghuang.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Game10240Tests;
+				PRODUCT_NAME = Game20480;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Game10240.app/Game10240";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Game20480.app/Game20480";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1AC563D8193DCE6000402286 /* Build configuration list for PBXProject "Game10240" */ = {
+		1AC563D8193DCE6000402286 /* Build configuration list for PBXProject "Game20480" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AC563F7193DCE6000402286 /* Debug */,
@@ -690,7 +690,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "Game10240" */ = {
+		1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "Game20480" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AC563FA193DCE6000402286 /* Debug */,
@@ -699,7 +699,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "Game10240Tests" */ = {
+		1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "Game20480Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AC563FD193DCE6000402286 /* Debug */,
