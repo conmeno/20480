@@ -103,6 +103,10 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                     {
                         amazonLocationY = (viewController.view?.bounds.height)! - 100
                     }
+                    else
+                    {
+                    amazonLocationY = 20
+                    }
                     //set up amazon full
                     interstitialAmazon = AmazonAdInterstitial()
                     interstitialAmazon.delegate = self
