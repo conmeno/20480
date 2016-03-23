@@ -42,6 +42,8 @@ class AdManagerView: UIViewController
     
     @IBOutlet weak var sw9: UISwitch!
     
+        @IBOutlet weak var CheckAdOnline: UISwitch!
+    
     @IBOutlet weak var textDevice: UITextView!
     
     @IBAction func sw1Action(sender: UISwitch) {
@@ -102,6 +104,11 @@ class AdManagerView: UIViewController
         Utility.isAd9 = sender.on
     }
 
+    @IBAction func CheckAdOnlineAction(sender: UISwitch) {
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"adOnline")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        Utility.CheckOnline = sender.on
+    }
     
     
     override func viewDidLoad() {
@@ -211,6 +218,7 @@ class AdManagerView: UIViewController
          sw7.on = Utility.isAd7
          sw8.on = Utility.isAd8
         sw9.on = Utility.isAd9
+        CheckAdOnline.on = Utility.CheckOnline
         
     }
     
