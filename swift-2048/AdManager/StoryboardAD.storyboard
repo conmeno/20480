@@ -68,7 +68,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="zN6-Sm-Og7"/>
+                                    <constraint firstAttribute="height" constant="150" id="zN6-Sm-Og7">
+                                        <variation key="widthClass=compact" constant="90"/>
+                                    </constraint>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -174,6 +176,16 @@
                                     <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="NnR-2Y-enT"/>
                                 </connections>
                             </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-vQ-Ta5">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="351" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="CheckAdOnlineAction:" destination="mQ7-qi-MMn" eventType="valueChanged" id="Vt6-cf-wPj"/>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="fnu-gm-ya9"/>
+                                </connections>
+                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Applovin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygi-vI-sfP">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -201,6 +213,15 @@
                                     <action selector="sw9Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="DrV-pM-EzK"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Ad Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1P-zF-qHq">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="83" y="356" width="166" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -224,9 +245,11 @@
                                 <exclude reference="IJ1-Lu-gTx"/>
                                 <exclude reference="2yc-fA-ibW"/>
                                 <exclude reference="jPY-Lm-igu"/>
+                                <exclude reference="8HN-vQ-Ta5"/>
                                 <exclude reference="ygi-vI-sfP"/>
                                 <exclude reference="B9w-ww-hV3"/>
                                 <exclude reference="16D-cy-ecX"/>
+                                <exclude reference="J1P-zF-qHq"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0se-Mu-mSP"/>
@@ -250,9 +273,11 @@
                                 <include reference="IJ1-Lu-gTx"/>
                                 <include reference="2yc-fA-ibW"/>
                                 <include reference="jPY-Lm-igu"/>
+                                <include reference="8HN-vQ-Ta5"/>
                                 <include reference="ygi-vI-sfP"/>
                                 <include reference="B9w-ww-hV3"/>
                                 <include reference="16D-cy-ecX"/>
+                                <include reference="J1P-zF-qHq"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0se-Mu-mSP"/>
@@ -263,6 +288,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="CheckAdOnline" destination="8HN-vQ-Ta5" id="hVq-bL-RJH"/>
                         <outlet property="sw1" destination="wOF-1C-lwA" id="Z4c-B2-2Sh"/>
                         <outlet property="sw2" destination="B9w-ww-hV3" id="nI1-bu-eMa"/>
                         <outlet property="sw3" destination="RsR-Mn-Med" id="Xug-em-pur"/>

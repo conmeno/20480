@@ -15,12 +15,12 @@ class Utility {
     static var isAd3 = false//auto chartboost
     static var isAd4 = false//admob banner //ok
     static var isAd5 = false//adcolony      //ok
-    static var isAd6 = false//amazon     //ok
+    static var isAd6 = true//amazon     //ok
     static var isAd7 = false//REvmob    //ok
     static var isAd8 = false//VungLe    /not show
-    static var isAd9 = true//Applovin  //ok
+    static var isAd9 = false//Applovin  //ok
     
-    
+    static var CheckOnline = true // on/off check ad online
     static var GBannerAdUnit: String = ""
     static var GFullAdUnit: String = ""
     static var ChartboostAppID: String = ""
@@ -127,17 +127,24 @@ class Utility {
             
         }
         
+        if(NSUserDefaults.standardUserDefaults().objectForKey("adOnline") != nil)
+        {
+            Utility.CheckOnline = NSUserDefaults.standardUserDefaults().objectForKey("adOnline") as! Bool
+            
+        }
+        
         
         
         
         
         //GEt Ad unit online
         
+        if(Utility.CheckOnline)
+        {
         
-        
-        let xmlSetup = ADXML()
-        xmlSetup.LoadXML()
-        
+            let xmlSetup = ADXML()
+            xmlSetup.LoadXML()
+        }
         SetupAdOnline()
         
         

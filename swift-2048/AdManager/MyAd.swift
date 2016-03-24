@@ -31,10 +31,10 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var isFirsAdmob = false
     var isFirstChart = false
     var isApplovinShowed = false
-    var amazonLocationY:CGFloat = -40.0
+    var amazonLocationY:CGFloat = 20.0
     var AdmobLocationY: CGFloat = 20
     var AdmobBannerTop = false
-    var AmazonBannerTop = false
+    var AmazonBannerTop = true
     var AdNumber = 1
     let data = Data()
     
