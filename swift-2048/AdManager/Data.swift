@@ -13,7 +13,7 @@ class Data {
     //10240 game
     
     //URL setup online
-    let AdURL: String = "http://www.tony.somee.com/10240.txt"
+    let AdURL: String = "http://www.tony.somee.com/10240-v2.txt"
     
     //google
     let gBanner : String = "ca-app-pub-1359745315754901/5585356073"
@@ -36,6 +36,9 @@ class Data {
     
     //Vungle ID
     let VungleID: String = "1050584579"
+    
+    //startapp
+    let StartAppID: String = "202270741"
     
     
     

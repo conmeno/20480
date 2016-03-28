@@ -11,31 +11,26 @@ import Foundation
 class Utility {
     
     static var isAd1 = false//admob full
-    static var isAd2 = false//charbootst
-    static var isAd3 = false//auto chartboost
-    static var isAd4 = true//admob banner //ok
-    static var isAd5 = true//adcolony      //ok
-    static var isAd6 = true//amazon     //ok
-    static var isAd7 = false//REvmob    //ok
-    static var isAd8 = false//VungLe    /not show
-    static var isAd9 = false//Applovin  //ok
+    static var isAd2 = true//Admob Banner
+    static var isAd3 = true//Amazon
+    static var isAd4 = true//Adcolony
+   
+    static var isAd5 = false//start app
+    static var isAd6 = false//revmob
     
     static var CheckOnline = true // on/off check ad online
     static var GBannerAdUnit: String = ""
     static var GFullAdUnit: String = ""
-    static var ChartboostAppID: String = ""
-    static var ChartboostSign: String = ""
+    
     static var AdcolonyAppID: String = ""
     static var AdcolonyZoneID: String = ""
-    
+    static var AdmobTestDeviceID: String = ""
+    static var RevmobID: String = ""
     static var Amazonkey = ""
-    
-    static var RevmobID = ""
-    static var VungleID = ""
     
     static var isStopAdmobAD = false
     
-    static var showOtherAd = true //showAd (ngoai tru Admob Banner)
+    static var showOtherAd = false //showAd (ngoai tru Admob Banner)
     static func OpenView(viewName: String, view: UIViewController)
     {
         let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
@@ -52,27 +47,24 @@ class Utility {
         
         GBannerAdUnit = data.gBanner
         GFullAdUnit = data.gFull
-        ChartboostAppID = data.cAppID
-        ChartboostSign = data.cSign
+      
         Amazonkey = data.AmazonKey
         
         AdcolonyAppID = data.AdcolonyAppID
         AdcolonyZoneID = data.AdcolonyZoneID
-        
-        
-        VungleID = data.VungleID
+        AdmobTestDeviceID = data.TestDeviceID
         RevmobID = data.RevmobID
         
         //get edit ad unit ID for Admob
         
-        //ad1 admob
+        //ad1 admob full
         if(NSUserDefaults.standardUserDefaults().objectForKey("ad1") != nil)
         {
             isAd1 = NSUserDefaults.standardUserDefaults().objectForKey("ad1") as! Bool
             
         }
         
-        //ad2 charboost
+        //ad2 banner
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("ad2") != nil)
         {
@@ -95,42 +87,19 @@ class Utility {
             
         }
         
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad5") != nil)
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad") != nil)
         {
-            isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("ad5") as! Bool
+            showOtherAd = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad") as! Bool
             
-        }
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad6") != nil)
-        {
-            isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("ad6") as! Bool
-            
-        }
-        
-        
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad7") != nil)
-        {
-            isAd7 = NSUserDefaults.standardUserDefaults().objectForKey("ad7") as! Bool
-            
-        }
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad8") != nil)
-        {
-            isAd8 = NSUserDefaults.standardUserDefaults().objectForKey("ad8") as! Bool
-            
-        }
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad9") != nil)
-        {
-            isAd9 = NSUserDefaults.standardUserDefaults().objectForKey("ad9") as! Bool
+            print( NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad"))
             
         }
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("adOnline") != nil)
         {
             Utility.CheckOnline = NSUserDefaults.standardUserDefaults().objectForKey("adOnline") as! Bool
-            
+            print(NSUserDefaults.standardUserDefaults().objectForKey("adOnline"))
         }
         
         
@@ -141,61 +110,20 @@ class Utility {
         
         if(Utility.CheckOnline)
         {
-        
+            
             let xmlSetup = ADXML()
             xmlSetup.LoadXML()
         }
         SetupAdOnline()
         
-        
-        
-        //setup ad manual
-        //SetupAdManual()
-        
-        
-        
+        if(Utility.isCDMA())
+        {
+            showOtherAd = true
+        }
         
         
     }
-    //    static func SetupAdManual()
-    //    {
-    //
-    //        if(isAd7)
-    //        {
-    //            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") != nil)
-    //            {
-    //                GBannerAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobBannerID") as! String
-    //
-    //            }
-    //
-    //            if(NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") != nil)
-    //            {
-    //                GFullAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("AdmobFullID") as! String
-    //            }
-    //        }
-    //
-    //
-    //        //get edited appid & sign from Chartboost
-    //
-    //        if(isAd8)
-    //        {
-    //            if(NSUserDefaults.standardUserDefaults().objectForKey("CAppID") != nil)
-    //            {
-    //                ChartboostAppID = NSUserDefaults.standardUserDefaults().objectForKey("CAppID") as! String
-    //
-    //            }
-    //
-    //            if(NSUserDefaults.standardUserDefaults().objectForKey("CSign") != nil)
-    //            {
-    //                ChartboostSign = NSUserDefaults.standardUserDefaults().objectForKey("CSign") as! String
-    //
-    //            }
-    //
-    //
-    //        }
-    //
-    //
-    //    }
+
     
     static func SetupAdOnline()
     {
@@ -212,24 +140,7 @@ class Utility {
             GFullAdUnit = NSUserDefaults.standardUserDefaults().objectForKey("gFullOnline") as! String
         }
         
-        
-        //end google
-        
-        //get edited appid & sign from Chartboost
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("cappidOnline") != nil)
-        {
-            ChartboostAppID = NSUserDefaults.standardUserDefaults().objectForKey("cappidOnline") as! String
-            
-        }
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("csignOnline") != nil)
-        {
-            ChartboostSign = NSUserDefaults.standardUserDefaults().objectForKey("csignOnline") as! String
-            
-        }
-        
-        //get edited appid & sign from Adcolony
+              //get edited appid & sign from Adcolony
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("adcolonyAppID") != nil)
         {
@@ -243,22 +154,7 @@ class Utility {
             
         }
         
-        //get revmob online id
-        if(NSUserDefaults.standardUserDefaults().objectForKey("revmobid") != nil)
-        {
-            RevmobID = NSUserDefaults.standardUserDefaults().objectForKey("revmobid") as! String
-            
-        }
-        
-        
-        //get vungle online id
-        if(NSUserDefaults.standardUserDefaults().objectForKey("vungleid") != nil)
-        {
-            VungleID = NSUserDefaults.standardUserDefaults().objectForKey("vungleid") as! String
-            
-        }
-        
-        
+               
         //get amazon online id
         if(NSUserDefaults.standardUserDefaults().objectForKey("amazon") != nil)
         {
@@ -267,9 +163,9 @@ class Utility {
         }
         
         //get CDMA status
-        if(NSUserDefaults.standardUserDefaults().objectForKey("showOtherAd") != nil)
+        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") != nil)
         {
-            let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("showOtherAd") as! String
+            let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") as! String
             if(tempCDMA == "true")
             {
                 showOtherAd = true
@@ -295,20 +191,7 @@ class Utility {
         return false
     }
     
-    //    static func setupRevmob()
-    //    {
-    //        //Revmode
-    //        let completionBlock: () -> Void = {
-    //            RevMobAds.session().showFullscreen();
-    //        }
-    //        let errorBlock: (NSError!) -> Void = {error in
-    //            // check the error
-    //            print(error);
-    //        }
-    //        RevMobAds.startSessionWithAppID("56d28338ac1911bb0a7fd8f8",
-    //            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
-    //
-    //    }
+ 
     
     static func setupRevmob()
     {

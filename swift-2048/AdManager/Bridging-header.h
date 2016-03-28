@@ -7,7 +7,7 @@
  
 
 #import <Foundation/Foundation.h>
-#import <Chartboost/Chartboost.h>
+
 #import <CommonCrypto/CommonDigest.h>
 #import <AdSupport/AdSupport.h> 
 #import <UIKit/UIKit.h>
@@ -18,29 +18,10 @@
 #import <AmazonAd/AmazonAdView.h>
 #import <AmazonAd/AmazonAdError.h>
 #import <AmazonAd/AmazonAdOptions.h>
-#import <RevMobAds/RevMobAds.h>
+ #import <RevMobAds/RevMobAds.h>
 #import <AdColony/AdColony.h>
- #import <VungleSDK/VungleSDK.h>
-// Core SDK
-#import "ALErrorCodes.h"
-#import "ALSdk.h"
-#import "ALSdkSettings.h"
-#import "ALTargetingData.h"
-#import "ALPostbackService.h"
-#import "ALPostbackDelegate.h"
-// Standard Ads
-#import "ALAd.h"
-#import "ALAdDisplayDelegate.h"
-#import "ALAdLoadDelegate.h"
-#import "ALAdRewardDelegate.h"
-#import "ALAdService.h"
-#import "ALAdSize.h"
-#import "ALAdType.h"
-#import "ALAdUpdateDelegate.h"
-#import "ALAdVideoPlaybackDelegate.h"
-#import "ALAdView.h"
-#import "ALIncentivizedInterstitialAd.h"
-#import "ALInterstitialAd.h"
+// #import <VungleSDK/VungleSDK.h>
+
 
 #include <ifaddrs.h>
 #import "cclass.h"

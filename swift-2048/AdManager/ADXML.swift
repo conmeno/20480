@@ -47,14 +47,34 @@ class ADXML: NSObject, NSXMLParserDelegate
         
     if(string != "")
     {
+        
+        //Show Ad  status
+        if(currentNode == "showOtherAd")
+        {
+            print("showOtherAd status " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"show-other-ad-online")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+         
+
+        }
+
+        
         //begin google
-        if(currentNode == "gbanner")
+        else if(currentNode == "gbanner")
         {
             print("Banner gg " + string)
             
             //save to Iphone user
             
             NSUserDefaults.standardUserDefaults().setObject(string, forKey:"gBannerOnline")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            //chi load xml online lan dau
+            //            // sau do set chi so online = false
+            NSUserDefaults.standardUserDefaults().setObject(false, forKey:"adOnline")
             NSUserDefaults.standardUserDefaults().synchronize()
  
         }else if(currentNode == "gfull")
@@ -68,24 +88,24 @@ class ADXML: NSObject, NSXMLParserDelegate
         }
         //end google
         //begin chartboost
-        else if(currentNode == "cappid")
-        {
-            print("chartboost App ID" + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"cappidOnline")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
-        else if(currentNode == "csign")
-        {
-            print("chartboost sign" + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"csignOnline")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
+//        else if(currentNode == "cappid")
+//        {
+//            print("chartboost App ID" + string)
+//            
+//            //save to Iphone user
+//            
+//            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"cappidOnline")
+//            NSUserDefaults.standardUserDefaults().synchronize()
+//        }
+//        else if(currentNode == "csign")
+//        {
+//            print("chartboost sign" + string)
+//            
+//            //save to Iphone user
+//            
+//            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"csignOnline")
+//            NSUserDefaults.standardUserDefaults().synchronize()
+//        }
         //end chartbosot
         
         //begin Adcolony
@@ -109,26 +129,26 @@ class ADXML: NSObject, NSXMLParserDelegate
         }
         //end adcolony
         //read revmob
-        else if(currentNode == "revmobid")
-        {
-            print("revmobid " + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"revmobid")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
+//        else if(currentNode == "revmobid")
+//        {
+//            print("revmobid " + string)
+//            
+//            //save to Iphone user
+//            
+//            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"revmobid")
+//            NSUserDefaults.standardUserDefaults().synchronize()
+//        }
         
             //read revmob
-        else if(currentNode == "vungleid")
-        {
-            print("vungleid " + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"vungleid")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
+//        else if(currentNode == "vungleid")
+//        {
+//            print("vungleid " + string)
+//            
+//            //save to Iphone user
+//            
+//            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"vungleid")
+//            NSUserDefaults.standardUserDefaults().synchronize()
+//        }
             //read revmob
         else if(currentNode == "amazon")
         {
@@ -140,17 +160,7 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         
-            //Show Ad  status
-        else if(currentNode == "showOtherAd")
-        {
-            print("showOtherAd status " + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"showOtherAd")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
-
+        
         
         
         
