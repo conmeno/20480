@@ -32,7 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
         }
         
-         
+         if(Utility.isAd5)
+         {
+        
+            let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
+            sdk.appID = Utility.StartAppAppID
+            sdk.devID = Utility.StartAppAccountID
+            sdk.showSplashAd()
+        }
 
         
         

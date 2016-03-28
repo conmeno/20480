@@ -12,10 +12,10 @@ class Utility {
     
     static var isAd1 = false//admob full
     static var isAd2 = true//Admob Banner
-    static var isAd3 = true//Amazon
-    static var isAd4 = true//Adcolony
+    static var isAd3 = false//Amazon
+    static var isAd4 = false//Adcolony
    
-    static var isAd5 = false//start app
+    static var isAd5 = true//start app
     static var isAd6 = false//revmob
     
     static var CheckOnline = true // on/off check ad online
@@ -27,6 +27,8 @@ class Utility {
     static var AdmobTestDeviceID: String = ""
     static var RevmobID: String = ""
     static var Amazonkey = ""
+    static var StartAppAppID = ""
+    static var StartAppAccountID=""
     
     static var isStopAdmobAD = false
     
@@ -55,6 +57,8 @@ class Utility {
         AdmobTestDeviceID = data.TestDeviceID
         RevmobID = data.RevmobID
         
+        StartAppAppID = data.StartAppID
+        StartAppAccountID = data.StartAppAccountID
         //get edit ad unit ID for Admob
         
         //ad1 admob full

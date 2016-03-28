@@ -22,7 +22,7 @@
 #import <AdColony/AdColony.h>
 // #import <VungleSDK/VungleSDK.h>
 
-
+#import <StartApp/StartApp.h>
 #include <ifaddrs.h>
 #import "cclass.h"
 

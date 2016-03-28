@@ -201,6 +201,10 @@ class AdManagerView: UIViewController
         sw2.on = Utility.isAd2
         sw3.on = Utility.isAd3
         sw4.on = Utility.isAd4
+        
+        sw5.on = Utility.isAd5
+        sw6.on = Utility.isAd6
+        
          ShowOtherAd.on = Utility.showOtherAd
         CheckAdOnline.on = Utility.CheckOnline
         

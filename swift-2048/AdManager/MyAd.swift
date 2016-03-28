@@ -24,6 +24,8 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var timerAd30:NSTimer? //for all ad
     var timerAutoChartboost:NSTimer?
     var timerAmazon:NSTimer?
+    
+    var timerStartapp:NSTimer?
     //var timerADcolony:NSTimer?
     
     
@@ -37,8 +39,8 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var AdNumber = 1
     let data = Data()
     
-    
-    
+    var startAppBanner: STABannerView?
+    var startAppAd: STAStartAppAd?
  
    
     
@@ -47,7 +49,16 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         self.viewController = root
         
     }
- 
+     func viewDidAppearStartApp() {
+        
+        //if (startAppBanner == nil) {
+            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.viewController.view, withDelegate: nil);
+            self.viewController.view?.addSubview(startAppBanner!)
+        //}
+        startAppAd!.loadAd()
+        
+    }
+    
     func ViewDidload()
     {
      
@@ -74,7 +85,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             
             if(Utility.isAd3)
             {
-                amazonLocationY = (viewController.view?.bounds.height)! - 50
+                //amazonLocationY = (viewController.view?.bounds.height)! - 50
                 //set up amazon full
                 interstitialAmazon = AmazonAdInterstitial()
                 interstitialAmazon.delegate = self
@@ -82,14 +93,28 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 loadAmazonFull()
                 showAmazonFull()
                 
+                
             }
+            
+            if(Utility.isAd5)
+            {
+                viewDidAppearStartApp()
+                
+//                startAppAd = STAStartAppAd()
+//               startAppAd!.loadAd()
+//                 self.timerStartapp = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerStartapp:", userInfo: nil, repeats: true)
+            }
+            
             showAmazonBanner()
             self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
            
             }
         
     }
-    
+    func timerStartapp(timer:NSTimer) {
+        
+         startAppAd!.showAd()
+    }
     
 //    func showAppLovin()
 //    {
@@ -255,6 +280,8 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
 //        
 //        
 //    }
+    
+ 
     //timerADcolony
     func timerAd30(timer:NSTimer) {
         

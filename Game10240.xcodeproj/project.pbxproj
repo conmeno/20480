@@ -60,6 +60,9 @@
 		967AC2281C9170A300950D31 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 967AC2271C9170A300950D31 /* libsqlite3.tbd */; };
 		967AC22C1C927EE400950D31 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967AC22B1C927EE400950D31 /* RevMobAds.framework */; };
 		96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */; };
+		96E1FCBA1CA9231D00A98394 /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96E1FCB81CA9231D00A98394 /* StartApp.bundle */; };
+		96E1FCBD1CA9234900A98394 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E1FCBC1CA9234900A98394 /* libz.tbd */; };
+		96E1FCC21CA9281500A98394 /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E1FCC11CA9281500A98394 /* StartApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +140,9 @@
 		967AC2271C9170A300950D31 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		967AC22B1C927EE400950D31 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		96E1FCB81CA9231D00A98394 /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
+		96E1FCBC1CA9234900A98394 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		96E1FCC11CA9281500A98394 /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +150,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E1FCBD1CA9234900A98394 /* libz.tbd in Frameworks */,
 				84A794211BB52B58007E4AE1 /* MediaPlayer.framework in Frameworks */,
 				967AC2281C9170A300950D31 /* libsqlite3.tbd in Frameworks */,
+				96E1FCC21CA9281500A98394 /* StartApp.framework in Frameworks */,
 				96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */,
 				84A794341BB52B97007E4AE1 /* EventKit.framework in Frameworks */,
 				84A480811BD0D231006F2BBB /* AmazonAd.framework in Frameworks */,
@@ -188,6 +196,9 @@
 		1AC563D4193DCE6000402286 = {
 			isa = PBXGroup;
 			children = (
+				96E1FCC11CA9281500A98394 /* StartApp.framework */,
+				96E1FCBC1CA9234900A98394 /* libz.tbd */,
+				96E1FCB81CA9231D00A98394 /* StartApp.bundle */,
 				967AC22B1C927EE400950D31 /* RevMobAds.framework */,
 				967AC2271C9170A300950D31 /* libsqlite3.tbd */,
 				84A794361BB534E4007E4AE1 /* Chartboost.framework */,
@@ -402,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B666B141C82BA1900B936B8 /* StoryboardAD.storyboard in Resources */,
+				96E1FCBA1CA9231D00A98394 /* StartApp.bundle in Resources */,
 				1AC563E8193DCE6000402286 /* Main.storyboard in Resources */,
 				84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */,
 				1AC563EA193DCE6000402286 /* Images.xcassets in Resources */,
