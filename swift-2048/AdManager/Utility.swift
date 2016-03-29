@@ -183,6 +183,19 @@ class Utility {
             
         }
         
+        //get startapp online id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("startappID") != nil)
+        {
+            StartAppAppID = NSUserDefaults.standardUserDefaults().objectForKey("startappID") as! String
+            
+        }
+        if(NSUserDefaults.standardUserDefaults().objectForKey("startAccID") != nil)
+        {
+            StartAppAccountID = NSUserDefaults.standardUserDefaults().objectForKey("startAccID") as! String
+            
+        }
+        
+        
         //get CDMA status
         if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") != nil)
         {
@@ -214,50 +227,50 @@ class Utility {
     
  
     
-    static func setupRevmob()
-    {
-        
-        let completionBlock: () -> Void = {
-            RevMobAds.session().showFullscreen()
-            
-            self.RevmobFull()
-            self.RevmobVideo()
-            RevmobPopup()
-            self.RevmobBanner()
-        }
-        let errorBlock: (NSError!) -> Void = {error in
-            // check the error
-            print(error);
-        }
-        RevMobAds.startSessionWithAppID(Utility.RevmobID,
-            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
-        
-    }
-    static func RevmobBanner()
-    {
-        let banner = RevMobAds.session()?.bannerView()
-        banner?.frame = CGRect(x: 0,y: 70,width: 320,height: 50);
-        
-        RevMobAds.session()?.showBanner();
-    }
-    static func RevmobFull()
-    {
-        RevMobAds.session()?.showFullscreen();
-    }
-    static func RevmobPopup()
-    {
-        RevMobAds.session()?.showPopup();
-        
-    }
-    static func RevmobVideo()
-    {
-        //To load
-        RevMobAds.session()?.fullscreen().loadVideo()
-        
-        //To show
-        RevMobAds.session()?.fullscreen().showVideo()
-    }
-    
+//    static func setupRevmob()
+//    {
+//        
+//        let completionBlock: () -> Void = {
+//            RevMobAds.session().showFullscreen()
+//            
+//            self.RevmobFull()
+//            self.RevmobVideo()
+//            RevmobPopup()
+//            self.RevmobBanner()
+//        }
+//        let errorBlock: (NSError!) -> Void = {error in
+//            // check the error
+//            print(error);
+//        }
+//        RevMobAds.startSessionWithAppID(Utility.RevmobID,
+//            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
+//        
+//    }
+//    static func RevmobBanner()
+//    {
+//        let banner = RevMobAds.session()?.bannerView()
+//        banner?.frame = CGRect(x: 0,y: 70,width: 320,height: 50);
+//        
+//        RevMobAds.session()?.showBanner();
+//    }
+//    static func RevmobFull()
+//    {
+//        RevMobAds.session()?.showFullscreen();
+//    }
+//    static func RevmobPopup()
+//    {
+//        RevMobAds.session()?.showPopup();
+//        
+//    }
+//    static func RevmobVideo()
+//    {
+//        //To load
+//        RevMobAds.session()?.fullscreen().loadVideo()
+//        
+//        //To show
+//        RevMobAds.session()?.fullscreen().showVideo()
+//    }
+//    
     static func CanShowAd()->Bool
     {
         let abc = cclass()

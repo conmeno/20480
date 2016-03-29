@@ -13,33 +13,33 @@ class Data {
     //10240 game
     
     //URL setup online
-    let AdURL: String = "http://www.tony.somee.com/10240-v2.txt"
+    let AdURL: String = "http://www.tony.somee.com/5120-v2.txt"
     
     //google
-    let gBanner : String = "ca-app-pub-1359745315754901/5585356073"
-    let gFull : String = "ca-app-pub-1359745315754901/7062089278"
-    let TestDeviceID: String = "25229a4d09c90bcec58dec27036a470b"
+    let gBanner : String = "ca-app-pub-9901064082545929/2633959296"
+    let gFull : String = "ca-app-pub-9901064082545929/7064158890"
+    let TestDeviceID: String = ""
     
 
     //chartboost
     let cAppID: String = ""
     let cSign : String = ""
     //amazon
-    let AmazonKey: String = "f952dd60f8c14f7c9347ee495ae0a3ea"
+    let AmazonKey: String = ""
     
     //adcolony
-    let AdcolonyAppID: String = "appc21b928c354c44b9ae"
-    let AdcolonyZoneID: String = "vz00bc85ddf0c4471eba"
+    let AdcolonyAppID: String = ""
+    let AdcolonyZoneID: String = ""
     
     //revmob appID
-    let RevmobID: String = "56d28338ac1911bb0a7fd8f8"
+    let RevmobID: String = ""
     
     //Vungle ID
-    let VungleID: String = "1050584579"
+    let VungleID: String = ""
     
     //startapp
-    let StartAppID: String = "202270741"
-    let StartAppAccountID: String = "101741138"
+    let StartAppID: String = "202174021"
+    let StartAppAccountID: String = " 102803784"
     
     
     
