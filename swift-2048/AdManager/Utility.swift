@@ -12,10 +12,10 @@ class Utility {
     
     static var isAd1 = false//admob full
     static var isAd2 = true//Admob Banner
-    static var isAd3 = false//Amazon
-    static var isAd4 = false//Adcolony
+    static var isAd3 = true//Amazon
+    static var isAd4 = true//Adcolony
    
-    static var isAd5 = true//start app
+    static var isAd5 = false//start app
     static var isAd6 = false//revmob
     
     static var CheckOnline = true // on/off check ad online
@@ -90,6 +90,23 @@ class Utility {
             isAd4 = NSUserDefaults.standardUserDefaults().objectForKey("ad4") as! Bool
             
         }
+        
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("ad5") != nil)
+        {
+            isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("ad5") as! Bool
+            
+        }
+
+        
+        
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("ad6") != nil)
+        {
+            isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("ad6") as! Bool
+            
+        }
+
         
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad") != nil)

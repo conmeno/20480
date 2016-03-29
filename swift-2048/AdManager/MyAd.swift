@@ -52,10 +52,9 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
      func viewDidAppearStartApp() {
         
         //if (startAppBanner == nil) {
-            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, withView: self.viewController.view, withDelegate: nil);
+            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Top, withView: self.viewController.view, withDelegate: nil);
             self.viewController.view?.addSubview(startAppBanner!)
         //}
-        startAppAd!.loadAd()
         
     }
     
@@ -100,9 +99,11 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             {
                 viewDidAppearStartApp()
                 
-//                startAppAd = STAStartAppAd()
-//               startAppAd!.loadAd()
-//                 self.timerStartapp = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerStartapp:", userInfo: nil, repeats: true)
+                startAppAd = STAStartAppAd()
+               startAppAd!.loadAd()
+            self.timerStartapp = NSTimer.scheduledTimerWithTimeInterval(25, target: self, selector: "timerStartapp:", userInfo: nil, repeats: true)
+                
+                //startAppAd!.showAd()
             }
             
             showAmazonBanner()
@@ -114,6 +115,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     func timerStartapp(timer:NSTimer) {
         
          startAppAd!.showAd()
+        
     }
     
 //    func showAppLovin()

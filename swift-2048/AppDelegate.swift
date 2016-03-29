@@ -38,7 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
             sdk.appID = Utility.StartAppAppID
             sdk.devID = Utility.StartAppAccountID
-            sdk.showSplashAd()
+//            sdk.showSplashAd()
+//            sdk.
         }
 
         
