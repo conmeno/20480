@@ -12,8 +12,8 @@ class Utility {
     
     static var isAd1 = false//admob full
     static var isAd2 = true//Admob Banner
-    static var isAd3 = true//Amazon
-    static var isAd4 = true//Adcolony
+    static var isAd3 = false//Amazon
+    static var isAd4 = false//Adcolony
    
     static var isAd5 = false//start app
     static var isAd6 = false//revmob

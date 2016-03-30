@@ -10,7 +10,7 @@ import Foundation
 
 class Data {
     
-    //10240 game
+    //5120 game
     
     //URL setup online
     let AdURL: String = "http://www.tony.somee.com/5120-v2.txt"
@@ -25,11 +25,11 @@ class Data {
     let cAppID: String = ""
     let cSign : String = ""
     //amazon
-    let AmazonKey: String = ""
+    let AmazonKey: String = "adb769b819be42f6b9cc3eb404e41dae"
     
     //adcolony
-    let AdcolonyAppID: String = ""
-    let AdcolonyZoneID: String = ""
+    let AdcolonyAppID: String = "app47cc1fcdfe14451a8e"
+    let AdcolonyZoneID: String = "vz4455b1888a13410c83"
     
     //revmob appID
     let RevmobID: String = ""

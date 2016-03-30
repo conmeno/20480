@@ -582,7 +582,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
 				);
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/applovin/headers";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "swift-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -614,7 +614,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
 				);
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/applovin/headers";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "swift-2048/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

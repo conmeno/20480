@@ -61,11 +61,12 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     func ViewDidload()
     {
      
-        if(Utility.isCDMA())
-        {
-            amazonLocationY = (viewController.view?.bounds.height)! - 50
-        }
-        
+//        if(Utility.isCDMA())
+//        {
+//            amazonLocationY = (viewController.view?.bounds.height)! - 50
+//        }
+        amazonLocationY = (viewController.view?.bounds.height)!
+
         if(Utility.CanShowAd())
         {
             if(Utility.isAd1)

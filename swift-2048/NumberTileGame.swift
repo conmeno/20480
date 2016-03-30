@@ -274,7 +274,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
   func followUp() {
     assert(model != nil)
     let m = model!
-    let (userWon, winningCoords) = m.userHasWon()
+    let (userWon, _) = m.userHasWon()
     if userWon {
       // TODO: alert delegate we won
       let alertView = UIAlertView()
