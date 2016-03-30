@@ -580,7 +580,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "swift-2048/Info.plist";
@@ -589,7 +588,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/applovin",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
@@ -612,7 +610,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "swift-2048/Info.plist";
@@ -621,7 +618,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/applovin",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";

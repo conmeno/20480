@@ -39,7 +39,7 @@ class Data {
     
     //startapp
     let StartAppID: String = "202174021"
-    let StartAppAccountID: String = " 102803784"
+    let StartAppAccountID: String = "102803784"
     
     
     
