@@ -58,7 +58,6 @@
 		84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C81BB9431700FDAD49 /* 6666.png */; };
 		96722F181C86C6D7008ACA05 /* ADXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96722F171C86C6D7008ACA05 /* ADXML.swift */; };
 		967AC2281C9170A300950D31 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 967AC2271C9170A300950D31 /* libsqlite3.tbd */; };
-		967AC22C1C927EE400950D31 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967AC22B1C927EE400950D31 /* RevMobAds.framework */; };
 		96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */; };
 		96E1FCBA1CA9231D00A98394 /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96E1FCB81CA9231D00A98394 /* StartApp.bundle */; };
 		96E1FCBD1CA9234900A98394 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E1FCBC1CA9234900A98394 /* libz.tbd */; };
@@ -138,7 +137,6 @@
 		84B5A8C81BB9431700FDAD49 /* 6666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6666.png; sourceTree = "<group>"; };
 		96722F171C86C6D7008ACA05 /* ADXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADXML.swift; path = AdManager/ADXML.swift; sourceTree = "<group>"; };
 		967AC2271C9170A300950D31 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		967AC22B1C927EE400950D31 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		96E1FCB81CA9231D00A98394 /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
 		96E1FCBC1CA9234900A98394 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -165,7 +163,6 @@
 				84A794291BB52B74007E4AE1 /* CFNetwork.framework in Frameworks */,
 				84A794271BB52B70007E4AE1 /* CoreAudio.framework in Frameworks */,
 				84A794251BB52B66007E4AE1 /* CoreLocation.framework in Frameworks */,
-				967AC22C1C927EE400950D31 /* RevMobAds.framework in Frameworks */,
 				84A794231BB52B5E007E4AE1 /* CoreTelephony.framework in Frameworks */,
 				84A7941F1BB52B4B007E4AE1 /* MessageUI.framework in Frameworks */,
 				84A7941D1BB52B46007E4AE1 /* QuartzCore.framework in Frameworks */,
@@ -199,7 +196,6 @@
 				96E1FCC11CA9281500A98394 /* StartApp.framework */,
 				96E1FCBC1CA9234900A98394 /* libz.tbd */,
 				96E1FCB81CA9231D00A98394 /* StartApp.bundle */,
-				967AC22B1C927EE400950D31 /* RevMobAds.framework */,
 				967AC2271C9170A300950D31 /* libsqlite3.tbd */,
 				84A794361BB534E4007E4AE1 /* Chartboost.framework */,
 				1B666B181C82C40500B936B8 /* AdColony.framework */,
