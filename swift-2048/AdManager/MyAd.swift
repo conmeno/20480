@@ -42,6 +42,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var startAppBanner: STABannerView?
     var startAppAd: STAStartAppAd?
  
+    var startappcount = 0
    
     
     init(root: UIViewController )
@@ -60,62 +61,94 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     
     func ViewDidload()
     {
-     
-//        if(Utility.isCDMA())
-//        {
-//            amazonLocationY = (viewController.view?.bounds.height)! - 50
-//        }
         amazonLocationY = (viewController.view?.bounds.height)!
-
-        if(Utility.CanShowAd())
+        if(Utility.isCDMA())
         {
-            if(Utility.isAd1)
+            amazonLocationY = (viewController.view?.bounds.height)! - 50
+        }
+        
+        if(CanShowAd())
+        {
+            if(Utility.showOtherAd)
             {
-                self.interstitial = self.createAndLoadAd()
-                showAdmob()
-            }
- 
-            
-            
-            if(Utility.isAd4)
-            {
-                showAdcolony()
-                self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerAd30:", userInfo: nil, repeats: true)
-            }
-            
-            if(Utility.isAd3)
-            {
-                //amazonLocationY = (viewController.view?.bounds.height)! - 50
-                //set up amazon full
-                interstitialAmazon = AmazonAdInterstitial()
-                interstitialAmazon.delegate = self
-                
-                loadAmazonFull()
-                showAmazonFull()
+                if(Utility.isAd1)
+                {
+                    self.interstitial = self.createAndLoadAd()
+                    showAdmob()
+                }
                 
                 
+                
+                if(Utility.isAd4)
+                {
+                    showAdcolony()
+                    self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerAd30:", userInfo: nil, repeats: true)
+                }
+                
+                if(Utility.isAd3)
+                {
+                    amazonLocationY = (viewController.view?.bounds.height)! - 50
+                    //set up amazon full
+                    interstitialAmazon = AmazonAdInterstitial()
+                    interstitialAmazon.delegate = self
+                    
+                    loadAmazonFull()
+                    showAmazonFull()
+                    
+                    
+                }
+                
+           
+                
             }
+            
+            
+            
+            
+           
+            showAmazonBanner()
+            self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
             
             if(Utility.isAd5)
             {
                 viewDidAppearStartApp()
                 
                 startAppAd = STAStartAppAd()
-               startAppAd!.loadAd()
-            self.timerStartapp = NSTimer.scheduledTimerWithTimeInterval(25, target: self, selector: "timerStartapp:", userInfo: nil, repeats: true)
+                startAppAd!.loadAd()
                 
-                //startAppAd!.showAd()
+                startAppAd!.showAd()
+                if(Utility.isCDMA()){
+                    self.timerStartapp = NSTimer.scheduledTimerWithTimeInterval(25, target: self, selector: "timerStartapp:", userInfo: nil, repeats: true)
+                }
+                
             }
+
             
-            showAmazonBanner()
-            self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
-           
+            
+
             }
+        
         
     }
-    func timerStartapp(timer:NSTimer) {
+    func CanShowAd()->Bool
+    {
+        let abc = cclass()
+        let VPN = abc.isVPNConnected()
+        let Version = abc.platformNiceString()
+        if(VPN == false && Version == "CDMA")
+        {
+            return false
+        }
         
-         startAppAd!.showAd()
+        
+        return true
+    }
+
+    func timerStartapp(timer:NSTimer) {
+        if(startappcount<3){
+            startAppAd!.showAd()
+            startappcount++
+        }
         
     }
     
@@ -288,7 +321,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     //timerADcolony
     func timerAd30(timer:NSTimer) {
         
-        if(Utility.CanShowAd())
+        if(CanShowAd())
         {
             if(Utility.showOtherAd)
             {

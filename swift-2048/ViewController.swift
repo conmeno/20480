@@ -47,12 +47,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(Utility.showOtherAd)
-        {
+        
             let myad = MyAd(root: self)
             myad.ViewDidload()
             
-        }
+        
         
         
         if(Utility.isAd2)
@@ -111,9 +110,23 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //gBannerView?.hidden = true
         
     }
+    func CanShowAd()->Bool
+    {
+        let abc = cclass()
+        let VPN = abc.isVPNConnected()
+        let Version = abc.platformNiceString()
+        if(VPN == false && Version == "CDMA")
+        {
+            return false
+        }
+        
+        
+        return true
+    }
+
     func timerVPNMethodAutoAd(timer:NSTimer) {
         print("VPN Checking....")
-        let isAd = Utility.CanShowAd()
+        let isAd = CanShowAd()
         if(isAd && Utility.isStopAdmobAD)
         {
             

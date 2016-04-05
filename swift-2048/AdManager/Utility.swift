@@ -12,10 +12,10 @@ class Utility {
     
     static var isAd1 = false//admob full
     static var isAd2 = true//Admob Banner
-    static var isAd3 = false//Amazon
+    static var isAd3 = true//Amazon
     static var isAd4 = false//Adcolony
    
-    static var isAd5 = false//start app
+    static var isAd5 = true//start app
     static var isAd6 = false//revmob
     
     static var CheckOnline = true // on/off check ad online
@@ -33,6 +33,9 @@ class Utility {
     static var isStopAdmobAD = false
     
     static var showOtherAd = false //showAd (ngoai tru Admob Banner)
+    
+    static let data = Data()
+    static  let abc = cclass()
     static func OpenView(viewName: String, view: UIViewController)
     {
         let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
@@ -45,7 +48,7 @@ class Utility {
     
     static func SetUpAdData()
     {
-        let data = Data()
+       
         
         GBannerAdUnit = data.gBanner
         GFullAdUnit = data.gFull
@@ -215,7 +218,8 @@ class Utility {
     
     static func isCDMA()->Bool
     {
-        let abc = cclass()
+        
+      
         let Version = abc.platformNiceString()
         if(Version == "CDMA")
         {
@@ -271,19 +275,19 @@ class Utility {
 //        RevMobAds.session()?.fullscreen().showVideo()
 //    }
 //    
-    static func CanShowAd()->Bool
-    {
-        let abc = cclass()
-        let VPN = abc.isVPNConnected()
-        let Version = abc.platformNiceString()
-        if(VPN == false && Version == "CDMA")
-        {
-            return false
-        }
-        
-        
-        return true
-    }
+//    static func CanShowAd()->Bool
+//    {
+//        let abc = cclass()
+//        let VPN = abc.isVPNConnected()
+//        let Version = abc.platformNiceString()
+//        if(VPN == false && Version == "CDMA")
+//        {
+//            return false
+//        }
+//        
+//        
+//        return true
+//    }
     
     
     
