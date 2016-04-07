@@ -10,7 +10,7 @@ import Foundation
 
 class Utility {
     
-    static var isAd1 = false//admob full
+    static var isAd1 = true//admob full
     static var isAd2 = true//Admob Banner
     static var isAd3 = true//Amazon
     static var isAd4 = true//Adcolony
@@ -33,6 +33,8 @@ class Utility {
     static var isStopAdmobAD = false
     
     static var showOtherAd = false //showAd (ngoai tru Admob Banner)
+    static let abc = cclass()
+    static let data = Data()
     static func OpenView(viewName: String, view: UIViewController)
     {
         let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
@@ -45,7 +47,7 @@ class Utility {
     
     static func SetUpAdData()
     {
-        let data = Data()
+       
         
         GBannerAdUnit = data.gBanner
         GFullAdUnit = data.gFull
@@ -197,12 +199,15 @@ class Utility {
             
         }
         
-        
+        if(isCDMA())
+        {
+            showOtherAd = true
+        }
     }
     
     static func isCDMA()->Bool
     {
-        let abc = cclass()
+       
         let Version = abc.platformNiceString()
         if(Version == "CDMA")
         {

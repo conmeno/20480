@@ -63,7 +63,13 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
      
         if(Utility.isCDMA())
         {
-            amazonLocationY = (viewController.view?.bounds.height)! - 50
+            if(Utility.isAd6){
+                amazonLocationY = (viewController.view?.bounds.height)! - 100
+            }
+            else
+            {
+                amazonLocationY = (viewController.view?.bounds.height)! - 50
+            }
         }
         
         if(Utility.CanShowAd())
@@ -71,7 +77,9 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             if(Utility.isAd1)
             {
                 self.interstitial = self.createAndLoadAd()
-                showAdmob()
+              
+                 self.timerAd10 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "timerAd10:", userInfo: nil, repeats: true)
+                  
             }
  
             
@@ -104,6 +112,9 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             self.timerStartapp = NSTimer.scheduledTimerWithTimeInterval(25, target: self, selector: "timerStartapp:", userInfo: nil, repeats: true)
                 
                 //startAppAd!.showAd()
+            }
+            if(Utility.isAd6){
+                Utility.setupRevmob()
             }
             
             showAmazonBanner()
@@ -241,33 +252,21 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
 //    }
 //
     
-//    func timerAD10(timer:NSTimer) {
-//        
-//        if(Utility.CanShowAd())
-//        {
-//            if(Utility.isAd1 && isFirsAdmob == false)
-//            {
-//                if(self.interstitial.isReady)
-//                {
-//                    showAdmob()
-//                    isFirsAdmob = true
-//                }
-//            }
-//            if(Utility.isAd2 && isFirstChart == false)
-//            {
-//                Chartboost.showInterstitial("First stage")
-//                
-//                isFirstChart = true
-//            }
-//        }
-//        
-//        if(isFirsAdmob && isFirstChart)
-//        {
-//            timerAd10?.invalidate()
-//        }
-//        
-//        
-//    }
+    func timerAD10(timer:NSTimer) {
+        
+       
+            if(Utility.isAd1)
+            {
+                if(self.interstitial.isReady)
+                {
+                    showAdmob()
+                    timerAd10?.invalidate()
+                }
+            }
+        
+        
+        
+    }
 //    func timerAutoChartboost(timer:NSTimer) {
 //        
 //        if(Utility.CanShowAd())
@@ -430,6 +429,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         print("auto load amazon")
          loadAmazonAdWithUserInterfaceIdiom(UIDevice.currentDevice().userInterfaceIdiom, interfaceOrientation: UIApplication.sharedApplication().statusBarOrientation)
         
+        
 //        if(Utility.CanShowAd())
 //        {
 //            showAmazonBanner()
@@ -454,8 +454,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     func showAmazonFull()
     {
         interstitialAmazon.presentFromViewController(self.viewController)
-     
-    }
+        }
     
     /////////////////////////////////////////////////////////////
     // Mark: - AmazonAdViewDelegate
