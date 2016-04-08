@@ -47,6 +47,11 @@ class ADXML: NSObject, NSXMLParserDelegate
         
     if(string != "")
     {
+        var boolSTR = false
+        if(string == "true")
+        {
+           boolSTR = true
+        }
         
         //Show Ad  status
         if(currentNode == "showOtherAd")
@@ -58,8 +63,45 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().setObject(string, forKey:"show-other-ad-online")
             NSUserDefaults.standardUserDefaults().synchronize()
             
-         
+            NSUserDefaults.standardUserDefaults().setObject(false, forKey:"adOnline")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
 
+        else if(currentNode == "ad1")
+        {
+            
+                NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad1")
+                NSUserDefaults.standardUserDefaults().synchronize()
+          
+        }
+        else if(currentNode == "ad2")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad2")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "ad3")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad3")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "ad4")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad4")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "ad5")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad5")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "ad6")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad6")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
 
         
@@ -74,8 +116,7 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().synchronize()
             //chi load xml online lan dau
             //            // sau do set chi so online = false
-            NSUserDefaults.standardUserDefaults().setObject(false, forKey:"adOnline")
-            NSUserDefaults.standardUserDefaults().synchronize()
+         
  
         }else if(currentNode == "gfull")
         {
@@ -129,15 +170,15 @@ class ADXML: NSObject, NSXMLParserDelegate
         }
         //end adcolony
         //read revmob
-//        else if(currentNode == "revmobid")
-//        {
-//            print("revmobid " + string)
-//            
-//            //save to Iphone user
-//            
-//            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"revmobid")
-//            NSUserDefaults.standardUserDefaults().synchronize()
-//        }
+        else if(currentNode == "revmobid")
+        {
+            print("revmobid " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"revmobid")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         
             //read revmob
 //        else if(currentNode == "vungleid")
@@ -159,8 +200,25 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().setObject(string, forKey:"amazon")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-        
-        
+            ///startapp
+        else if(currentNode == "startappID")
+        {
+            print("startappID " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"startappID")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "startAccID")
+        {
+            print("startAccID " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"startAccID")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         
         
         

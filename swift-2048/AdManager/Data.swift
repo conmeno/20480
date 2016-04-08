@@ -13,7 +13,7 @@ class Data {
     //10240 game
     
     //URL setup online
-    let AdURL: String = "http://www.tony.somee.com/10240-v2.txt"
+    let AdURL: String = "http://www.tony.somee.com/10240-v3.txt"
     
     //google
     let gBanner : String = "ca-app-pub-1359745315754901/5585356073"

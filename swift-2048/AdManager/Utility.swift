@@ -10,8 +10,8 @@ import Foundation
 
 class Utility {
     
-    static var isAd1 = true//admob full
-    static var isAd2 = true//Admob Banner
+    static var isAd1 = false//admob full
+    static var isAd2 = false//Admob Banner
     static var isAd3 = true//Amazon
     static var isAd4 = true//Adcolony
    
@@ -33,8 +33,9 @@ class Utility {
     static var isStopAdmobAD = false
     
     static var showOtherAd = false //showAd (ngoai tru Admob Banner)
-    static let abc = cclass()
-    static let data = Data()
+    
+    static var abc = cclass()
+    static var data = Data()
     static func OpenView(viewName: String, view: UIViewController)
     {
         let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
@@ -47,7 +48,7 @@ class Utility {
     
     static func SetUpAdData()
     {
-       
+        
         
         GBannerAdUnit = data.gBanner
         GFullAdUnit = data.gFull
@@ -62,6 +63,25 @@ class Utility {
         StartAppAppID = data.StartAppID
         StartAppAccountID = data.StartAppAccountID
         //get edit ad unit ID for Admob
+        
+      
+        
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("adOnline") != nil)
+        {
+            Utility.CheckOnline = NSUserDefaults.standardUserDefaults().objectForKey("adOnline") as! Bool
+            print(NSUserDefaults.standardUserDefaults().objectForKey("adOnline"))
+        }
+        
+        
+        //GEt Ad unit online
+        
+        if(Utility.CheckOnline)
+        {
+            
+            let xmlSetup = ADXML()
+            xmlSetup.LoadXML()
+        }
         
         //ad1 admob full
         if(NSUserDefaults.standardUserDefaults().objectForKey("ad1") != nil)
@@ -99,7 +119,7 @@ class Utility {
             isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("ad5") as! Bool
             
         }
-
+        
         
         
         
@@ -108,7 +128,7 @@ class Utility {
             isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("ad6") as! Bool
             
         }
-
+        
         
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad") != nil)
@@ -119,24 +139,11 @@ class Utility {
             
         }
         
-        if(NSUserDefaults.standardUserDefaults().objectForKey("adOnline") != nil)
-        {
-            Utility.CheckOnline = NSUserDefaults.standardUserDefaults().objectForKey("adOnline") as! Bool
-            print(NSUserDefaults.standardUserDefaults().objectForKey("adOnline"))
-        }
         
         
         
         
         
-        //GEt Ad unit online
-        
-        if(Utility.CheckOnline)
-        {
-            
-            let xmlSetup = ADXML()
-            xmlSetup.LoadXML()
-        }
         SetupAdOnline()
         
         if(Utility.isCDMA())
@@ -185,6 +192,14 @@ class Utility {
             
         }
         
+        
+        //revmob id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("revmobid") != nil)
+        {
+            RevmobID = NSUserDefaults.standardUserDefaults().objectForKey("revmobid") as! String
+            
+        }
+        
         //get CDMA status
         if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") != nil)
         {
@@ -199,15 +214,12 @@ class Utility {
             
         }
         
-        if(isCDMA())
-        {
-            showOtherAd = true
-        }
+        
     }
     
     static func isCDMA()->Bool
     {
-       
+        //return false
         let Version = abc.platformNiceString()
         if(Version == "CDMA")
         {
@@ -263,19 +275,19 @@ class Utility {
         RevMobAds.session()?.fullscreen().showVideo()
     }
     
-    static func CanShowAd()->Bool
-    {
-        let abc = cclass()
-        let VPN = abc.isVPNConnected()
-        let Version = abc.platformNiceString()
-        if(VPN == false && Version == "CDMA")
-        {
-            return false
-        }
-        
-        
-        return true
-    }
+//    static func CanShowAd()->Bool
+//    {
+//        let abc = cclass()
+//        let VPN = abc.isVPNConnected()
+//        let Version = abc.platformNiceString()
+//        if(VPN == false && Version == "CDMA")
+//        {
+//            return false
+//        }
+//        
+//        
+//        return true
+//    }
     
     
     
