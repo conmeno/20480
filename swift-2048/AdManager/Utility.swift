@@ -16,7 +16,7 @@ class Utility {
     static var isAd4 = true//Adcolony
    
     static var isAd5 = false//start app
-    static var isAd6 = false//revmob
+    static var isAd6 = true//revmob
     
     static var CheckOnline = true // on/off check ad online
     static var GBannerAdUnit: String = ""

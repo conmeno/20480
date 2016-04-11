@@ -111,9 +111,15 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
             if(Utility.isAd3)
             {
-                
-                amazonLocationY = (viewController.view?.bounds.height)! - 50
-                //set up amazon full
+                if(Utility.isAd6)
+                {
+                    
+                 amazonLocationY = 20
+                }else
+                {
+                    amazonLocationY = (viewController.view?.bounds.height)! - 50
+                }
+                    //set up amazon full
                 interstitialAmazon = AmazonAdInterstitial()
                 interstitialAmazon.delegate = self
                 
