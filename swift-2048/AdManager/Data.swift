@@ -35,11 +35,11 @@ class Data {
     let RevmobID: String = ""
     
     //Vungle ID
-    let VungleID: String = ""
+    let VungleID: String = "1078567033"
     
-    //startapp
-    let StartAppID: String = "202174021"
-    let StartAppAccountID: String = "102803784"
+    let UnityGameId: String = "1061074"
+    
+    let SonicID: String = "47bb4185"
     
     
     

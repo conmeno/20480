@@ -11,12 +11,16 @@ import Foundation
 class Utility {
     
     static var isAd1 = false//admob full
-    static var isAd2 = true//Admob Banner
+    static var isAd2 = false//Admob Banner
     static var isAd3 = true//Amazon
-    static var isAd4 = false//Adcolony
+    static var isAd4 = true//Adcolony
    
-    static var isAd5 = true//start app
-    static var isAd6 = false//revmob
+    static var isAd5 = false// ==>UnityAds
+    static var isAd6 = true//revmob
+    
+    static var isAd7 = true //vungle
+    static var isAd8 = false //Sonic
+    
     
     static var CheckOnline = true // on/off check ad online
     static var GBannerAdUnit: String = ""
@@ -29,13 +33,17 @@ class Utility {
     static var Amazonkey = ""
     static var StartAppAppID = ""
     static var StartAppAccountID=""
-    
+    static var VungleID = ""
+    static var UnityGameID = ""
+    static var SonicID = ""
     static var isStopAdmobAD = false
     
-    static var showOtherAd = false //showAd (ngoai tru Admob Banner)
+    static var CheckVPN = true
     
-    static let data = Data()
-    static  let abc = cclass()
+    //static var showOtherAd = false //showAd (ngoai tru Admob Banner)
+    
+    static var abc = cclass()
+    static var data = Data()
     static func OpenView(viewName: String, view: UIViewController)
     {
         let storyboard = UIStoryboard(name: "StoryboardAD", bundle: nil)
@@ -48,7 +56,7 @@ class Utility {
     
     static func SetUpAdData()
     {
-       
+        
         
         GBannerAdUnit = data.gBanner
         GFullAdUnit = data.gFull
@@ -59,10 +67,27 @@ class Utility {
         AdcolonyZoneID = data.AdcolonyZoneID
         AdmobTestDeviceID = data.TestDeviceID
         RevmobID = data.RevmobID
+        VungleID = data.VungleID
+        UnityGameID = data.UnityGameId
+        SonicID = data.SonicID
+ 
         
-        StartAppAppID = data.StartAppID
-        StartAppAccountID = data.StartAppAccountID
-        //get edit ad unit ID for Admob
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("adOnline") != nil)
+        {
+            Utility.CheckOnline = NSUserDefaults.standardUserDefaults().objectForKey("adOnline") as! Bool
+            print(NSUserDefaults.standardUserDefaults().objectForKey("adOnline"))
+        }
+        
+        
+        //GEt Ad unit online
+        
+        if(Utility.CheckOnline)
+        {
+            
+            let xmlSetup = ADXML()
+            xmlSetup.LoadXML()
+        }
         
         //ad1 admob full
         if(NSUserDefaults.standardUserDefaults().objectForKey("ad1") != nil)
@@ -100,7 +125,7 @@ class Utility {
             isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("ad5") as! Bool
             
         }
-
+        
         
         
         
@@ -109,41 +134,37 @@ class Utility {
             isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("ad6") as! Bool
             
         }
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("ad7") != nil)
+        {
+            isAd7 = NSUserDefaults.standardUserDefaults().objectForKey("ad7") as! Bool
+            
+        }
+        if(NSUserDefaults.standardUserDefaults().objectForKey("ad8") != nil)
+        {
+            isAd8 = NSUserDefaults.standardUserDefaults().objectForKey("ad8") as! Bool
+            
+        }
 
         
         
-        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad") != nil)
+        if(NSUserDefaults.standardUserDefaults().objectForKey("check-VPN") != nil)
         {
-            showOtherAd = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad") as! Bool
-            
-            print( NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad"))
+            CheckVPN = NSUserDefaults.standardUserDefaults().objectForKey("check-VPN") as! Bool
             
         }
         
-        if(NSUserDefaults.standardUserDefaults().objectForKey("adOnline") != nil)
-        {
-            Utility.CheckOnline = NSUserDefaults.standardUserDefaults().objectForKey("adOnline") as! Bool
-            print(NSUserDefaults.standardUserDefaults().objectForKey("adOnline"))
-        }
         
         
         
         
         
-        //GEt Ad unit online
-        
-        if(Utility.CheckOnline)
-        {
-            
-            let xmlSetup = ADXML()
-            xmlSetup.LoadXML()
-        }
         SetupAdOnline()
         
-        if(Utility.isCDMA())
-        {
-            showOtherAd = true
-        }
+//        if(Utility.isCDMA())
+//        {
+//            showOtherAd = true
+//        }
         
         
     }
@@ -186,40 +207,55 @@ class Utility {
             
         }
         
-        //get startapp online id
-        if(NSUserDefaults.standardUserDefaults().objectForKey("startappID") != nil)
+        //vungle id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("vungleid") != nil)
         {
-            StartAppAppID = NSUserDefaults.standardUserDefaults().objectForKey("startappID") as! String
-            
-        }
-        if(NSUserDefaults.standardUserDefaults().objectForKey("startAccID") != nil)
-        {
-            StartAppAccountID = NSUserDefaults.standardUserDefaults().objectForKey("startAccID") as! String
+            VungleID = NSUserDefaults.standardUserDefaults().objectForKey("vungleid") as! String
             
         }
         
         
-        //get CDMA status
-        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") != nil)
+        //unity id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("unityid") != nil)
         {
-            let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") as! String
-            if(tempCDMA == "true")
-            {
-                showOtherAd = true
-            }else
-            {
-                showOtherAd = false
-            }
+            UnityGameID = NSUserDefaults.standardUserDefaults().objectForKey("unityid") as! String
             
         }
+        
+        
+        //sonic id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("sonicid") != nil)
+        {
+            SonicID = NSUserDefaults.standardUserDefaults().objectForKey("sonicid") as! String
+            
+        }
+        //revmob id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("revmobid") != nil)
+        {
+            RevmobID = NSUserDefaults.standardUserDefaults().objectForKey("revmobid") as! String
+            
+        }
+        
+//        //get CDMA status
+//        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") != nil)
+//        {
+//            let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") as! String
+//            if(tempCDMA == "true")
+//            {
+//                showOtherAd = true
+//            }else
+//            {
+//                showOtherAd = false
+//            }
+//            
+//        }
         
         
     }
     
     static func isCDMA()->Bool
     {
-        
-      
+        //return false
         let Version = abc.platformNiceString()
         if(Version == "CDMA")
         {
@@ -231,50 +267,51 @@ class Utility {
     
  
     
-//    static func setupRevmob()
-//    {
-//        
-//        let completionBlock: () -> Void = {
-//            RevMobAds.session().showFullscreen()
-//            
-//            self.RevmobFull()
-//            self.RevmobVideo()
-//            RevmobPopup()
-//            self.RevmobBanner()
-//        }
-//        let errorBlock: (NSError!) -> Void = {error in
-//            // check the error
-//            print(error);
-//        }
-//        RevMobAds.startSessionWithAppID(Utility.RevmobID,
-//            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
-//        
-//    }
-//    static func RevmobBanner()
-//    {
-//        let banner = RevMobAds.session()?.bannerView()
-//        banner?.frame = CGRect(x: 0,y: 70,width: 320,height: 50);
-//        
-//        RevMobAds.session()?.showBanner();
-//    }
-//    static func RevmobFull()
-//    {
-//        RevMobAds.session()?.showFullscreen();
-//    }
-//    static func RevmobPopup()
-//    {
-//        RevMobAds.session()?.showPopup();
-//        
-//    }
-//    static func RevmobVideo()
-//    {
-//        //To load
-//        RevMobAds.session()?.fullscreen().loadVideo()
-//        
-//        //To show
-//        RevMobAds.session()?.fullscreen().showVideo()
-//    }
-//    
+    static func setupRevmob()
+    {
+        
+        let completionBlock: () -> Void = {
+            RevMobAds.session().showFullscreen()
+        
+            
+            self.RevmobFull()
+            self.RevmobVideo()
+            //RevmobPopup()
+            self.RevmobBanner()
+        }
+        let errorBlock: (NSError!) -> Void = {error in
+            // check the error
+            print(error);
+        }
+        RevMobAds.startSessionWithAppID(Utility.RevmobID,
+            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
+        
+    }
+    static func RevmobBanner()
+    {
+        let banner = RevMobAds.session()?.bannerView()
+        banner?.frame = CGRect(x: 0,y: 70,width: 320,height: 50);
+        
+        RevMobAds.session()?.showBanner();
+    }
+    static func RevmobFull()
+    {
+        RevMobAds.session()?.showFullscreen();
+    }
+    static func RevmobPopup()
+    {
+        RevMobAds.session()?.showPopup();
+        
+    }
+    static func RevmobVideo()
+    {
+        //To load
+        RevMobAds.session()?.fullscreen().loadVideo()
+        
+        //To show
+        RevMobAds.session()?.fullscreen().showVideo()
+    }
+    
 //    static func CanShowAd()->Bool
 //    {
 //        let abc = cclass()

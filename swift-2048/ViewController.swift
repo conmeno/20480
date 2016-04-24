@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import GoogleMobileAds
 
-class ViewController: UIViewController, GADBannerViewDelegate {
+class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDelegate,VungleSDKDelegate {
     
    
       var audioPlayer: AVAudioPlayer?
