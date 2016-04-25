@@ -16,8 +16,8 @@ class Data {
     let AdURL: String = "http://www.tony.somee.com/5120-v2.txt"
     
     //google
-    let gBanner : String = "ca-app-pub-9901064082545929/2633959296"
-    let gFull : String = "ca-app-pub-9901064082545929/7064158890"
+    let gBanner : String = "ca-app-pub-4878842131288665/3374273434"
+    let gFull : String = "ca-app-pub-4878842131288665/4851006639"
     let TestDeviceID: String = ""
     
 
@@ -32,14 +32,14 @@ class Data {
     let AdcolonyZoneID: String = "vz4455b1888a13410c83"
     
     //revmob appID
-    let RevmobID: String = ""
+    let RevmobID: String = "571cd2cacae2c3201d299671"
     
     //Vungle ID
-    let VungleID: String = "1078567033"
+    let VungleID: String = "1069278187"
     
-    let UnityGameId: String = "1061074"
+    let UnityGameId: String = "1062521"
     
-    let SonicID: String = "47bb4185"
+    let SonicID: String = "47f5761d"
     
     
     

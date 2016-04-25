@@ -10,7 +10,7 @@
         <!--Ad Manager View-->
         <scene sceneID="MDb-VE-VLt">
             <objects>
-                <viewController storyboardIdentifier="AdView1" id="mQ7-qi-MMn" customClass="AdManagerView" customModule="Conway_s_GoL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdView1" id="mQ7-qi-MMn" customClass="AdManagerView" customModule="_120_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RkD-vD-QMJ"/>
                         <viewControllerLayoutGuide type="bottom" id="lsm-U3-Fee"/>
@@ -203,15 +203,6 @@
                                     <rect key="frame" x="223" y="235" width="97" height="21"/>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="acs-5o-KQd">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="159" y="230" width="51" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="76G-V8-na5"/>
-                                </connections>
-                            </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-1C-lwA">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -219,6 +210,15 @@
                                 </variation>
                                 <connections>
                                     <action selector="CheckVPN:" destination="mQ7-qi-MMn" eventType="valueChanged" id="VEr-n3-T0z"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="acs-5o-KQd">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="230" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="76G-V8-na5"/>
                                 </connections>
                             </switch>
                         </subviews>
