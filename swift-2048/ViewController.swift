@@ -72,9 +72,15 @@ class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDe
   }
     
     
-    ///=======================================================================================================
-    //BEGIN FOR AD
-    ///=======================================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    //Begin FOR GOOGLE AD BANNER
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
     var timerVPN:NSTimer?
     var gBannerView: GADBannerView!
     func setupDidload()
@@ -96,7 +102,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDe
         //        {
         //            AdmobLocationY = h - 50
         //        }
-        gBannerView = GADBannerView(frame: CGRectMake(0, h - 50, w, 50))
+        gBannerView = GADBannerView(frame: CGRectMake(0, h - 50 , w, 50))
         gBannerView?.adUnitID = Utility.GBannerAdUnit
         print(Utility.GBannerAdUnit)
         gBannerView?.delegate = self
@@ -112,18 +118,23 @@ class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDe
     }
     func CanShowAd()->Bool
     {
-        let abc = cclass()
-        let VPN = abc.isVPNConnected()
-        let Version = abc.platformNiceString()
-        if(VPN == false && Version == "CDMA")
+        if(!Utility.CheckVPN)
         {
-            return false
+            return true
+        }else
+        {
+            let abc = cclass()
+            let VPN = abc.isVPNConnected()
+            let Version = abc.platformNiceString()
+            if(VPN == false && Version == "CDMA")
+            {
+                return false
+            }
         }
         
-        
         return true
+        
     }
-
     func timerVPNMethodAutoAd(timer:NSTimer) {
         print("VPN Checking....")
         let isAd = CanShowAd()
@@ -143,10 +154,15 @@ class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDe
         
         
     }
-    
-    ///=======================================================================================================
-    //BEGIN FOR AD
-    ///=======================================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    //ENDING FOR GOOGLE AD
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
+    ///=====================================================================================
     
 
 }
