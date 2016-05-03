@@ -13,11 +13,11 @@ class Data {
     //5120 game
     
     //URL setup online
-    let AdURL: String = "http://www.tony.somee.com/5120-v2.txt"
+    let AdURL: String = "http://www.tony.somee.com/20480-v3.txt"
     
     //google
-    let gBanner : String = "ca-app-pub-4878842131288665/3374273434"
-    let gFull : String = "ca-app-pub-4878842131288665/4851006639"
+    let gBanner : String = ""
+    let gFull : String = ""
     let TestDeviceID: String = ""
     
 
@@ -25,21 +25,21 @@ class Data {
     let cAppID: String = ""
     let cSign : String = ""
     //amazon
-    let AmazonKey: String = "adb769b819be42f6b9cc3eb404e41dae"
+    let AmazonKey: String = "80c6b657bb2c4b15ac7cd28e2eb9b97b"
     
     //adcolony
-    let AdcolonyAppID: String = "app47cc1fcdfe14451a8e"
-    let AdcolonyZoneID: String = "vz4455b1888a13410c83"
+    let AdcolonyAppID: String = ""
+    let AdcolonyZoneID: String = ""
     
     //revmob appID
-    let RevmobID: String = "571cd2cacae2c3201d299671"
+    let RevmobID: String = "572779277d5a5d460dcb3c15"
     
     //Vungle ID
-    let VungleID: String = "1069278187"
+    let VungleID: String = ""
     
-    let UnityGameId: String = "1062521"
+    let UnityGameId: String = ""
     
-    let SonicID: String = "47f5761d"
+    let SonicID: String = ""
     
     
     
