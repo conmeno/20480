@@ -155,6 +155,19 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
  //self.interstitial = self.createAndLoadAd()
     setupGame()
    // setupButton()
+    
+    
+    if(Utility.showOtherAd)
+    {
+        let myad = MyAd(root: self)
+        myad.ViewDidload()
+        
+    }
+    
+    
+   
+    
+    
   }
     func setupButton(){
     
