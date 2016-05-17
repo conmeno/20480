@@ -21,12 +21,23 @@ class ADXML: NSObject, NSXMLParserDelegate
     {
         if let url = NSURL(string: data.AdURL)
         {
-            if let data = NSData(contentsOfURL: url)
-            {
-                let parser = NSXMLParser(data: data)
+            var data: NSData? = nil
+            data = NSData(contentsOfURL: url)
+            if data != nil {
+                let parser = NSXMLParser(data: data!)
                 parser.delegate = self
                 parser.parse()
             }
+            
+            
+            
+//            if let data = NSData(contentsOfURL: url)
+//            {
+//                let parser = NSXMLParser(data: data)
+//                parser.delegate = self
+//                parser.parse()
+//                
+//            }
         }
         
     }
@@ -63,37 +74,86 @@ class ADXML: NSObject, NSXMLParserDelegate
 
 
         }
+        else if(currentNode == "online-ad1")
+        {
+            
+                NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad1")
+                NSUserDefaults.standardUserDefaults().synchronize()
+          
+        }
+        else if(currentNode == "online-ad2")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad2")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "online-ad3")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad3")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "online-ad4")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad4")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "online-ad5")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad5")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+
+        else if(currentNode == "online-ad6")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad6")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad7")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad7")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad8")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad8")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+            
+            
+            ///Ad for CDMA
         else if(currentNode == "ad1")
         {
             
-                NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad1")
-                NSUserDefaults.standardUserDefaults().synchronize()
-          
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad1")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
         }
         else if(currentNode == "ad2")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad2")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+            
         else if(currentNode == "ad3")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad3")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+            
         else if(currentNode == "ad4")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad4")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+            
         else if(currentNode == "ad5")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad5")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-
+            
         else if(currentNode == "ad6")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad6")
@@ -109,6 +169,7 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad8")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
+
         
         //begin google
         else if(currentNode == "gbanner")
