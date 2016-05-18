@@ -32,7 +32,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var isFirsAdmob = false
     var isFirstChart = false
     var isApplovinShowed = false
-    var amazonLocationY:CGFloat = 20.0
+    var amazonLocationY:CGFloat = 20
     var AdmobLocationY: CGFloat = 20
     var AdmobBannerTop = true
     var AmazonBannerTop = false
@@ -121,17 +121,14 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 loadAmazonFull()
                 showAmazonFull()
                 
-                
+                showAmazonBanner()
+                self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
             
             
-            }else
-            {
-                amazonLocationY = (viewController.view?.bounds.height)!
-                
             }
             
-            showAmazonBanner()
-            self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
+            
+         
             
             
         }

@@ -13,12 +13,12 @@ class Utility {
     static var isAd1 = false//admob full
     static var isAd2 = false//Admob Banner
     static var isAd3 = true//Amazon
-    static var isAd4 = true//Adcolony
+    static var isAd4 = false//Adcolony
    
     static var isAd5 = false// ==>UnityAds
     static var isAd6 = true//revmob
     
-    static var isAd7 = true //vungle
+    static var isAd7 = false //vungle
     static var isAd8 = false //Sonic
     
     
@@ -89,62 +89,127 @@ class Utility {
             xmlSetup.LoadXML()
         }
         
-        //ad1 admob full
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad1") != nil)
+        if(isCDMA())
         {
-            isAd1 = NSUserDefaults.standardUserDefaults().objectForKey("ad1") as! Bool
+            //ad1 admob full
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad1") != nil)
+            {
+                isAd1 = NSUserDefaults.standardUserDefaults().objectForKey("ad1") as! Bool
+                
+            }
             
+            //ad2 banner
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad2") != nil)
+            {
+                isAd2 = NSUserDefaults.standardUserDefaults().objectForKey("ad2") as! Bool
+                
+            }
+            
+            
+            //ad3 ...
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad3") != nil)
+            {
+                isAd3 = NSUserDefaults.standardUserDefaults().objectForKey("ad3") as! Bool
+                
+            }
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad4") != nil)
+            {
+                isAd4 = NSUserDefaults.standardUserDefaults().objectForKey("ad4") as! Bool
+                
+            }
+            
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad5") != nil)
+            {
+                isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("ad5") as! Bool
+                
+            }
+            
+            
+            
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad6") != nil)
+            {
+                isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("ad6") as! Bool
+                
+            }
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad7") != nil)
+            {
+                isAd7 = NSUserDefaults.standardUserDefaults().objectForKey("ad7") as! Bool
+                
+            }
+            if(NSUserDefaults.standardUserDefaults().objectForKey("ad8") != nil)
+            {
+                isAd8 = NSUserDefaults.standardUserDefaults().objectForKey("ad8") as! Bool
+                
+            }
+        
+        }else
+        {
+        
+            //ad1 admob full
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad1") != nil)
+            {
+                isAd1 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad1") as! Bool
+                
+            }
+            
+            //ad2 banner
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad2") != nil)
+            {
+                isAd2 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad2") as! Bool
+                
+            }
+            
+            
+            //ad3 ...
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad3") != nil)
+            {
+                isAd3 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad3") as! Bool
+                
+            }
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad4") != nil)
+            {
+                isAd4 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad4") as! Bool
+                
+            }
+            
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad5") != nil)
+            {
+                isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad5") as! Bool
+                
+            }
+            
+            
+            
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad6") != nil)
+            {
+                isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad6") as! Bool
+                
+            }
+            
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad7") != nil)
+            {
+                isAd7 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad7") as! Bool
+                
+            }
+            if(NSUserDefaults.standardUserDefaults().objectForKey("online-ad8") != nil)
+            {
+                isAd8 = NSUserDefaults.standardUserDefaults().objectForKey("online-ad8") as! Bool
+                
+            }
         }
         
-        //ad2 banner
         
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad2") != nil)
-        {
-            isAd2 = NSUserDefaults.standardUserDefaults().objectForKey("ad2") as! Bool
-            
-        }
-        
-        
-        //ad3 ...
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad3") != nil)
-        {
-            isAd3 = NSUserDefaults.standardUserDefaults().objectForKey("ad3") as! Bool
-            
-        }
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad4") != nil)
-        {
-            isAd4 = NSUserDefaults.standardUserDefaults().objectForKey("ad4") as! Bool
-            
-        }
-        
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad5") != nil)
-        {
-            isAd5 = NSUserDefaults.standardUserDefaults().objectForKey("ad5") as! Bool
-            
-        }
-        
-        
-        
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad6") != nil)
-        {
-            isAd6 = NSUserDefaults.standardUserDefaults().objectForKey("ad6") as! Bool
-            
-        }
-        
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad7") != nil)
-        {
-            isAd7 = NSUserDefaults.standardUserDefaults().objectForKey("ad7") as! Bool
-            
-        }
-        if(NSUserDefaults.standardUserDefaults().objectForKey("ad8") != nil)
-        {
-            isAd8 = NSUserDefaults.standardUserDefaults().objectForKey("ad8") as! Bool
-            
-        }
 
         
         
