@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Carrot_Poping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dame_June" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -63,7 +63,7 @@
                                     <action selector="moreApp2click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYq-ff-NWn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrot Poping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf3-GM-5YD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dame June" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf3-GM-5YD">
                                 <rect key="frame" x="-4" y="83" width="328" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="ouc-qk-cca"/>
@@ -129,7 +129,7 @@
         <!--Number Tile Game View Controller-->
         <scene sceneID="QfM-cc-7TL">
             <objects>
-                <viewController id="arW-xw-jSq" customClass="NumberTileGameViewController" customModule="Carrot_Poping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="arW-xw-jSq" customClass="NumberTileGameViewController" customModule="Dame_June" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lQc-8g-A2b"/>
                         <viewControllerLayoutGuide type="bottom" id="5X3-ta-cIO"/>
