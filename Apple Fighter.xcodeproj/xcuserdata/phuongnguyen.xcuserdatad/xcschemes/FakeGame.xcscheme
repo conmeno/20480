@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1AC563DC193DCE6000402286"
                BuildableName = "FakeGame.app"
-               BlueprintName = "FakeGame"
-               ReferencedContainer = "container:FakeGame.xcodeproj">
+               BlueprintName = "Apple Fighter"
+               ReferencedContainer = "container:Apple Fighter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
             BuildableName = "FakeGame.app"
-            BlueprintName = "FakeGame"
-            ReferencedContainer = "container:FakeGame.xcodeproj">
+            BlueprintName = "Apple Fighter"
+            ReferencedContainer = "container:Apple Fighter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -57,8 +57,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
             BuildableName = "FakeGame.app"
-            BlueprintName = "FakeGame"
-            ReferencedContainer = "container:FakeGame.xcodeproj">
+            BlueprintName = "Apple Fighter"
+            ReferencedContainer = "container:Apple Fighter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -76,8 +76,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
             BuildableName = "FakeGame.app"
-            BlueprintName = "FakeGame"
-            ReferencedContainer = "container:FakeGame.xcodeproj">
+            BlueprintName = "Apple Fighter"
+            ReferencedContainer = "container:Apple Fighter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
