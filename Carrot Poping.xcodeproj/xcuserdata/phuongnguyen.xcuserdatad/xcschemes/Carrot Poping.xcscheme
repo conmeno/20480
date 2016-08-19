@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1AC563DC193DCE6000402286"
-               BuildableName = "Bean Jump.app"
-               BlueprintName = "Bean Jump"
-               ReferencedContainer = "container:Bean Jump.xcodeproj">
+               BuildableName = "Carrot Poping.app"
+               BlueprintName = "Carrot Poping"
+               ReferencedContainer = "container:Carrot Poping.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
-            BuildableName = "Bean Jump.app"
-            BlueprintName = "Bean Jump"
-            ReferencedContainer = "container:Bean Jump.xcodeproj">
+            BuildableName = "Carrot Poping.app"
+            BlueprintName = "Carrot Poping"
+            ReferencedContainer = "container:Carrot Poping.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
-            BuildableName = "Bean Jump.app"
-            BlueprintName = "Bean Jump"
-            ReferencedContainer = "container:Bean Jump.xcodeproj">
+            BuildableName = "Carrot Poping.app"
+            BlueprintName = "Carrot Poping"
+            ReferencedContainer = "container:Carrot Poping.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
-            BuildableName = "Bean Jump.app"
-            BlueprintName = "Bean Jump"
-            ReferencedContainer = "container:Bean Jump.xcodeproj">
+            BuildableName = "Carrot Poping.app"
+            BlueprintName = "Carrot Poping"
+            ReferencedContainer = "container:Carrot Poping.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

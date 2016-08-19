@@ -10,7 +10,7 @@
         <!--Ad Manager View-->
         <scene sceneID="MDb-VE-VLt">
             <objects>
-                <viewController storyboardIdentifier="AdView1" id="mQ7-qi-MMn" customClass="AdManagerView" customModule="Bird_Jump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdView1" id="mQ7-qi-MMn" customClass="AdManagerView" customModule="Carrot_Poping" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RkD-vD-QMJ"/>
                         <viewControllerLayoutGuide type="bottom" id="lsm-U3-Fee"/>
