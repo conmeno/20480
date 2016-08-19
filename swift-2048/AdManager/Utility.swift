@@ -16,7 +16,7 @@ class Utility {
     static var isAd4 = false//Adcolony
    
     static var isAd5 = false// ==>UnityAds
-    static var isAd6 = true//revmob
+    static var isAd6 = false//revmob
     
     static var isAd7 = false //vungle
     static var isAd8 = false //Sonic
@@ -301,19 +301,7 @@ class Utility {
             
         }
         
-//        //get CDMA status
-//        if(NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") != nil)
-//        {
-//            let tempCDMA = NSUserDefaults.standardUserDefaults().objectForKey("show-other-ad-online") as! String
-//            if(tempCDMA == "true")
-//            {
-//                showOtherAd = true
-//            }else
-//            {
-//                showOtherAd = false
-//            }
-//            
-//        }
+ 
         
         
     }
@@ -331,65 +319,9 @@ class Utility {
     }
     
  
+ 
     
-    static func setupRevmob()
-    {
-        
-        let completionBlock: () -> Void = {
-            RevMobAds.session().showFullscreen()
-        
-            
-            self.RevmobFull()
-            self.RevmobVideo()
-            //RevmobPopup()
-            self.RevmobBanner()
-        }
-        let errorBlock: (NSError!) -> Void = {error in
-            // check the error
-            print(error);
-        }
-        RevMobAds.startSessionWithAppID(Utility.RevmobID,
-            withSuccessHandler: completionBlock, andFailHandler: errorBlock);
-        
-    }
-    static func RevmobBanner()
-    {
-        let banner = RevMobAds.session()?.bannerView()
-        banner?.frame = CGRect(x: 0,y: 70,width: 320,height: 50);
-        
-        RevMobAds.session()?.showBanner();
-    }
-    static func RevmobFull()
-    {
-        RevMobAds.session()?.showFullscreen();
-    }
-    static func RevmobPopup()
-    {
-        RevMobAds.session()?.showPopup();
-        
-    }
-    static func RevmobVideo()
-    {
-        //To load
-        RevMobAds.session()?.fullscreen().loadVideo()
-        
-        //To show
-        RevMobAds.session()?.fullscreen().showVideo()
-    }
-    
-//    static func CanShowAd()->Bool
-//    {
-//        let abc = cclass()
-//        let VPN = abc.isVPNConnected()
-//        let Version = abc.platformNiceString()
-//        if(VPN == false && Version == "CDMA")
-//        {
-//            return false
-//        }
-//        
-//        
-//        return true
-//    }
+ 
     
     
     

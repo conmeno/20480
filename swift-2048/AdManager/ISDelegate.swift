@@ -7,7 +7,7 @@
 //
 
 
-class ISDelegate: NSObject, SupersonicISDelegate {
+class ISDelegate: NSObject {
     /**
      * Called when initiation process of the Interstitial products has finished successfully.
      **/
