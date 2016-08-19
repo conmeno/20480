@@ -595,7 +595,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.newbornGame.DameJune;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgame.DameJune;
 				PRODUCT_NAME = "Dame June";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift-2048/AdManager/Bridging-header.h";
@@ -625,7 +625,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.newbornGame.DameJune;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgame.DameJune;
 				PRODUCT_NAME = "Dame June";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift-2048/AdManager/Bridging-header.h";
