@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1AC563DC193DCE6000402286"
-               BuildableName = "Dame June.app"
-               BlueprintName = "Dame June"
-               ReferencedContainer = "container:Dame June.xcodeproj">
+               BuildableName = "Egg Fight.app"
+               BlueprintName = "Egg Fight"
+               ReferencedContainer = "container:Egg Fight.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
-            BuildableName = "Dame June.app"
-            BlueprintName = "Dame June"
-            ReferencedContainer = "container:Dame June.xcodeproj">
+            BuildableName = "Egg Fight.app"
+            BlueprintName = "Egg Fight"
+            ReferencedContainer = "container:Egg Fight.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
-            BuildableName = "Dame June.app"
-            BlueprintName = "Dame June"
-            ReferencedContainer = "container:Dame June.xcodeproj">
+            BuildableName = "Egg Fight.app"
+            BlueprintName = "Egg Fight"
+            ReferencedContainer = "container:Egg Fight.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1AC563DC193DCE6000402286"
-            BuildableName = "Dame June.app"
-            BlueprintName = "Dame June"
-            ReferencedContainer = "container:Dame June.xcodeproj">
+            BuildableName = "Egg Fight.app"
+            BlueprintName = "Egg Fight"
+            ReferencedContainer = "container:Egg Fight.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
