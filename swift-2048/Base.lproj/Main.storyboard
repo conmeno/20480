@@ -62,7 +62,7 @@
                                     <action selector="moreApp2click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wYq-ff-NWn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hexspin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf3-GM-5YD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hocphat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf3-GM-5YD">
                                 <rect key="frame" x="-4" y="83" width="328" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="ouc-qk-cca"/>
