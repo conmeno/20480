@@ -83,13 +83,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1AC563DD193DCE6000402286 /* Hexspin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hexspin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC563DD193DCE6000402286 /* Spin Hexagon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spin Hexagon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC563E1193DCE6000402286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC563E2193DCE6000402286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AC563E4193DCE6000402286 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1AC563E7193DCE6000402286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AC563E9193DCE6000402286 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1AC563EF193DCE6000402286 /* Hexspin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hexspin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC563EF193DCE6000402286 /* Spin Hexagon.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spin Hexagon.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC563F4193DCE6000402286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC563F5193DCE6000402286 /* swift_2048Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_2048Tests.swift; sourceTree = "<group>"; };
 		1AE339B1193DCF110081FFA4 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameModel.swift; path = Models/GameModel.swift; sourceTree = "<group>"; };
@@ -236,8 +236,8 @@
 		1AC563DE193DCE6000402286 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AC563DD193DCE6000402286 /* Hexspin.app */,
-				1AC563EF193DCE6000402286 /* Hexspin.xctest */,
+				1AC563DD193DCE6000402286 /* Spin Hexagon.app */,
+				1AC563EF193DCE6000402286 /* Spin Hexagon.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,9 +326,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1AC563DC193DCE6000402286 /* Hexspin */ = {
+		1AC563DC193DCE6000402286 /* Spin Hexagon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "Hexspin" */;
+			buildConfigurationList = 1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "Spin Hexagon" */;
 			buildPhases = (
 				1AC563D9193DCE6000402286 /* Sources */,
 				1AC563DA193DCE6000402286 /* Frameworks */,
@@ -338,14 +338,14 @@
 			);
 			dependencies = (
 			);
-			name = Hexspin;
+			name = "Spin Hexagon";
 			productName = "swift-2048";
-			productReference = 1AC563DD193DCE6000402286 /* Hexspin.app */;
+			productReference = 1AC563DD193DCE6000402286 /* Spin Hexagon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1AC563EE193DCE6000402286 /* HexspinTests */ = {
+		1AC563EE193DCE6000402286 /* Spin HexagonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "HexspinTests" */;
+			buildConfigurationList = 1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "Spin HexagonTests" */;
 			buildPhases = (
 				1AC563EB193DCE6000402286 /* Sources */,
 				1AC563EC193DCE6000402286 /* Frameworks */,
@@ -357,9 +357,9 @@
 				1AC563F1193DCE6000402286 /* PBXTargetDependency */,
 				1AE8BEF8193F1090007592BA /* PBXTargetDependency */,
 			);
-			name = HexspinTests;
+			name = "Spin HexagonTests";
 			productName = "swift-2048Tests";
-			productReference = 1AC563EF193DCE6000402286 /* Hexspin.xctest */;
+			productReference = 1AC563EF193DCE6000402286 /* Spin Hexagon.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -375,7 +375,7 @@
 				TargetAttributes = {
 					1AC563DC193DCE6000402286 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 6SZC32EP3F;
+						DevelopmentTeam = 597LVZ4LQD;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -388,7 +388,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1AC563D8193DCE6000402286 /* Build configuration list for PBXProject "Hexspin" */;
+			buildConfigurationList = 1AC563D8193DCE6000402286 /* Build configuration list for PBXProject "Spin Hexagon" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -401,8 +401,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1AC563DC193DCE6000402286 /* Hexspin */,
-				1AC563EE193DCE6000402286 /* HexspinTests */,
+				1AC563DC193DCE6000402286 /* Spin Hexagon */,
+				1AC563EE193DCE6000402286 /* Spin HexagonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -470,12 +470,12 @@
 /* Begin PBXTargetDependency section */
 		1AC563F1193DCE6000402286 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1AC563DC193DCE6000402286 /* Hexspin */;
+			target = 1AC563DC193DCE6000402286 /* Spin Hexagon */;
 			targetProxy = 1AC563F0193DCE6000402286 /* PBXContainerItemProxy */;
 		};
 		1AE8BEF8193F1090007592BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1AC563DC193DCE6000402286 /* Hexspin */;
+			target = 1AC563DC193DCE6000402286 /* Spin Hexagon */;
 			targetProxy = 1AE8BEF7193F1090007592BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -595,8 +595,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = phuongnguyen3006.Hexspin;
-				PRODUCT_NAME = Hexspin;
+				PRODUCT_BUNDLE_IDENTIFIER = "HTML5Game3005.Spin-Hexagon";
+				PRODUCT_NAME = "Spin Hexagon";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift-2048/AdManager/Bridging-header.h";
 			};
@@ -625,8 +625,8 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = phuongnguyen3006.Hexspin;
-				PRODUCT_NAME = Hexspin;
+				PRODUCT_BUNDLE_IDENTIFIER = "HTML5Game3005.Spin-Hexagon";
+				PRODUCT_NAME = "Spin Hexagon";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift-2048/AdManager/Bridging-header.h";
 			};
@@ -649,9 +649,9 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "f3nghuang.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Hexspin;
+				PRODUCT_NAME = "Spin Hexagon";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hexspin.app/Hexspin";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spin Hexagon.app/Spin Hexagon";
 			};
 			name = Debug;
 		};
@@ -668,16 +668,16 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "f3nghuang.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Hexspin;
+				PRODUCT_NAME = "Spin Hexagon";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hexspin.app/Hexspin";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spin Hexagon.app/Spin Hexagon";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1AC563D8193DCE6000402286 /* Build configuration list for PBXProject "Hexspin" */ = {
+		1AC563D8193DCE6000402286 /* Build configuration list for PBXProject "Spin Hexagon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AC563F7193DCE6000402286 /* Debug */,
@@ -686,7 +686,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "Hexspin" */ = {
+		1AC563F9193DCE6000402286 /* Build configuration list for PBXNativeTarget "Spin Hexagon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AC563FA193DCE6000402286 /* Debug */,
@@ -695,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "HexspinTests" */ = {
+		1AC563FC193DCE6000402286 /* Build configuration list for PBXNativeTarget "Spin HexagonTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1AC563FD193DCE6000402286 /* Debug */,
