@@ -29,14 +29,7 @@
 		1B666B141C82BA1900B936B8 /* StoryboardAD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B666B0C1C82BA1900B936B8 /* StoryboardAD.storyboard */; };
 		1B666B151C82BA1900B936B8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B666B0D1C82BA1900B936B8 /* Utility.swift */; };
 		1B666B191C82C40500B936B8 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B666B181C82C40500B936B8 /* AdColony.framework */; };
-		1BBF526F1CCC73EA00879E77 /* libFlurry_7.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF52661CCC73EA00879E77 /* libFlurry_7.5.2.a */; };
-		1BBF52701CCC73EA00879E77 /* libFlurryAds_7.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF52671CCC73EA00879E77 /* libFlurryAds_7.5.2.a */; };
-		1BBF52721CCC73EA00879E77 /* SUFlurryAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF52691CCC73EA00879E77 /* SUFlurryAdapter.framework */; };
-		1BBF52731CCC73EA00879E77 /* Supersonic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF526A1CCC73EA00879E77 /* Supersonic.framework */; };
-		1BBF52741CCC73EA00879E77 /* UnityAds.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF526B1CCC73EA00879E77 /* UnityAds.bundle */; };
-		1BBF52751CCC73EA00879E77 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF526C1CCC73EA00879E77 /* UnityAds.framework */; };
-		1BBF52761CCC73EA00879E77 /* VungleSDK.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF526D1CCC73EA00879E77 /* VungleSDK.embeddedframework */; };
-		1BBF52771CCC73EA00879E77 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF526E1CCC73EA00879E77 /* VungleSDK.framework */; };
+		1B9C875F1DCB8D250079FCDB /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9C875E1DCB8D250079FCDB /* Chartboost.framework */; };
 		1BBF527A1CCC743F00879E77 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF52781CCC743F00879E77 /* CoreFoundation.framework */; };
 		1BBF527B1CCC743F00879E77 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF52791CCC743F00879E77 /* CoreImage.framework */; };
 		1BBF527D1CCC756200879E77 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF527C1CCC756200879E77 /* StoreKit.framework */; };
@@ -66,16 +59,13 @@
 		84A794311BB52B92007E4AE1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794301BB52B91007E4AE1 /* CoreData.framework */; };
 		84A794341BB52B97007E4AE1 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794321BB52B97007E4AE1 /* EventKit.framework */; };
 		84A794351BB52B97007E4AE1 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794331BB52B97007E4AE1 /* EventKitUI.framework */; };
-		84A794371BB534E4007E4AE1 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794361BB534E4007E4AE1 /* Chartboost.framework */; };
 		84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C61BB9430600FDAD49 /* bt1.png */; };
 		84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C81BB9431700FDAD49 /* 6666.png */; };
 		96722F181C86C6D7008ACA05 /* ADXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96722F171C86C6D7008ACA05 /* ADXML.swift */; };
 		9677818E1CCDFC5B005219E4 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9677818D1CCDFC5B005219E4 /* RevMobAds.framework */; };
 		967AC2281C9170A300950D31 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 967AC2271C9170A300950D31 /* libsqlite3.tbd */; };
 		96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */; };
-		96E1FCBA1CA9231D00A98394 /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96E1FCB81CA9231D00A98394 /* StartApp.bundle */; };
 		96E1FCBD1CA9234900A98394 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E1FCBC1CA9234900A98394 /* libz.tbd */; };
-		96E1FCC21CA9281500A98394 /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E1FCC11CA9281500A98394 /* StartApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,14 +112,7 @@
 		1B666B0C1C82BA1900B936B8 /* StoryboardAD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = StoryboardAD.storyboard; path = AdManager/StoryboardAD.storyboard; sourceTree = "<group>"; };
 		1B666B0D1C82BA1900B936B8 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = AdManager/Utility.swift; sourceTree = "<group>"; };
 		1B666B181C82C40500B936B8 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
-		1BBF52661CCC73EA00879E77 /* libFlurry_7.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_7.5.2.a; sourceTree = "<group>"; };
-		1BBF52671CCC73EA00879E77 /* libFlurryAds_7.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAds_7.5.2.a; sourceTree = "<group>"; };
-		1BBF52691CCC73EA00879E77 /* SUFlurryAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SUFlurryAdapter.framework; sourceTree = "<group>"; };
-		1BBF526A1CCC73EA00879E77 /* Supersonic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Supersonic.framework; sourceTree = "<group>"; };
-		1BBF526B1CCC73EA00879E77 /* UnityAds.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UnityAds.bundle; sourceTree = "<group>"; };
-		1BBF526C1CCC73EA00879E77 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
-		1BBF526D1CCC73EA00879E77 /* VungleSDK.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VungleSDK.embeddedframework; sourceTree = "<group>"; };
-		1BBF526E1CCC73EA00879E77 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
+		1B9C875E1DCB8D250079FCDB /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		1BBF52781CCC743F00879E77 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		1BBF52791CCC743F00879E77 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		1BBF527C1CCC756200879E77 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -159,16 +142,13 @@
 		84A794301BB52B91007E4AE1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84A794321BB52B97007E4AE1 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		84A794331BB52B97007E4AE1 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
-		84A794361BB534E4007E4AE1 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Chartboost.framework; sourceTree = "<group>"; };
 		84B5A8C61BB9430600FDAD49 /* bt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt1.png; sourceTree = "<group>"; };
 		84B5A8C81BB9431700FDAD49 /* 6666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6666.png; sourceTree = "<group>"; };
 		96722F171C86C6D7008ACA05 /* ADXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADXML.swift; path = AdManager/ADXML.swift; sourceTree = "<group>"; };
 		9677818D1CCDFC5B005219E4 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		967AC2271C9170A300950D31 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
-		96E1FCB81CA9231D00A98394 /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
 		96E1FCBC1CA9234900A98394 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		96E1FCC11CA9281500A98394 /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,23 +176,16 @@
 				84A794211BB52B58007E4AE1 /* MediaPlayer.framework in Frameworks */,
 				96E1FCBD1CA9234900A98394 /* libz.tbd in Frameworks */,
 				967AC2281C9170A300950D31 /* libsqlite3.tbd in Frameworks */,
-				1BBF52731CCC73EA00879E77 /* Supersonic.framework in Frameworks */,
-				96E1FCC21CA9281500A98394 /* StartApp.framework in Frameworks */,
 				96DD2D101C61AC690053EDF7 /* libz.1.2.5.tbd in Frameworks */,
+				1B9C875F1DCB8D250079FCDB /* Chartboost.framework in Frameworks */,
 				84A794341BB52B97007E4AE1 /* EventKit.framework in Frameworks */,
 				84A480811BD0D231006F2BBB /* AmazonAd.framework in Frameworks */,
 				84A794351BB52B97007E4AE1 /* EventKitUI.framework in Frameworks */,
 				84A794291BB52B74007E4AE1 /* CFNetwork.framework in Frameworks */,
-				1BBF52701CCC73EA00879E77 /* libFlurryAds_7.5.2.a in Frameworks */,
-				1BBF526F1CCC73EA00879E77 /* libFlurry_7.5.2.a in Frameworks */,
 				84A7941B1BB52B40007E4AE1 /* Security.framework in Frameworks */,
 				84A794191BB52B38007E4AE1 /* SystemConfiguration.framework in Frameworks */,
 				84A794151BB52B28007E4AE1 /* UIKit.framework in Frameworks */,
-				1BBF52771CCC73EA00879E77 /* VungleSDK.framework in Frameworks */,
-				84A794371BB534E4007E4AE1 /* Chartboost.framework in Frameworks */,
 				9677818E1CCDFC5B005219E4 /* RevMobAds.framework in Frameworks */,
-				1BBF52721CCC73EA00879E77 /* SUFlurryAdapter.framework in Frameworks */,
-				1BBF52751CCC73EA00879E77 /* UnityAds.framework in Frameworks */,
 				1B666B191C82C40500B936B8 /* AdColony.framework in Frameworks */,
 				84A794091BB52ADC007E4AE1 /* WebKit.framework in Frameworks */,
 				84A794051BB52AAB007E4AE1 /* GoogleMobileAds.framework in Frameworks */,
@@ -232,24 +205,14 @@
 		1AC563D4193DCE6000402286 = {
 			isa = PBXGroup;
 			children = (
+				1B9C875E1DCB8D250079FCDB /* Chartboost.framework */,
 				9677818D1CCDFC5B005219E4 /* RevMobAds.framework */,
 				1BBF527E1CCC75B100879E77 /* MobileCoreServices.framework */,
 				1BBF527C1CCC756200879E77 /* StoreKit.framework */,
 				1BBF52781CCC743F00879E77 /* CoreFoundation.framework */,
 				1BBF52791CCC743F00879E77 /* CoreImage.framework */,
-				1BBF52661CCC73EA00879E77 /* libFlurry_7.5.2.a */,
-				1BBF52671CCC73EA00879E77 /* libFlurryAds_7.5.2.a */,
-				1BBF52691CCC73EA00879E77 /* SUFlurryAdapter.framework */,
-				1BBF526A1CCC73EA00879E77 /* Supersonic.framework */,
-				1BBF526B1CCC73EA00879E77 /* UnityAds.bundle */,
-				1BBF526C1CCC73EA00879E77 /* UnityAds.framework */,
-				1BBF526D1CCC73EA00879E77 /* VungleSDK.embeddedframework */,
-				1BBF526E1CCC73EA00879E77 /* VungleSDK.framework */,
-				96E1FCC11CA9281500A98394 /* StartApp.framework */,
 				96E1FCBC1CA9234900A98394 /* libz.tbd */,
-				96E1FCB81CA9231D00A98394 /* StartApp.bundle */,
 				967AC2271C9170A300950D31 /* libsqlite3.tbd */,
-				84A794361BB534E4007E4AE1 /* Chartboost.framework */,
 				1B666B181C82C40500B936B8 /* AdColony.framework */,
 				96DD2D0F1C61AC690053EDF7 /* libz.1.2.5.tbd */,
 				84A480801BD0D231006F2BBB /* AmazonAd.framework */,
@@ -461,10 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BBF52741CCC73EA00879E77 /* UnityAds.bundle in Resources */,
-				1BBF52761CCC73EA00879E77 /* VungleSDK.embeddedframework in Resources */,
 				1B666B141C82BA1900B936B8 /* StoryboardAD.storyboard in Resources */,
-				96E1FCBA1CA9231D00A98394 /* StartApp.bundle in Resources */,
 				1AC563E8193DCE6000402286 /* Main.storyboard in Resources */,
 				84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */,
 				1AC563EA193DCE6000402286 /* Images.xcassets in Resources */,

@@ -40,7 +40,8 @@ class AdManagerView: UIViewController
     @IBOutlet weak var CheckAdOnline: UISwitch!
     
     @IBOutlet weak var textDevice: UITextView!
-    
+
+    @IBOutlet weak var txtVersion: UILabel!
     @IBAction func sw1Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad1")
         NSUserDefaults.standardUserDefaults().synchronize()
@@ -157,6 +158,8 @@ class AdManagerView: UIViewController
 
         CheckVPN.on = Utility.CheckVPN
         CheckAdOnline.on = Utility.CheckOnline
+        
+        txtVersion.text = "Version" + Utility.version
         
     }
     

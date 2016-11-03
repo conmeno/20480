@@ -74,6 +74,14 @@ class ADXML: NSObject, NSXMLParserDelegate
 
 
         }
+        else if(currentNode == "v")
+        {
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"version")
+            NSUserDefaults.standardUserDefaults().synchronize()
+
+            
+        }
         else if(currentNode == "online-ad1")
         {
             
@@ -238,38 +246,26 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         
-            //read vungle
-        else if(currentNode == "vungleid")
+            //read chartboost
+        else if(currentNode == "cbappid")
         {
-            print("vungleid " + string)
+            print("cbappid " + string)
             
             //save to Iphone user
             
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"vungleid")
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"cbappid")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-            //read revmob
- 
-            //read UNITY
-        else if(currentNode == "unityid")
+        else if(currentNode == "cbsign")
         {
-            print("unityid " + string)
+            print("cbsign " + string)
             
             //save to Iphone user
             
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"unityid")
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"cbsign")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
-            //read sonic
-        else if(currentNode == "sonicid")
-        {
-            print("sonicid " + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"sonicid")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
+     
         
         
         

@@ -33,15 +33,7 @@ class Data {
     
     //revmob appID
     let RevmobID: String = "572779277d5a5d460dcb3c15"
-    
-    //Vungle ID
-    let VungleID: String = ""
-    
-    let UnityGameId: String = ""
-    
-    let SonicID: String = ""
-    
-    
+       
     
     
     

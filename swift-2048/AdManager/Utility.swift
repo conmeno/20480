@@ -15,11 +15,11 @@ class Utility {
     static var isAd3 = true//Amazon
     static var isAd4 = false//Adcolony
    
-    static var isAd5 = false// ==>UnityAds
+    static var isAd5 = false// ==>Chartboost
     static var isAd6 = true//revmob
     
-    static var isAd7 = false //vungle
-    static var isAd8 = false //Sonic
+    static var isAd7 = false //none
+    static var isAd8 = false //none
     
     
     static var CheckOnline = true // on/off check ad online
@@ -31,11 +31,10 @@ class Utility {
     static var AdmobTestDeviceID: String = ""
     static var RevmobID: String = ""
     static var Amazonkey = ""
-    static var StartAppAppID = ""
-    static var StartAppAccountID=""
-    static var VungleID = ""
-    static var UnityGameID = ""
-    static var SonicID = ""
+    
+    static var CBAppID = ""
+    static var CBSign=""
+    static var version = ""
     static var isStopAdmobAD = false
     
     static var CheckVPN = true
@@ -67,9 +66,9 @@ class Utility {
         AdcolonyZoneID = data.AdcolonyZoneID
         AdmobTestDeviceID = data.TestDeviceID
         RevmobID = data.RevmobID
-        VungleID = data.VungleID
-        UnityGameID = data.UnityGameId
-        SonicID = data.SonicID
+       
+        CBAppID = data.cAppID
+        CBSign = data.cSign
  
         
         
@@ -272,32 +271,27 @@ class Utility {
             
         }
         
-        //vungle id
-        if(NSUserDefaults.standardUserDefaults().objectForKey("vungleid") != nil)
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("cbappid") != nil)
         {
-            VungleID = NSUserDefaults.standardUserDefaults().objectForKey("vungleid") as! String
+            CBAppID = NSUserDefaults.standardUserDefaults().objectForKey("cbappid") as! String
             
         }
         
-        
-        //unity id
-        if(NSUserDefaults.standardUserDefaults().objectForKey("unityid") != nil)
+        if(NSUserDefaults.standardUserDefaults().objectForKey("cbsign") != nil)
         {
-            UnityGameID = NSUserDefaults.standardUserDefaults().objectForKey("unityid") as! String
+            CBSign = NSUserDefaults.standardUserDefaults().objectForKey("cbsign") as! String
             
         }
-        
-        
-        //sonic id
-        if(NSUserDefaults.standardUserDefaults().objectForKey("sonicid") != nil)
-        {
-            SonicID = NSUserDefaults.standardUserDefaults().objectForKey("sonicid") as! String
-            
-        }
-        //revmob id
+               //revmob id
         if(NSUserDefaults.standardUserDefaults().objectForKey("revmobid") != nil)
         {
             RevmobID = NSUserDefaults.standardUserDefaults().objectForKey("revmobid") as! String
+            
+        }
+        if(NSUserDefaults.standardUserDefaults().objectForKey("version") != nil)
+        {
+            version = NSUserDefaults.standardUserDefaults().objectForKey("version") as! String
             
         }
         
