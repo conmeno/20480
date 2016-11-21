@@ -34,7 +34,6 @@
 		1BBF527B1CCC743F00879E77 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF52791CCC743F00879E77 /* CoreImage.framework */; };
 		1BBF527D1CCC756200879E77 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF527C1CCC756200879E77 /* StoreKit.framework */; };
 		1BBF527F1CCC75B100879E77 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBF527E1CCC75B100879E77 /* MobileCoreServices.framework */; };
-		1BBF52811CCC77BA00879E77 /* ISDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBF52801CCC77BA00879E77 /* ISDelegate.swift */; };
 		84A4807F1BD0B19B006F2BBB /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A4807E1BD0B19B006F2BBB /* reload.png */; };
 		84A480811BD0D231006F2BBB /* AmazonAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A480801BD0D231006F2BBB /* AmazonAd.framework */; };
 		84A794051BB52AAB007E4AE1 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794041BB52AAB007E4AE1 /* GoogleMobileAds.framework */; };
@@ -117,7 +116,6 @@
 		1BBF52791CCC743F00879E77 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		1BBF527C1CCC756200879E77 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1BBF527E1CCC75B100879E77 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		1BBF52801CCC77BA00879E77 /* ISDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ISDelegate.swift; path = AdManager/ISDelegate.swift; sourceTree = "<group>"; };
 		84A4807E1BD0B19B006F2BBB /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reload.png; sourceTree = "<group>"; };
 		84A480801BD0D231006F2BBB /* AmazonAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AmazonAd.framework; sourceTree = "<group>"; };
 		84A794041BB52AAB007E4AE1 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 		1B666B031C82BA0900B936B8 /* Ad */ = {
 			isa = PBXGroup;
 			children = (
-				1BBF52801CCC77BA00879E77 /* ISDelegate.swift */,
 				1B666B041C82BA1900B936B8 /* AdManagerView.swift */,
 				1B666B051C82BA1900B936B8 /* Bridging-header.h */,
 				1B666B061C82BA1900B936B8 /* cclass.h */,
@@ -387,7 +384,7 @@
 				TargetAttributes = {
 					1AC563DC193DCE6000402286 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = 597LVZ4LQD;
+						DevelopmentTeam = 6SZC32EP3F;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -449,7 +446,6 @@
 			files = (
 				1B666B131C82BA1900B936B8 /* MyAd.swift in Sources */,
 				96722F181C86C6D7008ACA05 /* ADXML.swift in Sources */,
-				1BBF52811CCC77BA00879E77 /* ISDelegate.swift in Sources */,
 				1B666B0E1C82BA1900B936B8 /* AdManagerView.swift in Sources */,
 				1AE8BEF4193EF260007592BA /* NumberTileGame.swift in Sources */,
 				1AF8F0B619403AA400A7049E /* AccessoryViews.swift in Sources */,

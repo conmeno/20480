@@ -27,6 +27,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="83" y="347" width="125" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="226" width="90" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-dD-nOF">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
@@ -36,11 +39,17 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="83" y="72" width="132" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="50" width="120" height="21"/>
+                                </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-Mn-Med">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="67" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="40" width="51" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="sw2Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="1mE-xs-M5p"/>
@@ -53,6 +62,9 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="83" y="33" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="11" width="90" height="21"/>
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="spA-Qb-dIS">
@@ -76,6 +88,9 @@
                                         <include reference="zN6-Sm-Og7"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="271" width="480" height="49"/>
+                                </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-kl-yli">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
@@ -85,11 +100,17 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="83" y="111" width="125" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="79" width="90" height="21"/>
+                                </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XDQ-VJ-oo7">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="106" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="74" width="51" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="sw3Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="P2i-1x-PJj"/>
@@ -103,11 +124,17 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="83" y="149" width="97" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="113" width="90" height="21"/>
+                                </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7YG-R5-FrN">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="145" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="108" width="51" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="sw4Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="OAS-If-aTc"/>
@@ -121,29 +148,29 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="83" y="189" width="97" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="20" width="90" height="21"/>
+                                </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-3W-dcs">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="184" width="51" height="31"/>
                                 </variation>
-                                <connections>
-                                    <action selector="sw5Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="CeD-Sf-Irp"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-vQ-Ta5">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="303" width="51" height="31"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="11" width="51" height="31"/>
                                 </variation>
                                 <connections>
-                                    <action selector="CheckAdOnlineAction:" destination="mQ7-qi-MMn" eventType="valueChanged" id="Vt6-cf-wPj"/>
+                                    <action selector="sw5Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="CeD-Sf-Irp"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B9w-ww-hV3">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="28" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="6" width="51" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="sw1Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="5If-rh-biK"/>
@@ -157,6 +184,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="83" y="308" width="132" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="178" y="226" width="137" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revmob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnt-f8-sMg">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
@@ -166,11 +196,17 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="227" y="189" width="97" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="50" width="90" height="21"/>
+                                </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GQf-E4-aVG">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="172" y="184" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="45" width="51" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="sw6Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="xKU-ct-ZT2"/>
@@ -181,19 +217,13 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="230" width="51" height="31"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="79" width="51" height="31"/>
+                                </variation>
                                 <connections>
                                     <action selector="sw7Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="2MO-GS-PbS"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mD-oP-LKb">
-                                <rect key="frame" x="66" y="65" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="235" width="97" height="21"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-HR-bvt">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -202,11 +232,17 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="223" y="235" width="97" height="21"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="118" width="42" height="21"/>
+                                </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-1C-lwA">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="342" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="110" y="221" width="51" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="CheckVPN:" destination="mQ7-qi-MMn" eventType="valueChanged" id="VEr-n3-T0z"/>
@@ -217,11 +253,14 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="159" y="230" width="51" height="31"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="113" width="51" height="31"/>
+                                </variation>
                                 <connections>
                                     <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="76G-V8-na5"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz3-YZ-RMa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz3-YZ-RMa">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -229,7 +268,34 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="269" width="53" height="26"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="197" width="42" height="21"/>
+                                </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mD-oP-LKb">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="83" y="235" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="79" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-vQ-Ta5">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="303" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="323" y="221" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="CheckAdOnlineAction:" destination="mQ7-qi-MMn" eventType="valueChanged" id="Vt6-cf-wPj"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -249,16 +315,16 @@
                                 <exclude reference="7YG-R5-FrN"/>
                                 <exclude reference="RmU-43-91F"/>
                                 <exclude reference="FVn-3W-dcs"/>
-                                <exclude reference="8HN-vQ-Ta5"/>
                                 <exclude reference="B9w-ww-hV3"/>
                                 <exclude reference="J1P-zF-qHq"/>
                                 <exclude reference="Lnt-f8-sMg"/>
                                 <exclude reference="GQf-E4-aVG"/>
                                 <exclude reference="Z9P-m0-bya"/>
-                                <exclude reference="0mD-oP-LKb"/>
                                 <exclude reference="LAb-HR-bvt"/>
                                 <exclude reference="acs-5o-KQd"/>
                                 <exclude reference="Iz3-YZ-RMa"/>
+                                <exclude reference="0mD-oP-LKb"/>
+                                <exclude reference="8HN-vQ-Ta5"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0se-Mu-mSP"/>
@@ -278,21 +344,47 @@
                                 <include reference="7YG-R5-FrN"/>
                                 <include reference="RmU-43-91F"/>
                                 <include reference="FVn-3W-dcs"/>
-                                <include reference="8HN-vQ-Ta5"/>
                                 <include reference="B9w-ww-hV3"/>
                                 <include reference="J1P-zF-qHq"/>
                                 <include reference="Lnt-f8-sMg"/>
                                 <include reference="GQf-E4-aVG"/>
                                 <include reference="Z9P-m0-bya"/>
-                                <include reference="0mD-oP-LKb"/>
                                 <include reference="LAb-HR-bvt"/>
                                 <include reference="acs-5o-KQd"/>
                                 <include reference="Iz3-YZ-RMa"/>
+                                <include reference="0mD-oP-LKb"/>
+                                <include reference="8HN-vQ-Ta5"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0se-Mu-mSP"/>
                                 <include reference="DiW-pD-2hg"/>
                                 <include reference="cU2-Ru-bAA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="4bi-Ak-Z6H"/>
+                                <include reference="WKv-dD-nOF"/>
+                                <include reference="RsR-Mn-Med"/>
+                                <include reference="ND5-4K-AdM"/>
+                                <include reference="spA-Qb-dIS"/>
+                                <include reference="lJh-kl-yli"/>
+                                <include reference="XDQ-VJ-oo7"/>
+                                <include reference="UQ4-NK-dH7"/>
+                                <include reference="7YG-R5-FrN"/>
+                                <include reference="RmU-43-91F"/>
+                                <include reference="FVn-3W-dcs"/>
+                                <include reference="B9w-ww-hV3"/>
+                                <include reference="J1P-zF-qHq"/>
+                                <include reference="Lnt-f8-sMg"/>
+                                <include reference="GQf-E4-aVG"/>
+                                <include reference="Z9P-m0-bya"/>
+                                <include reference="LAb-HR-bvt"/>
+                                <include reference="wOF-1C-lwA"/>
+                                <include reference="acs-5o-KQd"/>
+                                <include reference="Iz3-YZ-RMa"/>
+                                <include reference="0mD-oP-LKb"/>
+                                <include reference="8HN-vQ-Ta5"/>
                             </mask>
                         </variation>
                     </view>
@@ -314,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg9-Z9-z6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="232.5" y="16"/>
+            <point key="canvasLocation" x="230.25" y="36"/>
         </scene>
     </scenes>
 </document>

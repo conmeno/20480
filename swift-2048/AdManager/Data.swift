@@ -13,7 +13,7 @@ class Data {
     //5120 game
     
     //URL setup online
-     let AdURL: String = "http://webappchannel.com/tonyapp/20480-v4.txt"
+     let AdURL: String = "http://webappchannel.com/v5/20480-v5.txt"
     
     //google
     let gBanner : String = ""
@@ -25,14 +25,14 @@ class Data {
     let cAppID: String = ""
     let cSign : String = ""
     //amazon
-    let AmazonKey: String = "80c6b657bb2c4b15ac7cd28e2eb9b97b"
+    let AmazonKey: String = ""
     
     //adcolony
     let AdcolonyAppID: String = ""
     let AdcolonyZoneID: String = ""
     
     //revmob appID
-    let RevmobID: String = "572779277d5a5d460dcb3c15"
+    let RevmobID: String = ""
        
     
     
