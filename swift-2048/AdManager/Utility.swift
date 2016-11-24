@@ -253,8 +253,7 @@ class Utility {
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("adcolonyAppID") != nil)
         {
-            AdcolonyAppID = NSUserDefaults.standardUserDefaults().objectForKey("adcolonyAppID") as! String
-            
+            AdcolonyAppID = NSUserDefaults.standardUserDefaults().objectForKey("adcolonyAppID") as! String            
         }
         
         if(NSUserDefaults.standardUserDefaults().objectForKey("adcolonyZoneID") != nil)
