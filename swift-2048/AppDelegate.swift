@@ -36,9 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //           
 //        }
         
-        if(Utility.isAd5)
+        if(Utility.isAd5 || Utility.isAd6)
         {
             Chartboost.startWithAppId(Utility.CBAppID, appSignature: Utility.CBSign, delegate: nil)
+            print(Utility.CBAppID + " " + Utility.CBSign)
         }
         
 //        if(Utility.isAd8)

@@ -37,6 +37,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var AdmobBannerTop = true
     var AmazonBannerTop = false
     var AdNumber = 1
+    var RewardAdNumber = 1000
     let data = Data()
     
     
@@ -78,6 +79,11 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             }
             if(Utility.isAd6)
             {
+                //charboost
+               showChartRewardVideo()
+            }
+            if(Utility.isAd7)
+            {
                 
                 Utility.setupRevmob()
             }
@@ -95,9 +101,9 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
 //                Supersonic.sharedInstance().showISWithViewController(viewController)
 //            }
             
-            if(Utility.isAd4 || Utility.isAd7 || Utility.isAd5 || Utility.isAd8 )
+            if(Utility.isAd4 || Utility.isAd7 || Utility.isAd5 || Utility.isAd6 || Utility.isAd8 )
             {
-                self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerAd30:", userInfo: nil, repeats: true)
+                self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(MyAd.timerAd30(_:)), userInfo: nil, repeats: true)
             }
             
             
@@ -124,29 +130,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         }
         
     }
-    func vungleSDKwillCloseAdWithViewInfo(viewInfo: [NSObject : AnyObject]!, willPresentProductSheet: Bool) {
-        print("cai con me no")
-    }
-    
-   
-    
-//    func showVungle()
-//    {
-//        
-//        //let nserr : NSError
-//        //
-//        let sdk = VungleSDK.sharedSDK()
-//        sdk.delegate = self
-//        do {
-//            try sdk.playAd(viewController, error: ())
-//        } catch
-//        {
-//            print("Invalid Selection.")
-//        }
-//    }
-    //
-    //
-    func showAdcolony()
+       func showAdcolony()
     {
         AdColony.playVideoAdForZone(Utility.AdcolonyZoneID, withDelegate: nil)
     }
@@ -203,14 +187,14 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
 //            }
             if(Utility.isAd5)
             {
-                //ShowUnity()
+               showChartBoost()
                 
             }
             
-//            if(Utility.isAd8)
-//            {
-//                
-//            }
+            if(Utility.isAd6)
+            {
+               //chartboost reward
+                showChartRewardVideo()            }
             
             
             
@@ -233,10 +217,17 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         {
             //Chartboost.closeImpression()
             Chartboost.showInterstitial("Home" + String(AdNumber))
-            AdNumber++
+            AdNumber += 1
             print(AdNumber)
         }
     
+    func showChartRewardVideo()
+    {
+        
+        Chartboost.showRewardedVideo("rewarded " + String(RewardAdNumber))
+        RewardAdNumber += 1
+          print(RewardAdNumber)
+    }
     
     
     
