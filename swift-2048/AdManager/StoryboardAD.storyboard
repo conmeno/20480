@@ -67,31 +67,6 @@
                                     <rect key="frame" x="12" y="11" width="90" height="21"/>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="spA-Qb-dIS">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="zN6-Sm-Og7">
-                                        <variation key="widthClass=compact" constant="90"/>
-                                    </constraint>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="zN6-Sm-Og7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="zN6-Sm-Og7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="271" width="480" height="49"/>
-                                </variation>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-kl-yli">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -296,6 +271,31 @@
                                     <rect key="frame" x="201" y="50" width="90" height="21"/>
                                 </variation>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="spA-Qb-dIS">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="zN6-Sm-Og7">
+                                        <variation key="widthClass=compact" constant="100"/>
+                                    </constraint>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zN6-Sm-Og7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="zN6-Sm-Og7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="271" width="480" height="49"/>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -308,7 +308,6 @@
                                 <exclude reference="WKv-dD-nOF"/>
                                 <exclude reference="RsR-Mn-Med"/>
                                 <exclude reference="ND5-4K-AdM"/>
-                                <exclude reference="spA-Qb-dIS"/>
                                 <exclude reference="lJh-kl-yli"/>
                                 <exclude reference="XDQ-VJ-oo7"/>
                                 <exclude reference="UQ4-NK-dH7"/>
@@ -325,6 +324,7 @@
                                 <exclude reference="0mD-oP-LKb"/>
                                 <exclude reference="8HN-vQ-Ta5"/>
                                 <exclude reference="Lnt-f8-sMg"/>
+                                <exclude reference="spA-Qb-dIS"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0se-Mu-mSP"/>
@@ -337,7 +337,6 @@
                                 <include reference="WKv-dD-nOF"/>
                                 <include reference="RsR-Mn-Med"/>
                                 <include reference="ND5-4K-AdM"/>
-                                <include reference="spA-Qb-dIS"/>
                                 <include reference="lJh-kl-yli"/>
                                 <include reference="XDQ-VJ-oo7"/>
                                 <include reference="UQ4-NK-dH7"/>
@@ -354,6 +353,7 @@
                                 <include reference="0mD-oP-LKb"/>
                                 <include reference="8HN-vQ-Ta5"/>
                                 <include reference="Lnt-f8-sMg"/>
+                                <include reference="spA-Qb-dIS"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0se-Mu-mSP"/>
@@ -367,7 +367,6 @@
                                 <include reference="WKv-dD-nOF"/>
                                 <include reference="RsR-Mn-Med"/>
                                 <include reference="ND5-4K-AdM"/>
-                                <include reference="spA-Qb-dIS"/>
                                 <include reference="lJh-kl-yli"/>
                                 <include reference="XDQ-VJ-oo7"/>
                                 <include reference="UQ4-NK-dH7"/>
@@ -385,6 +384,7 @@
                                 <include reference="0mD-oP-LKb"/>
                                 <include reference="8HN-vQ-Ta5"/>
                                 <include reference="Lnt-f8-sMg"/>
+                                <include reference="spA-Qb-dIS"/>
                             </mask>
                         </variation>
                     </view>

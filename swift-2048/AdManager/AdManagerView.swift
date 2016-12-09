@@ -159,7 +159,7 @@ class AdManagerView: UIViewController
         CheckVPN.on = Utility.CheckVPN
         CheckAdOnline.on = Utility.CheckOnline
         
-        txtVersion.text = "Version" + Utility.version
+        txtVersion.text = "Version " + Utility.version
         
     }
     
