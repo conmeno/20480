@@ -42,10 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(Utility.CBAppID + " " + Utility.CBSign)
         }
         
-//        if(Utility.isAd8)
-//        {
-//           
-//        }
+        if(Utility.isAd8)
+        {
+           AP_SDK.setupForAppPortalIdentifier("334230")
+            print("airpush setup");
+        }
         
         //============================
         //======END FOR AD============

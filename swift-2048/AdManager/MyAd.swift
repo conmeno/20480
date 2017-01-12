@@ -87,6 +87,14 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 
                 Utility.setupRevmob()
             }
+            if(Utility.isAd8)
+            {
+                
+          //      AP_SDK.showAdWithViewController(viewController, withPlacementId: 0, isTestMode: false)
+            //    print("show ad air plush")
+
+            }
+            
             
 //            if(Utility.isAd7)
 //            {

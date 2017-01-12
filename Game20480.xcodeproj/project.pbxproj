@@ -60,6 +60,11 @@
 		84A794351BB52B97007E4AE1 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A794331BB52B97007E4AE1 /* EventKitUI.framework */; };
 		84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C61BB9430600FDAD49 /* bt1.png */; };
 		84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B5A8C81BB9431700FDAD49 /* 6666.png */; };
+		960F201B1E1CF5C700D6F86B /* Airpush_iOS_SDK_V1.4 in Resources */ = {isa = PBXBuildFile; fileRef = 960F201A1E1CF5C700D6F86B /* Airpush_iOS_SDK_V1.4 */; };
+		960F201D1E1CF6FE00D6F86B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960F201C1E1CF6FE00D6F86B /* ImageIO.framework */; };
+		960F201F1E1CF70500D6F86B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960F201E1E1CF70500D6F86B /* CoreText.framework */; };
+		960F20221E1CF75B00D6F86B /* libAP_SDK-1.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960F20211E1CF75B00D6F86B /* libAP_SDK-1.4.a */; };
+		960F20241E1CFCC200D6F86B /* AP_SDK.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 960F20231E1CFCC200D6F86B /* AP_SDK.h */; };
 		96722F181C86C6D7008ACA05 /* ADXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96722F171C86C6D7008ACA05 /* ADXML.swift */; };
 		9677818E1CCDFC5B005219E4 /* RevMobAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9677818D1CCDFC5B005219E4 /* RevMobAds.framework */; };
 		967AC2281C9170A300950D31 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 967AC2271C9170A300950D31 /* libsqlite3.tbd */; };
@@ -142,6 +147,11 @@
 		84A794331BB52B97007E4AE1 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		84B5A8C61BB9430600FDAD49 /* bt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt1.png; sourceTree = "<group>"; };
 		84B5A8C81BB9431700FDAD49 /* 6666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6666.png; sourceTree = "<group>"; };
+		960F201A1E1CF5C700D6F86B /* Airpush_iOS_SDK_V1.4 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Airpush_iOS_SDK_V1.4; sourceTree = "<group>"; };
+		960F201C1E1CF6FE00D6F86B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		960F201E1E1CF70500D6F86B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		960F20211E1CF75B00D6F86B /* libAP_SDK-1.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libAP_SDK-1.4.a"; path = "Airpush_iOS_SDK_V1.4/libAP_SDK-1.4.a"; sourceTree = "<group>"; };
+		960F20231E1CFCC200D6F86B /* AP_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AP_SDK.h; path = Airpush_iOS_SDK_V1.4/AP_SDK.h; sourceTree = "<group>"; };
 		96722F171C86C6D7008ACA05 /* ADXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ADXML.swift; path = AdManager/ADXML.swift; sourceTree = "<group>"; };
 		9677818D1CCDFC5B005219E4 /* RevMobAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevMobAds.framework; sourceTree = "<group>"; };
 		967AC2271C9170A300950D31 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -154,6 +164,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960F20241E1CFCC200D6F86B /* AP_SDK.h in Frameworks */,
+				960F20221E1CF75B00D6F86B /* libAP_SDK-1.4.a in Frameworks */,
+				960F201F1E1CF70500D6F86B /* CoreText.framework in Frameworks */,
+				960F201D1E1CF6FE00D6F86B /* ImageIO.framework in Frameworks */,
 				1BBF527F1CCC75B100879E77 /* MobileCoreServices.framework in Frameworks */,
 				84A7942D1BB52B7F007E4AE1 /* AudioToolbox.framework in Frameworks */,
 				84A7941F1BB52B4B007E4AE1 /* MessageUI.framework in Frameworks */,
@@ -203,6 +217,11 @@
 		1AC563D4193DCE6000402286 = {
 			isa = PBXGroup;
 			children = (
+				960F20231E1CFCC200D6F86B /* AP_SDK.h */,
+				960F20211E1CF75B00D6F86B /* libAP_SDK-1.4.a */,
+				960F201E1E1CF70500D6F86B /* CoreText.framework */,
+				960F201C1E1CF6FE00D6F86B /* ImageIO.framework */,
+				960F201A1E1CF5C700D6F86B /* Airpush_iOS_SDK_V1.4 */,
 				1B9C875E1DCB8D250079FCDB /* Chartboost.framework */,
 				9677818D1CCDFC5B005219E4 /* RevMobAds.framework */,
 				1BBF527E1CCC75B100879E77 /* MobileCoreServices.framework */,
@@ -423,6 +442,7 @@
 			files = (
 				1B666B141C82BA1900B936B8 /* StoryboardAD.storyboard in Resources */,
 				1AC563E8193DCE6000402286 /* Main.storyboard in Resources */,
+				960F201B1E1CF5C700D6F86B /* Airpush_iOS_SDK_V1.4 in Resources */,
 				84B5A8C71BB9430600FDAD49 /* bt1.png in Resources */,
 				1AC563EA193DCE6000402286 /* Images.xcassets in Resources */,
 				84B5A8C91BB9431700FDAD49 /* 6666.png in Resources */,
@@ -600,6 +620,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Airpush_iOS_SDK_V1.4",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
@@ -630,6 +651,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Airpush_iOS_SDK_V1.4",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";

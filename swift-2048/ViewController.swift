@@ -43,6 +43,11 @@ class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDe
     }
     
     //end click button
+    override func viewDidAppear(animated: Bool) {
+                AP_SDK.setCallBackDelegate(self)
+                AP_SDK.showAdWithViewController(self, withPlacementId: 1, isTestMode: true)
+                print("show ad air plush")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +56,8 @@ class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDe
             let myad = MyAd(root: self)
             myad.ViewDidload()
             
-        
+//        AP_SDK.showAdWithViewController(self, withPlacementId: 1, isTestMode: false)
+//        print("show ad air plush")
         
         
         if(Utility.isAd2)
@@ -62,6 +68,46 @@ class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDe
         
          }
    
+    
+    
+    
+    
+    
+    func onAdLoading() {
+       print("not available")
+    }
+    
+    func onAdLoaded() {
+        print("not available")
+    }
+    
+    func onAdClick() {
+       print("not available")    }
+    
+    func onClose() {
+        // This method will get called when ad is closed.
+    }
+    
+    func noAdAvailable() {
+        // This method will get called if there is no ads available.
+        print("not available")
+    }
+    
+    func onAdError(message: String) {
+        // This method will get called if there is any error while communicationg to server.
+        print("error")
+    }
+    
+    func onSDKIntegrationError(message: String) {
+        // This method will get called if there is any SDK Integreation error.
+        print("ninter err")
+    }
+    
+    
+    
+    
+    
+    
     
     
    
