@@ -85,83 +85,84 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     view.addGestureRecognizer(rightSwipe)
   }
     
-    var interstitial: GADInterstitial!
-    
-    func createAndLoadAd() -> GADInterstitial
-    {
-        let ad = GADInterstitial(adUnitID: "ca-app-pub-1165859043722140/5008085314")
-        
-        let request = GADRequest()
-        
-        request.testDevices = [kGADSimulatorID, "ed118f458979010c0f207ec85c5a21fa"]
-        
-        ad.loadRequest(request)
-        
-        return ad
-    }
-    func showAdmob()
-    {
-        if (self.interstitial.isReady)
-        {
-            self.interstitial.presentFromRootViewController(self)
-            self.interstitial = self.createAndLoadAd()
-        }
-    }
-
-    func ShowAdmobBanner()
-    {
-       let w = view?.bounds.width
-        
-        
-        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w! , 50))
-        gBannerView?.adUnitID = "ca-app-pub-1165859043722140/3531352116"
-        gBannerView?.delegate = nil
-        gBannerView?.rootViewController = self
-        
-//        let topConstraint = NSLayoutConstraint(item: gBannerView!,
-//            attribute: NSLayoutAttribute.CenterX,
-//            relatedBy: .Equal,
-//            toItem: view?,
-//            attribute: NSLayoutAttribute.CenterX,
-//            multiplier: 1,
-//            constant: 0)
-//        view?.addConstraint(topConstraint)
-        
-        view?.addSubview(gBannerView!)
-        //adViewHeight = bannerView!.frame.size.height
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID , "ed118f458979010c0f207ec85c5a21fa"];
-        gBannerView?.loadRequest(request)
-        //gBannerView?.hidden = true
-        print("load admob")
-        
-//        [NSLayoutConstraint constraintWithItem:contentView
-//            attribute:NSLayoutAttributeCenterX
-//            relatedBy:NSLayoutRelationEqual
-//            toItem:self.view
-//            attribute:NSLayoutAttributeCenterX
-//            multiplier:1.f constant:0.f]];
-        
-        
-        
-        
-        
-    }
+//    var interstitial: GADInterstitial!
+//    
+//    func createAndLoadAd() -> GADInterstitial
+//    {
+//        var ad = GADInterstitial(adUnitID: "ca-app-pub-7800586925586997/7512154068")
+//        
+//        var request = GADRequest()
+//        
+//        request.testDevices = [kGADSimulatorID, "840f78326dcb34887597a9fa80236814"]
+//        
+//        ad.loadRequest(request)
+//        
+//        return ad
+//    }
+//    func showAdmob()
+//    {
+//        if (self.interstitial.isReady)
+//        {
+//            self.interstitial.presentFromRootViewController(self)
+//            self.interstitial = self.createAndLoadAd()
+//        }
+//    }
+//
+//    func ShowAdmobBanner()
+//    {
+//       let w = view?.bounds.width
+//        
+//        
+//        gBannerView = GADBannerView(frame: CGRectMake(0, 20 , w! , 50))
+//        gBannerView?.adUnitID = "ca-app-pub-7800586925586997/7512154068"
+//        gBannerView?.delegate = nil
+//        gBannerView?.rootViewController = self
+//        
+////        let topConstraint = NSLayoutConstraint(item: gBannerView!,
+////            attribute: NSLayoutAttribute.CenterX,
+////            relatedBy: .Equal,
+////            toItem: view?,
+////            attribute: NSLayoutAttribute.CenterX,
+////            multiplier: 1,
+////            constant: 0)
+////        view?.addConstraint(topConstraint)
+//        
+//        view?.addSubview(gBannerView!)
+//        //adViewHeight = bannerView!.frame.size.height
+//        let request = GADRequest()
+//        request.testDevices = [kGADSimulatorID , "840f78326dcb34887597a9fa80236814"];
+//        gBannerView?.loadRequest(request)
+//        //gBannerView?.hidden = true
+//        print("load admob")
+//        
+////        [NSLayoutConstraint constraintWithItem:contentView
+////            attribute:NSLayoutAttributeCenterX
+////            relatedBy:NSLayoutRelationEqual
+////            toItem:self.view
+////            attribute:NSLayoutAttributeCenterX
+////            multiplier:1.f constant:0.f]];
+//        
+//        
+//        
+//        
+//        
+//    }
 
   // View Controller
   override func viewDidLoad()  {
     super.viewDidLoad()
-    ShowAdmobBanner()
- self.interstitial = self.createAndLoadAd()
+    //ShowAdmobBanner()
+ //self.interstitial = self.createAndLoadAd()
     setupGame()
-    setupButton()
+   // setupButton()
   }
     func setupButton(){
     
         let button   = UIButton(type: UIButtonType.System) as UIButton
         button.frame = CGRectMake(10, 80, 65, 40)
         button.backgroundColor = UIColor.blackColor()
-      
+        let image = UIImage(named: "reload.png")
+        button.imageView!.image = image
         button.setTitle("Reset", forState: UIControlState.Normal)
         button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
       //button.titleLabel?.textColor = UIColor.whiteColor()
@@ -203,7 +204,7 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     func yPositionForViewAtPosition(order: Int, views: [UIView]) -> CGFloat {
       assert(views.count > 0)
       assert(order >= 0 && order < views.count)
-      //let viewHeight = views[order].bounds.size.height
+      _ = views[order].bounds.size.height
       let totalHeight = CGFloat(views.count - 1)*viewPadding + views.map({ $0.bounds.size.height }).reduce(verticalViewOffset, combine: { $0 + $1 })
       let viewsTop = 0.5*(vcHeight - totalHeight) >= 0 ? 0.5*(vcHeight - totalHeight) : 0
 
@@ -314,8 +315,10 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
             break;
         case 0:
             NSLog("Show Ad");
-            showAdmob()
-
+            //showAdmob()
+             setupButton()
+          //  Chartboost.showInterstitial("New game")
+           
             break;
         default:
             NSLog("Default");

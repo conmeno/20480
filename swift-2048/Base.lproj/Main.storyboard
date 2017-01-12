@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6666.png" translatesAutoresizingMaskIntoConstraints="NO" id="5eB-8H-mJv">
-                                <rect key="frame" x="0.0" y="40" width="320" height="528"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKb-Fe-Dgl">
                                 <rect key="frame" x="16" y="380" width="288" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.1050577697" blue="0.26950855210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.20625099569999999" green="0.83526851130000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Dl3-8Y-zKS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="More Apps">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.7028509665868159" green="0.5160754528524476" blue="0.88595448369565211" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -38,11 +38,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfJ-eG-B82">
                                 <rect key="frame" x="16" y="312" width="288" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.1050577697" blue="0.26950855210000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.70285096660000002" green="0.51607545290000001" blue="0.88595448369999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="d5E-fA-XIu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="  Start Game">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,10 +53,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1W-vv-ave" userLabel="20480">
-                                <rect key="frame" x="0.0" y="100" width="320" height="98"/>
+                                <rect key="frame" x="19" y="90" width="282" height="116"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="6kP-Pj-UFd"/>
-                                    <constraint firstAttribute="height" constant="98" id="BU8-60-8yS"/>
+                                    <constraint firstAttribute="width" constant="282" id="R6F-iw-fRA"/>
+                                    <constraint firstAttribute="height" constant="116" id="p8O-C4-khL"/>
                                 </constraints>
                                 <state key="normal" image="bt1.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,12 +68,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5z-be-Z1L">
                                 <rect key="frame" x="16" y="448" width="288" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.10505776973648573" blue="0.2695085520771302" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.70285096660000002" green="0.51607545290000001" blue="0.88595448369999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="wFd-HZ-Xqg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="More Best Games">
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="More Best Apps">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -82,35 +82,23 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="p1W-vv-ave" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="0x8-P6-nED"/>
                             <constraint firstItem="cKb-Fe-Dgl" firstAttribute="top" secondItem="tfJ-eG-B82" secondAttribute="bottom" constant="8" id="5Z5-1l-s1G"/>
                             <constraint firstAttribute="bottomMargin" secondItem="5eB-8H-mJv" secondAttribute="bottom" id="ATo-Sy-c5F"/>
                             <constraint firstItem="cKb-Fe-Dgl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JVD-Kk-ejN"/>
                             <constraint firstItem="j5z-be-Z1L" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ORG-Jk-rqq"/>
-                            <constraint firstAttribute="centerX" secondItem="p1W-vv-ave" secondAttribute="centerX" id="P2F-dv-BYE"/>
-                            <constraint firstItem="p1W-vv-ave" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="Tu4-9P-Mra"/>
-                            <constraint firstItem="p1W-vv-ave" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="XnV-8S-G2O"/>
+                            <constraint firstItem="p1W-vv-ave" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UJT-SE-unM"/>
                             <constraint firstItem="5eB-8H-mJv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="aZl-fu-txW"/>
                             <constraint firstItem="tfJ-eG-B82" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fif-Au-zlM"/>
                             <constraint firstItem="tfJ-eG-B82" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gRN-8S-cgw"/>
                             <constraint firstItem="j5z-be-Z1L" firstAttribute="top" secondItem="cKb-Fe-Dgl" secondAttribute="bottom" constant="8" id="jQq-rF-dgG"/>
-                            <constraint firstItem="5eB-8H-mJv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="jdO-g6-TSF"/>
+                            <constraint firstItem="5eB-8H-mJv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="jdO-g6-TSF"/>
                             <constraint firstItem="cKb-Fe-Dgl" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="liZ-UE-gMK"/>
                             <constraint firstItem="j5z-be-Z1L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vXz-Fj-arE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5eB-8H-mJv" secondAttribute="trailing" constant="-16" id="xwn-rK-CiH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j5z-be-Z1L" secondAttribute="bottom" constant="60" id="y6U-Eu-7MJ"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Tu4-9P-Mra"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="Tu4-9P-Mra"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -148,7 +136,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6666.png" width="823" height="1237"/>
-        <image name="bt1.png" width="762" height="218"/>
+        <image name="6666.png" width="826" height="1414"/>
+        <image name="bt1.png" width="762" height="304"/>
     </resources>
 </document>
