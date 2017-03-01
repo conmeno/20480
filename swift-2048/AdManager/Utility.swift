@@ -15,12 +15,18 @@ class Utility {
     static var isAd3 = true//Amazon
     static var isAd4 = false//Adcolony
    
-    static var isAd5 = false// ==>UnityAds
-    static var isAd6 = true//revmob
+    static var isAd5 = false// ==>chart
+    static var isAd6 = true//chart rewarded
     
-    static var isAd7 = false //vungle
-    static var isAd8 = false //Sonic
+    static var isAd7 = false //revmob
+    static var isAd8 = false //startapp
     
+     static var isAd9 = false//vungle
+    static var isAd10 = false
+    static var isAd11 = false
+    static var isAd12 = false
+    static var isAd13 = false
+    static var isAd14 = false
     
     static var CheckOnline = true // on/off check ad online
     static var GBannerAdUnit: String = ""
@@ -34,8 +40,9 @@ class Utility {
     static var StartAppAppID = ""
     static var StartAppAccountID=""
     static var VungleID = ""
-    static var UnityGameID = ""
-    static var SonicID = ""
+    static var CBAppID = ""
+    static var CBSign=""
+    static var version = ""
     static var isStopAdmobAD = false
     
     static var CheckVPN = true
@@ -68,8 +75,7 @@ class Utility {
         AdmobTestDeviceID = data.TestDeviceID
         RevmobID = data.RevmobID
         VungleID = data.VungleID
-        UnityGameID = data.UnityGameId
-        SonicID = data.SonicID
+        
  
         
         
@@ -280,24 +286,40 @@ class Utility {
         }
         
         
-        //unity id
-        if(NSUserDefaults.standardUserDefaults().objectForKey("unityid") != nil)
+        //startapp id
+        if(NSUserDefaults.standardUserDefaults().objectForKey("startappid") != nil)
         {
-            UnityGameID = NSUserDefaults.standardUserDefaults().objectForKey("unityid") as! String
+            StartAppAppID = NSUserDefaults.standardUserDefaults().objectForKey("startappid") as! String
             
         }
         
         
         //sonic id
-        if(NSUserDefaults.standardUserDefaults().objectForKey("sonicid") != nil)
+        if(NSUserDefaults.standardUserDefaults().objectForKey("startappaccount") != nil)
         {
-            SonicID = NSUserDefaults.standardUserDefaults().objectForKey("sonicid") as! String
+            StartAppAccountID = NSUserDefaults.standardUserDefaults().objectForKey("startappaccount") as! String
+            
+        }
+        if(NSUserDefaults.standardUserDefaults().objectForKey("cbappid") != nil)
+        {
+            CBAppID = NSUserDefaults.standardUserDefaults().objectForKey("cbappid") as! String
+            
+        }
+        
+        if(NSUserDefaults.standardUserDefaults().objectForKey("cbsign") != nil)
+        {
+            CBSign = NSUserDefaults.standardUserDefaults().objectForKey("cbsign") as! String
             
         }
         //revmob id
         if(NSUserDefaults.standardUserDefaults().objectForKey("revmobid") != nil)
         {
             RevmobID = NSUserDefaults.standardUserDefaults().objectForKey("revmobid") as! String
+            
+        }
+        if(NSUserDefaults.standardUserDefaults().objectForKey("version") != nil)
+        {
+            version = NSUserDefaults.standardUserDefaults().objectForKey("version") as! String
             
         }
         

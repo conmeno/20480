@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--Ad Manager View-->
         <scene sceneID="MDb-VE-VLt">
             <objects>
-                <viewController storyboardIdentifier="AdView1" id="mQ7-qi-MMn" customClass="AdManagerView" customModule="Bird_Jump" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdView1" id="mQ7-qi-MMn" customClass="AdManagerView" customModule="_120_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RkD-vD-QMJ"/>
                         <viewControllerLayoutGuide type="bottom" id="lsm-U3-Fee"/>
@@ -25,34 +25,338 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="347" width="125" height="21"/>
+                                    <rect key="frame" x="76" y="347" width="125" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="226" width="90" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-dD-nOF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBanner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-dD-nOF">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="72" width="132" height="21"/>
+                                    <rect key="frame" x="214" y="33" width="132" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="50" width="120" height="21"/>
                                 </variation>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-Mn-Med">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="67" width="51" height="31"/>
+                                    <rect key="frame" x="159" y="28" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="40" width="51" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="sw2Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="1mE-xs-M5p"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google Full" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND5-4K-AdM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GFull" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ND5-4K-AdM">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="33" width="97" height="21"/>
+                                    <rect key="frame" x="83" y="33" width="43" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="11" width="90" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AZ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-kl-yli">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="83" y="72" width="72" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="79" width="90" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XDQ-VJ-oo7">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="67" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="74" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw3Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="P2i-1x-PJj"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adcolony" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ4-NK-dH7">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="213" y="71" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="113" width="90" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7YG-R5-FrN">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="67" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="108" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw4Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="OAS-If-aTc"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CB Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmU-43-91F">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="83" y="111" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="20" width="90" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-3W-dcs">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="106" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="11" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw5Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="CeD-Sf-Irp"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B9w-ww-hV3">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="28" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="6" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw1Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="5If-rh-biK"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Ad Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1P-zF-qHq">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="76" y="308" width="132" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="178" y="226" width="137" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GQf-E4-aVG">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="106" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="45" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw6Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="xKU-ct-ZT2"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z9P-m0-bya">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="21" y="145" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="79" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw7Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="2MO-GS-PbS"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Startapp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-HR-bvt">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="215" y="150" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="118" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-1C-lwA">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="342" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="110" y="221" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="CheckVPN:" destination="mQ7-qi-MMn" eventType="valueChanged" id="VEr-n3-T0z"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="acs-5o-KQd">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="145" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="113" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="76G-V8-na5"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vungle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKd-N7-X7H">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="84" y="189" width="71" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="118" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8HF-hW-DTu">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="184" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="113" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="cjK-Rg-0B9"/>
+                                    <action selector="sw9Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="isu-cx-lGU"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5n-lM-424">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="223" y="188" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="118" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jM5-AD-t4U">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="183" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="113" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw10Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="UL3-MT-R7A"/>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="gNJ-n5-UDa"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOA-uH-9ut">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="84" y="223" width="71" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="118" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xLq-lF-YRY">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="218" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="113" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw11Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="LWX-gg-6ir"/>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="MfW-3r-wMg"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcB-dn-anX">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="223" y="222" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="118" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3tT-Qv-ROs">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="217" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="113" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sw12Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="lMz-rk-xCS"/>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="WRD-HO-05q"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revmob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mD-oP-LKb">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="84" y="150" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="79" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-vQ-Ta5">
+                                <rect key="frame" x="26" y="94" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="303" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="323" y="221" width="51" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="CheckAdOnlineAction:" destination="mQ7-qi-MMn" eventType="valueChanged" id="Vt6-cf-wPj"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cb RVideo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnt-f8-sMg">
+                                <rect key="frame" x="66" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="211" y="111" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="50" width="90" height="21"/>
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="spA-Qb-dIS">
@@ -60,7 +364,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="zN6-Sm-Og7">
-                                        <variation key="widthClass=compact" constant="90"/>
+                                        <variation key="widthClass=compact" constant="100"/>
                                     </constraint>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -76,151 +380,72 @@
                                         <include reference="zN6-Sm-Og7"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="271" width="480" height="49"/>
+                                </variation>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amazon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJh-kl-yli">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqc-GC-ioC">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="111" width="125" height="21"/>
+                                    <rect key="frame" x="85" y="263" width="71" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="118" width="42" height="21"/>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XDQ-VJ-oo7">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="72C-h6-FFK">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="106" width="51" height="31"/>
+                                    <rect key="frame" x="21" y="258" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="113" width="51" height="31"/>
                                 </variation>
                                 <connections>
-                                    <action selector="sw3Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="P2i-1x-PJj"/>
+                                    <action selector="sw13Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="h1x-Tv-1XG"/>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="XrK-4u-pSf"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adcolony" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ4-NK-dH7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNo-8Z-UqT">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="149" width="97" height="21"/>
+                                    <rect key="frame" x="224" y="262" width="97" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="201" y="118" width="42" height="21"/>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7YG-R5-FrN">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cl1-k0-mE7">
                                 <rect key="frame" x="26" y="94" width="51" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="145" width="51" height="31"/>
+                                    <rect key="frame" x="160" y="257" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="113" width="51" height="31"/>
                                 </variation>
                                 <connections>
-                                    <action selector="sw4Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="OAS-If-aTc"/>
+                                    <action selector="sw14Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="WLX-8z-oAj"/>
+                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="JgP-L4-bFE"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UnityAds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmU-43-91F">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iz3-YZ-RMa">
                                 <rect key="frame" x="66" y="65" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="189" width="97" height="21"/>
+                                    <rect key="frame" x="186" y="342" width="134" height="26"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="197" width="42" height="21"/>
                                 </variation>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-3W-dcs">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="184" width="51" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sw5Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="CeD-Sf-Irp"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-vQ-Ta5">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="303" width="51" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="CheckAdOnlineAction:" destination="mQ7-qi-MMn" eventType="valueChanged" id="Vt6-cf-wPj"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B9w-ww-hV3">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="28" width="51" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sw1Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="5If-rh-biK"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Ad Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1P-zF-qHq">
-                                <rect key="frame" x="66" y="65" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="308" width="132" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revmob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnt-f8-sMg">
-                                <rect key="frame" x="66" y="65" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="223" y="189" width="97" height="21"/>
-                                </variation>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GQf-E4-aVG">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="159" y="184" width="51" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sw6Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="xKU-ct-ZT2"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Z9P-m0-bya">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="230" width="51" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sw7Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="2MO-GS-PbS"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VungLe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mD-oP-LKb">
-                                <rect key="frame" x="66" y="65" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="83" y="235" width="97" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sonic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-HR-bvt">
-                                <rect key="frame" x="66" y="65" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="223" y="235" width="97" height="21"/>
-                                </variation>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-1C-lwA">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="342" width="51" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="CheckVPN:" destination="mQ7-qi-MMn" eventType="valueChanged" id="VEr-n3-T0z"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="acs-5o-KQd">
-                                <rect key="frame" x="26" y="94" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="159" y="230" width="51" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sw8Action:" destination="mQ7-qi-MMn" eventType="valueChanged" id="76G-V8-na5"/>
-                                </connections>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -233,22 +458,35 @@
                                 <exclude reference="WKv-dD-nOF"/>
                                 <exclude reference="RsR-Mn-Med"/>
                                 <exclude reference="ND5-4K-AdM"/>
-                                <exclude reference="spA-Qb-dIS"/>
                                 <exclude reference="lJh-kl-yli"/>
                                 <exclude reference="XDQ-VJ-oo7"/>
                                 <exclude reference="UQ4-NK-dH7"/>
                                 <exclude reference="7YG-R5-FrN"/>
                                 <exclude reference="RmU-43-91F"/>
                                 <exclude reference="FVn-3W-dcs"/>
-                                <exclude reference="8HN-vQ-Ta5"/>
                                 <exclude reference="B9w-ww-hV3"/>
                                 <exclude reference="J1P-zF-qHq"/>
-                                <exclude reference="Lnt-f8-sMg"/>
                                 <exclude reference="GQf-E4-aVG"/>
                                 <exclude reference="Z9P-m0-bya"/>
-                                <exclude reference="0mD-oP-LKb"/>
                                 <exclude reference="LAb-HR-bvt"/>
                                 <exclude reference="acs-5o-KQd"/>
+                                <exclude reference="YKd-N7-X7H"/>
+                                <exclude reference="8HF-hW-DTu"/>
+                                <exclude reference="p5n-lM-424"/>
+                                <exclude reference="jM5-AD-t4U"/>
+                                <exclude reference="wOA-uH-9ut"/>
+                                <exclude reference="xLq-lF-YRY"/>
+                                <exclude reference="kcB-dn-anX"/>
+                                <exclude reference="3tT-Qv-ROs"/>
+                                <exclude reference="0mD-oP-LKb"/>
+                                <exclude reference="8HN-vQ-Ta5"/>
+                                <exclude reference="Lnt-f8-sMg"/>
+                                <exclude reference="spA-Qb-dIS"/>
+                                <exclude reference="sqc-GC-ioC"/>
+                                <exclude reference="72C-h6-FFK"/>
+                                <exclude reference="bNo-8Z-UqT"/>
+                                <exclude reference="cl1-k0-mE7"/>
+                                <exclude reference="Iz3-YZ-RMa"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0se-Mu-mSP"/>
@@ -261,27 +499,66 @@
                                 <include reference="WKv-dD-nOF"/>
                                 <include reference="RsR-Mn-Med"/>
                                 <include reference="ND5-4K-AdM"/>
-                                <include reference="spA-Qb-dIS"/>
                                 <include reference="lJh-kl-yli"/>
                                 <include reference="XDQ-VJ-oo7"/>
                                 <include reference="UQ4-NK-dH7"/>
                                 <include reference="7YG-R5-FrN"/>
                                 <include reference="RmU-43-91F"/>
                                 <include reference="FVn-3W-dcs"/>
-                                <include reference="8HN-vQ-Ta5"/>
                                 <include reference="B9w-ww-hV3"/>
                                 <include reference="J1P-zF-qHq"/>
-                                <include reference="Lnt-f8-sMg"/>
                                 <include reference="GQf-E4-aVG"/>
                                 <include reference="Z9P-m0-bya"/>
-                                <include reference="0mD-oP-LKb"/>
                                 <include reference="LAb-HR-bvt"/>
                                 <include reference="acs-5o-KQd"/>
+                                <include reference="YKd-N7-X7H"/>
+                                <include reference="8HF-hW-DTu"/>
+                                <include reference="p5n-lM-424"/>
+                                <include reference="jM5-AD-t4U"/>
+                                <include reference="wOA-uH-9ut"/>
+                                <include reference="xLq-lF-YRY"/>
+                                <include reference="kcB-dn-anX"/>
+                                <include reference="3tT-Qv-ROs"/>
+                                <include reference="0mD-oP-LKb"/>
+                                <include reference="8HN-vQ-Ta5"/>
+                                <include reference="Lnt-f8-sMg"/>
+                                <include reference="spA-Qb-dIS"/>
+                                <include reference="sqc-GC-ioC"/>
+                                <include reference="72C-h6-FFK"/>
+                                <include reference="bNo-8Z-UqT"/>
+                                <include reference="cl1-k0-mE7"/>
+                                <include reference="Iz3-YZ-RMa"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0se-Mu-mSP"/>
                                 <include reference="DiW-pD-2hg"/>
                                 <include reference="cU2-Ru-bAA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="4bi-Ak-Z6H"/>
+                                <include reference="WKv-dD-nOF"/>
+                                <include reference="RsR-Mn-Med"/>
+                                <include reference="ND5-4K-AdM"/>
+                                <include reference="lJh-kl-yli"/>
+                                <include reference="XDQ-VJ-oo7"/>
+                                <include reference="UQ4-NK-dH7"/>
+                                <include reference="7YG-R5-FrN"/>
+                                <include reference="RmU-43-91F"/>
+                                <include reference="FVn-3W-dcs"/>
+                                <include reference="B9w-ww-hV3"/>
+                                <include reference="J1P-zF-qHq"/>
+                                <include reference="GQf-E4-aVG"/>
+                                <include reference="Z9P-m0-bya"/>
+                                <include reference="LAb-HR-bvt"/>
+                                <include reference="wOF-1C-lwA"/>
+                                <include reference="acs-5o-KQd"/>
+                                <include reference="0mD-oP-LKb"/>
+                                <include reference="8HN-vQ-Ta5"/>
+                                <include reference="Lnt-f8-sMg"/>
+                                <include reference="spA-Qb-dIS"/>
+                                <include reference="Iz3-YZ-RMa"/>
                             </mask>
                         </variation>
                     </view>
@@ -290,6 +567,11 @@
                         <outlet property="CheckAdOnline" destination="8HN-vQ-Ta5" id="hVq-bL-RJH"/>
                         <outlet property="CheckVPN" destination="wOF-1C-lwA" id="2TU-W0-kF0"/>
                         <outlet property="sw1" destination="B9w-ww-hV3" id="cRW-3M-vZd"/>
+                        <outlet property="sw10" destination="jM5-AD-t4U" id="CtQ-Ra-EUW"/>
+                        <outlet property="sw11" destination="xLq-lF-YRY" id="Fx0-Mb-p1n"/>
+                        <outlet property="sw12" destination="3tT-Qv-ROs" id="6gm-2M-X8d"/>
+                        <outlet property="sw13" destination="72C-h6-FFK" id="8E5-qC-dcE"/>
+                        <outlet property="sw14" destination="cl1-k0-mE7" id="uKl-cl-0bd"/>
                         <outlet property="sw2" destination="RsR-Mn-Med" id="zB4-QI-YLm"/>
                         <outlet property="sw3" destination="XDQ-VJ-oo7" id="wLO-la-dvd"/>
                         <outlet property="sw4" destination="7YG-R5-FrN" id="2vp-dW-aea"/>
@@ -297,12 +579,14 @@
                         <outlet property="sw6" destination="GQf-E4-aVG" id="9is-Pn-6ou"/>
                         <outlet property="sw7" destination="Z9P-m0-bya" id="EFk-cX-Du0"/>
                         <outlet property="sw8" destination="acs-5o-KQd" id="Nnk-np-Rkj"/>
+                        <outlet property="sw9" destination="8HF-hW-DTu" id="GtS-Ms-RwD"/>
                         <outlet property="textDevice" destination="spA-Qb-dIS" id="vz2-5B-6lI"/>
+                        <outlet property="txtVersion" destination="Iz3-YZ-RMa" id="8ut-FZ-v4J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg9-Z9-z6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="249" y="-10"/>
+            <point key="canvasLocation" x="229.5" y="36"/>
         </scene>
     </scenes>
 </document>

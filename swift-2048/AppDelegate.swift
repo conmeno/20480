@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UnityAdsDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
                             
   var window: UIWindow?
 
@@ -22,14 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityAdsDelegate {
         //============================
         
         Utility.SetUpAdData()
-        
-        AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
-        AmazonAdRegistration.sharedRegistration().setLogging(true)
-        
-        if(Utility.isAd4)
+        if(Utility.isAd3)
         {
-            AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
+            AmazonAdRegistration.sharedRegistration().setAppKey(Utility.Amazonkey)
+            AmazonAdRegistration.sharedRegistration().setLogging(true)
         }
+        
+//        if(Utility.isAd4)
+//        {
+//            AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
+//        }
         if(Utility.isAd7)
         {
             
@@ -41,37 +43,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UnityAdsDelegate {
             sdk.clearSleep()
         }
         
-        if(Utility.isAd5)
+        if(Utility.isAd5 || Utility.isAd6)
         {
-            //UNITY ADS
-            UnityAds.sharedInstance().delegate = self
-            UnityAds.sharedInstance().setTestMode(true)
-            UnityAds.sharedInstance().startWithGameId(Utility.UnityGameID, andViewController: self.window?.rootViewController)
-            
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
-            
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
-                if UnityAds.sharedInstance().canShow() {
-                    UnityAds.sharedInstance().show()
-                }
-                else {
-                    NSLog("%@","Cannot show it yet!")
-                }
-            }
+            Chartboost.startWithAppId(Utility.CBAppID, appSignature: Utility.CBSign, delegate: nil)
+            print(Utility.CBAppID + " " + Utility.CBSign)
         }
         
         if(Utility.isAd8)
         {
-            let sonicDelegate:ISDelegate  = ISDelegate()
-            var myIDFA: String = ""
-            // Check if Advertising Tracking is Enabled
-            if ASIdentifierManager.sharedManager().advertisingTrackingEnabled {
-                // Set the IDFA
-                myIDFA = ASIdentifierManager.sharedManager().advertisingIdentifier.UUIDString
-            }
-            Supersonic.sharedInstance().setISDelegate(sonicDelegate)
-            Supersonic.sharedInstance().initISWithAppKey(Utility.SonicID, withUserId: myIDFA)
-            Supersonic.sharedInstance().loadIS()
+            //startapp
+            
+            let sdk: STAStartAppSDK = STAStartAppSDK.sharedInstance()
+            sdk.appID = Utility.StartAppAppID
+            sdk.devID = Utility.StartAppAccountID
+            sdk.showSplashAd()
         }
         
         //============================

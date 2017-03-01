@@ -32,6 +32,7 @@ class ViewController: UIViewController ,GADBannerViewDelegate, GADInterstitialDe
     
     @IBAction func moreApp2click(sender: AnyObject) {
        Utility.MoreGame()
+        
     }
     
     @IBAction func Click(sender: AnyObject) {

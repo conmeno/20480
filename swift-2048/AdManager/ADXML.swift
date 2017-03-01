@@ -74,6 +74,14 @@ class ADXML: NSObject, NSXMLParserDelegate
 
 
         }
+        else if(currentNode == "v")
+        {
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"version")
+            NSUserDefaults.standardUserDefaults().synchronize()
+
+            
+        }
         else if(currentNode == "online-ad1")
         {
             
@@ -118,6 +126,37 @@ class ADXML: NSObject, NSXMLParserDelegate
         else if(currentNode == "online-ad8")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad8")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+            
+        else if(currentNode == "online-ad9")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad9")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad10")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad10")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad11")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad11")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad12")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad12")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad13")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad13")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "online-ad14")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"online-ad14")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
             
@@ -167,6 +206,36 @@ class ADXML: NSObject, NSXMLParserDelegate
         else if(currentNode == "ad8")
         {
             NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad8")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "ad9")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad9")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "ad10")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad10")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "ad11")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad11")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "ad12")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad12")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "ad13")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad13")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "ad14")
+        {
+            NSUserDefaults.standardUserDefaults().setObject(boolSTR, forKey:"ad14")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
 
@@ -238,7 +307,44 @@ class ADXML: NSObject, NSXMLParserDelegate
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         
-            //read vungle
+            //read chartboost
+        else if(currentNode == "cbappid")
+        {
+            print("cbappid " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"cbappid")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "cbsign")
+        {
+            print("cbsign " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"cbsign")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        //startappid
+        else if(currentNode == "startappid")
+        {
+            print("startappid " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"startappid")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        else if(currentNode == "startappaccount")
+        {
+            print("startappaccount " + string)
+            
+            //save to Iphone user
+            
+            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"startappaccount")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         else if(currentNode == "vungleid")
         {
             print("vungleid " + string)
@@ -246,28 +352,6 @@ class ADXML: NSObject, NSXMLParserDelegate
             //save to Iphone user
             
             NSUserDefaults.standardUserDefaults().setObject(string, forKey:"vungleid")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
-            //read revmob
- 
-            //read UNITY
-        else if(currentNode == "unityid")
-        {
-            print("unityid " + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"unityid")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
-            //read sonic
-        else if(currentNode == "sonicid")
-        {
-            print("sonicid " + string)
-            
-            //save to Iphone user
-            
-            NSUserDefaults.standardUserDefaults().setObject(string, forKey:"sonicid")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         

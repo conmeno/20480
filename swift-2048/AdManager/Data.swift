@@ -36,10 +36,7 @@ class Data {
     
     //Vungle ID
     let VungleID: String = "1069278187"
-    
-    let UnityGameId: String = "1062521"
-    
-    let SonicID: String = "47f5761d"
+   
     
     
     

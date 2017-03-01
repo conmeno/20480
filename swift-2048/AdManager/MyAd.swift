@@ -17,8 +17,8 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var gBannerView: GADBannerView!
     var interstitial: GADInterstitial!
     var interstitialAmazon: AmazonAdInterstitial!
-    
-    
+    var RewardAdNumber = 1000
+    var ad: AdColonyInterstitial?
     var timerVPN:NSTimer?
     var timerAd10:NSTimer?
     var timerAd30:NSTimer? //for all ad
@@ -39,8 +39,8 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var AdNumber = 1
     let data = Data()
     
-    //    var startAppBanner: STABannerView?
-    //    var startAppAd: STAStartAppAd?
+        var startAppBanner: STABannerView?
+        var startAppAd: STAStartAppAd?
     
     
     
@@ -49,14 +49,14 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         self.viewController = root
         
     }
-    //     func viewDidAppearStartApp() {
-    //
-    //        //if (startAppBanner == nil) {
-    //            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Top, withView: self.viewController.view, withDelegate: nil);
-    //            self.viewController.view?.addSubview(startAppBanner!)
-    //        //}
-    //
-    //    }
+         func viewDidAppearStartApp() {
+    
+            //if (startAppBanner == nil) {
+                startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Top, withView: self.viewController.view, withDelegate: nil);
+                self.viewController.view?.addSubview(startAppBanner!)
+            //}
+    
+        }
     
     func ViewDidload()
     {
@@ -72,45 +72,6 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 self.timerAd10 = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "timerAd10Method:", userInfo: nil, repeats: true)
             }
             
-            
-            
-            if(Utility.isAd4)
-            {
-                showAdcolony()
-                
-            }
-            
-            
-            if(Utility.isAd5)
-            {
-                //Unity
-                ShowUnity()
-            }
-            if(Utility.isAd6)
-            {
-                
-                Utility.setupRevmob()
-            }
-            
-            if(Utility.isAd7)
-            {
-                showVungle()
-            }
-            
-            
-            if(Utility.isAd8)
-            {
-    
-                Supersonic.sharedInstance().loadIS()
-                Supersonic.sharedInstance().showISWithViewController(viewController)
-            }
-            
-            if(Utility.isAd4 || Utility.isAd7 || Utility.isAd5 || Utility.isAd8 )
-            {
-                self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerAd30:", userInfo: nil, repeats: true)
-            }
-            
-            
             if(Utility.isAd3)
             {
                 
@@ -123,9 +84,54 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 
                 showAmazonBanner()
                 self.timerAmazon = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerMethodAutoAmazon:", userInfo: nil, repeats: true)
-            
-            
+                
+                
             }
+
+            
+            if(Utility.isAd4)
+            {
+                showAdcolony()
+                
+            }
+            
+            
+            if(Utility.isAd5)
+            {
+                //chartboost
+                showChartBoost()
+            }
+            if(Utility.isAd6)
+            {
+                showChartRewardVideo()
+                
+            }
+            
+            if(Utility.isAd7)
+            {
+                Utility.setupRevmob()
+                
+            }
+            
+            
+            if(Utility.isAd8)
+            {
+    
+                //startapp
+                startAppAd = STAStartAppAd()
+                startAppAd?.loadAd()
+                startAppAd!.showAd()
+            }
+            if(Utility.isAd9)
+            {
+                showVungle()
+            }
+            if(Utility.isAd4 || Utility.isAd5 || Utility.isAd6 || Utility.isAd9 )
+            {
+                self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "timerAd30:", userInfo: nil, repeats: true)
+            }
+            
+            
             
             
          
@@ -134,50 +140,41 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         }
         
     }
+    
+    func showChartBoost()
+    {
+        //Chartboost.closeImpression()
+        Chartboost.showInterstitial("Home" + String(AdNumber))
+        AdNumber += 1
+        print(AdNumber)
+    }
+    
+    func showChartRewardVideo()
+    {
+        
+        Chartboost.showRewardedVideo("rewarded " + String(RewardAdNumber))
+        RewardAdNumber += 1
+        print(RewardAdNumber)
+    }
+    
     func vungleSDKwillCloseAdWithViewInfo(viewInfo: [NSObject : AnyObject]!, willPresentProductSheet: Bool) {
         print("cai con me no")
     }
     
-    func ShowUnity()
-    {
-        if UnityAds.sharedInstance().canShow() {
-            UnityAds.sharedInstance().show()
-        }
-        else {
-            NSLog("%@","Cannot show it yet!")
-        }
-        
-    }
-    //    func timerStartapp(timer:NSTimer) {
-    //
-    //         startAppAd!.showAd()
-    //
-    //    }
+ 
+   
     
-    //    func showAppLovin()
-    //    {
-    //        if(!isApplovinShowed)
-    //        {
-    //            ALInterstitialAd.load()
-    //            if ALInterstitialAd.isReadyForDisplay() == true {
-    //                ALInterstitialAd.show()
-    //                isApplovinShowed = true
-    //
-    //            } else {
-    //                print("No Applovin Ad available to show")
-    //            }
-    //        }
-    //
-    //    }
     func showVungle()
     {
         
         //let nserr : NSError
         //
+       
+        
         let sdk = VungleSDK.sharedSDK()
         sdk.delegate = self
         do {
-            try sdk.playAd(viewController, error: ())
+            try sdk.playAd(viewController, withOptions: nil)
         } catch
         {
             print("Invalid Selection.")
@@ -187,9 +184,78 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     //
     func showAdcolony()
     {
-        AdColony.playVideoAdForZone(Utility.AdcolonyZoneID, withDelegate: nil)
+//        AdColony.configureWithAppID(<#T##appID: String##String#>, zoneIDs: <#T##[String]#>, options: <#T##AdColonyAppOptions?#>, completion: <#T##(([AdColonyZone]) -> Void)?##(([AdColonyZone]) -> Void)?##([AdColonyZone]) -> Void#>)
+//
+        
+            AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], options: nil,
+                completion:{(zones) in
+                    
+                    //AdColony has finished configuring, so let's request an interstitial ad
+                    self.requestInterstitial()
+                    
+                    //If the application has been inactive for a while, our ad might have expired so let's add a check for a nil ad object
+//                    NotificationCenter.default.addObserver(self, selector:#selector(ViewController.onBecameActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+                   }
+                    )
+                    
+                    //Show the user that we are currently loading videos
+                   // setLoadingState()
+        
+        
     }
     
+    //begin new adcolony
+    func requestInterstitial()
+    {
+        //Request an interstitial ad from AdColony
+        AdColony.requestInterstitialInZone(Utility.AdcolonyZoneID, options:nil,
+                                     
+                                     //Handler for successful ad requests
+            success:{(newAd) in
+                
+                //Once the ad has finished, set the loading state and request a new interstitial
+                newAd.setClose({
+                    self.ad = nil
+                   
+                    //self.setLoadingState()
+                    self.requestInterstitial()
+                })
+                
+                //Interstitials can expire, so we need to handle that event also
+                newAd.setExpire({
+                    self.ad = nil
+                    
+                    //self.setLoadingState()
+                    self.requestInterstitial()
+                })
+                
+                //Store a reference to the returned interstitial object
+                self.ad = newAd
+                
+                //Show the user we are ready to play a video
+                //self.setReadyState()
+            },
+            
+            //Handler for failed ad requests
+            failure:{(error) in
+                NSLog("SAMPLE_APP: Request failed with error: " + error.localizedDescription + " and suggestion: " + error.localizedRecoverySuggestion!)
+            }
+        )
+    }
+    
+    @IBAction func launchInterstitial(sender: AnyObject)
+    {
+        //Display our ad to the user
+        if let ad = self.ad {
+            if (!ad.expired) {
+                ad.showWithPresentingViewController(viewController)
+            }
+        }
+    }
+
+    
+    
+    //end adcolony
     func createAndLoadAd() -> GADInterstitial
     {
         let ad = GADInterstitial(adUnitID: Utility.GFullAdUnit)
@@ -285,30 +351,25 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 showAdcolony()
                 
             }
-            if(Utility.isAd7)
+            if(Utility.isAd9)
             {
                 showVungle()
                 
             }
             if(Utility.isAd5)
             {
-                ShowUnity()
+                showChartBoost()
                 
             }
             
+            if(Utility.isAd6)
+            {
+                //chartboost reward
+                showChartRewardVideo()            }
+            
             if(Utility.isAd8)
             {
-                if(Supersonic.sharedInstance().isInterstitialAvailable())
-                {
-                    
-                    Supersonic.sharedInstance().showISWithViewController(viewController)
-                    Utility.isAd8 = false
-                }
-                else
-                {
-                    Supersonic.sharedInstance().loadIS()
-                }
-                
+                startAppAd!.showAd()
             }
             
             
