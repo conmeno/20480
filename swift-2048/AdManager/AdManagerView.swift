@@ -44,6 +44,7 @@ class AdManagerView: UIViewController
     @IBOutlet weak var txtVersion: UILabel!
     @IBAction func sw1Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad1")
+         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"online-ad1")
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd1 = sender.on
         
@@ -51,6 +52,7 @@ class AdManagerView: UIViewController
     
     @IBAction func sw2Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad2")
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"online-ad2")
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd2 = sender.on
     }
@@ -58,6 +60,7 @@ class AdManagerView: UIViewController
     
     @IBAction func sw3Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad3")
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"online-ad3")
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd3 = sender.on
     }
@@ -65,12 +68,14 @@ class AdManagerView: UIViewController
     
     @IBAction func sw4Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad4")
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"online-ad4")
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd4 = sender.on
     }
     
     @IBAction func sw5Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad5")
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"online-ad5")
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd5 = sender.on
     }
@@ -78,6 +83,7 @@ class AdManagerView: UIViewController
     
     @IBAction func sw6Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad6")
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"online-ad6")
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd6 = sender.on
     }
@@ -85,12 +91,14 @@ class AdManagerView: UIViewController
     
     @IBAction func sw7Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad7")
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"online-ad7")
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd7 = sender.on
     }
     
     @IBAction func sw8Action(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"ad8")
+        NSUserDefaults.standardUserDefaults().setObject(sender.on, forKey:"online-ad8")
         NSUserDefaults.standardUserDefaults().synchronize()
         Utility.isAd8 = sender.on
     }

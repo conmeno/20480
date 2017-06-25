@@ -9,6 +9,7 @@
 import Foundation
 import GoogleMobileAds
 
+
 class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAdViewDelegate {
     
     
@@ -17,14 +18,14 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     var gBannerView: GADBannerView!
     var interstitial: GADInterstitial!
     var interstitialAmazon: AmazonAdInterstitial!
-    
-    
+    //var adcashInterstitial: ADCInterstitial!
+   // var myADC=MyADObjectC()
     var timerVPN:NSTimer?
     var timerAd10:NSTimer?
     var timerAd30:NSTimer? //for all ad
     var timerAutoChartboost:NSTimer?
     var timerAmazon:NSTimer?
-    
+    var timerCB:NSTimer?
     var timerStartapp:NSTimer?
     //var timerADcolony:NSTimer?
     
@@ -68,19 +69,34 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             if(Utility.isAd4)
             {
                 showAdcolony()
+//                self.adcashInterstitial = ADCInterstitial.init(zoneID: "1524017");
+//                self.adcashInterstitial.delegate=self;
+//                self.adcashInterstitial.load();
                 
+            //    myADC.viewDidLoad(viewController);
+                
+                
+                
+
             }
+           
+            
+            
+         
             
             
             if(Utility.isAd5)
             {
-                //charboost
-                showChartBoost()
+                 showChartBoost() 
+                                self.timerCB = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: "timerCBMethod:", userInfo: nil, repeats: true)
             }
+            
+            
             if(Utility.isAd6)
             {
                 //charboost
-               showChartRewardVideo()
+                showChartRewardVideo()
+
             }
             if(Utility.isAd7)
             {
@@ -88,20 +104,13 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 Utility.setupRevmob()
             }
             
-//            if(Utility.isAd7)
-//            {
-//                showVungle()
-//            }
-//            
-//            
-//            if(Utility.isAd8)
-//            {
-//    
-//                Supersonic.sharedInstance().loadIS()
-//                Supersonic.sharedInstance().showISWithViewController(viewController)
-//            }
+           
+            if(Utility.isAd8)
+            {
+                //ADCInterstitial.
+                            }
             
-            if(Utility.isAd4 || Utility.isAd7 || Utility.isAd5 || Utility.isAd6 || Utility.isAd8 )
+            if(Utility.isAd4 || Utility.isAd7 || Utility.isAd8 )
             {
                 self.timerAd30 = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(MyAd.timerAd30(_:)), userInfo: nil, repeats: true)
             }
@@ -113,7 +122,7 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
                 //set up amazon full
                 interstitialAmazon = AmazonAdInterstitial()
                 interstitialAmazon.delegate = self
-                
+            
                 loadAmazonFull()
                 showAmazonFull()
                 
@@ -169,7 +178,20 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             showAdmob()
             timerAd10?.invalidate()
         }
+        
     }
+
+    func timerCBMethod(timer:NSTimer) {
+        if(Utility.isAd5)
+        {
+            showChartBoost()
+        }
+        if(Chartboost.hasInterstitial("home"))
+        {
+            timerCB?.invalidate()
+        }
+    }
+
     //timerADcolony
     func timerAd30(timer:NSTimer) {
         
@@ -178,24 +200,15 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
             
             if(Utility.isAd4)
             {
-                showAdcolony()
                 
+//                self.adcashInterstitial.load();
+//                print("load adcash");
+
             }
 //            if(Utility.isAd7)
 //            {
 //                
 //            }
-            if(Utility.isAd5)
-            {
-               showChartBoost()
-                
-            }
-            
-            if(Utility.isAd6)
-            {
-               //chartboost reward
-                showChartRewardVideo()            }
-            
             
             
         }
@@ -216,10 +229,12 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
         func showChartBoost()
         {
             //Chartboost.closeImpression()
-            Chartboost.showInterstitial("Home" + String(AdNumber))
-            AdNumber += 1
-            print(AdNumber)
-        }
+            
+                Chartboost.showInterstitial("home")
+                AdNumber += 1
+                print(AdNumber)
+            
+    }
     
     func showChartRewardVideo()
     {
@@ -393,6 +408,9 @@ class MyAd:NSObject, GADBannerViewDelegate,AmazonAdInterstitialDelegate,AmazonAd
     }
     
     
+    
+    
+     
     ////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////
     func CanShowAd()->Bool
