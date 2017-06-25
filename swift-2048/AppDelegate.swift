@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        {
 //            AdColony.configureWithAppID(Utility.AdcolonyAppID, zoneIDs: [Utility.AdcolonyZoneID], delegate: nil, logging: true)
 //        }
-        if(Utility.isAd7)
+        if(Utility.isAd9)
         {
             
             let sdk = VungleSDK.sharedSDK()
